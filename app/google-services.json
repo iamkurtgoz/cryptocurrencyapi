@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1087987431834",
+    "project_id": "myapps-eaeef",
+    "storage_bucket": "myapps-eaeef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1087987431834:android:a9b48a792155e1bbe06223",
+        "android_client_info": {
+          "package_name": "com.iamkurtgoz.cryptocurrencyapi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1087987431834-fhtp1l48e16hcu6rlcck3h9mmrqfck99.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDt1FRQ2Cg0H7YaCpIXOKt8aoqtwAwrxMU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1087987431834-fhtp1l48e16hcu6rlcck3h9mmrqfck99.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

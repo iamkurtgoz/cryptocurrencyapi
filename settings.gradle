@@ -1,0 +1,23 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "CryptoCurrencyApi"
+include ':app'
+include ':contract'
+include ':core'
+include ':data'
+include ':domain'
+include ':presentation'
+include ':network'
+include ':local'
