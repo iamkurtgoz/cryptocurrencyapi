@@ -22,7 +22,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.NavHost
@@ -32,7 +31,10 @@ import com.iamkurtgoz.cryptocurrencyapi.presentation.R
 import com.iamkurtgoz.presentation.core.CoreViewModel
 import com.iamkurtgoz.presentation.core.SharedUserState
 import com.iamkurtgoz.presentation.core.animation.KLottieProgressHUD
-import com.iamkurtgoz.presentation.features.home.HomeScreen
+import com.iamkurtgoz.presentation.features.BottomNav
+import com.iamkurtgoz.presentation.features.coin.HomeScreen
+import com.iamkurtgoz.presentation.features.favorite.FavoriteScreen
+import com.iamkurtgoz.presentation.features.login.LoginScreen
 import com.iamkurtgoz.presentation.theme.AppShapes
 import com.iamkurtgoz.presentation.theme.ColorBackground
 import com.iamkurtgoz.presentation.theme.ColorTextPrimary
@@ -65,15 +67,37 @@ fun Navigator(sharedUserState: SharedUserState) {
     }
 
     Scaffold(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier.fillMaxWidth(),
+        bottomBar = { BottomNav(navController = navController) }
     ) { innerPadding ->
         NavHost(
             navController = navController,
-            startDestination = Screen.Home.route,
+            startDestination = Screen.Coin.route,
             modifier = Modifier.padding(innerPadding)
         ) {
-            composable(Screen.Home.route) {
+            composable(Screen.Coin.route) {
                 HomeScreen(
+                    viewModel = customHiltViewModel(),
+                    navController = navController
+                )
+            }
+
+            composable(Screen.Favorite.route) {
+                FavoriteScreen(
+                    viewModel = customHiltViewModel(),
+                    navController = navController
+                )
+            }
+
+            composable(Screen.CoinDetail.route) {
+                LoginScreen(
+                    viewModel = customHiltViewModel(),
+                    navController = navController
+                )
+            }
+
+            composable(Screen.Login.route) {
+                LoginScreen(
                     viewModel = customHiltViewModel(),
                     navController = navController
                 )
@@ -124,7 +148,7 @@ fun Navigator(sharedUserState: SharedUserState) {
 inline fun <S, A, E, reified VM : CoreViewModel<S, A, E>> customHiltViewModel(): VM {
     val hiltViewModel = hiltViewModel<VM>()
 
-    when(hiltViewModel.viewModelState.value) {
+    when (hiltViewModel.viewModelState.value) {
         is CoreViewModel.ViewModelState.ShowLoadingDialog -> {
             KLottieProgressHUD(
                 size = MaterialTheme.dimens.DP_56

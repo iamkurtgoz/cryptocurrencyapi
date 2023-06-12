@@ -5,7 +5,6 @@ import com.iamkurtgoz.domain.model.CoinUIModel
 import com.iamkurtgoz.local.entity.CoinEntity
 import java.util.UUID
 import javax.inject.Inject
-import javax.inject.Singleton
 
 internal class CoinMapper @Inject constructor() {
 

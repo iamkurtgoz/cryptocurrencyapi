@@ -157,11 +157,11 @@
 
 <div>
   <ul>
-    <li>62 number of properties</li>
-    <li>86 number of functions</li>
-    <li>63 number of classes</li>
-    <li>33 number of packages</li>
-    <li>62 number of kt files</li>
+    <li>107 number of properties</li>
+    <li>112 number of functions</li>
+    <li>71 number of classes</li>
+    <li>39 number of packages</li>
+    <li>68 number of kt files</li>
   </ul>
 </div>
 
@@ -170,748 +170,121 @@
 
 <div>
   <ul>
-    <li>2,002 lines of code (loc)</li>
-    <li>1,637 source lines of code (sloc)</li>
-    <li>1,037 logical lines of code (lloc)</li>
-    <li>99 comment lines of code (cloc)</li>
-    <li>125 cyclomatic complexity (mcc)</li>
-    <li>31 cognitive complexity</li>
-    <li>166 number of total code smells</li>
-    <li>6% comment source ratio</li>
-    <li>120 mcc per 1,000 lloc</li>
-    <li>160 code smells per 1,000 lloc</li>
+    <li>2,860 lines of code (loc)</li>
+    <li>2,419 source lines of code (sloc)</li>
+    <li>1,504 logical lines of code (lloc)</li>
+    <li>64 comment lines of code (cloc)</li>
+    <li>203 cyclomatic complexity (mcc)</li>
+    <li>81 cognitive complexity</li>
+    <li>148 number of total code smells</li>
+    <li>2% comment source ratio</li>
+    <li>134 mcc per 1,000 lloc</li>
+    <li>98 code smells per 1,000 lloc</li>
   </ul>
 </div>
 
 
 <h2>Findings</h2>
-<div>Total: 166
+<div>Total: 148
   <h3>empty-blocks: 2</h3>
   <details id="EmptyFunctionBlock" open="open">
-    <summary class="rule-container"><span class="rule">EmptyFunctionBlock: 1 </span><span class="description">Empty block of code detected. As they serve no purpose they should be removed.</span></summary>
+    <summary class="rule-container"><span class="rule">EmptyFunctionBlock: 2 </span><span class="description">Empty block of code detected. As they serve no purpose they should be removed.</span></summary>
 <a href="https://detekt.dev/docs/rules/empty-blocks#emptyfunctionblock">Documentation</a>
     <ul>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/home/HomeViewModel.kt:24:43</span><span class="message">This empty block of code can be removed.</span>
-        <pre><code><span class="lineno">  21 </span>    init {
-<span class="lineno">  22 </span>    }
-<span class="lineno">  23 </span>
-<span class="lineno">  24 </span>    override fun dispatch(action: Action) <span class="error">{</span>
-<span class="lineno">  25 </span><span class="error">    }</span>
-<span class="lineno">  26 </span>
-<span class="lineno">  27 </span>    data class State(
-</code></pre>
-      </li>
-    </ul>
-  </details>
-  <details id="EmptyInitBlock" open="open">
-    <summary class="rule-container"><span class="rule">EmptyInitBlock: 1 </span><span class="description">Empty block of code detected. As they serve no purpose they should be removed.</span></summary>
-<a href="https://detekt.dev/docs/rules/empty-blocks#emptyinitblock">Documentation</a>
-    <ul>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/home/HomeViewModel.kt:21:10</span><span class="message">This empty block of code can be removed.</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/favorite/FavoriteViewModel.kt:21:43</span><span class="message">This empty block of code can be removed.</span>
         <pre><code><span class="lineno">  18 </span>    sharedUserState = sharedUserState
 <span class="lineno">  19 </span>) {
 <span class="lineno">  20 </span>
-<span class="lineno">  21 </span>    init <span class="error">{</span>
+<span class="lineno">  21 </span>    override fun dispatch(action: Action) <span class="error">{</span>
 <span class="lineno">  22 </span><span class="error">    }</span>
 <span class="lineno">  23 </span>
-<span class="lineno">  24 </span>    override fun dispatch(action: Action) {
+<span class="lineno">  24 </span>    data class State(
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/login/LoginViewModel.kt:19:43</span><span class="message">This empty block of code can be removed.</span>
+        <pre><code><span class="lineno">  16 </span>    sharedUserState = sharedUserState
+<span class="lineno">  17 </span>) {
+<span class="lineno">  18 </span>
+<span class="lineno">  19 </span>    override fun dispatch(action: Action) <span class="error">{</span>
+<span class="lineno">  20 </span><span class="error">    }</span>
+<span class="lineno">  21 </span>
+<span class="lineno">  22 </span>    data class State(
 </code></pre>
       </li>
     </ul>
   </details>
-  <h3>naming: 159</h3>
+  <h3>formatting: 6</h3>
+  <details id="NoWildcardImports" open="open">
+    <summary class="rule-container"><span class="rule">NoWildcardImports: 6 </span><span class="description">Detects wildcast import usages</span></summary>
+<a href="https://detekt.dev/docs/rules/formatting#nowildcardimports">Documentation</a>
+    <ul>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/BottomNav.kt:3:1</span><span class="message">Wildcard import</span>
+        <pre><code><span class="lineno">   1 </span>package com.iamkurtgoz.presentation.features
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span><span class="error">i</span>mport androidx.compose.foundation.*
+<span class="lineno">   4 </span>import androidx.compose.foundation.layout.*
+<span class="lineno">   5 </span>import androidx.compose.material.*
+<span class="lineno">   6 </span>import androidx.compose.material3.Icon
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/BottomNav.kt:4:1</span><span class="message">Wildcard import</span>
+        <pre><code><span class="lineno">   1 </span>package com.iamkurtgoz.presentation.features
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import androidx.compose.foundation.*
+<span class="lineno">   4 </span><span class="error">i</span>mport androidx.compose.foundation.layout.*
+<span class="lineno">   5 </span>import androidx.compose.material.*
+<span class="lineno">   6 </span>import androidx.compose.material3.Icon
+<span class="lineno">   7 </span>import androidx.compose.material3.MaterialTheme
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/BottomNav.kt:5:1</span><span class="message">Wildcard import</span>
+        <pre><code><span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import androidx.compose.foundation.*
+<span class="lineno">   4 </span>import androidx.compose.foundation.layout.*
+<span class="lineno">   5 </span><span class="error">i</span>mport androidx.compose.material.*
+<span class="lineno">   6 </span>import androidx.compose.material3.Icon
+<span class="lineno">   7 </span>import androidx.compose.material3.MaterialTheme
+<span class="lineno">   8 </span>import androidx.compose.material3.NavigationBar
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinScreen.kt:4:1</span><span class="message">Wildcard import</span>
+        <pre><code><span class="lineno">   1 </span>package com.iamkurtgoz.presentation.features.coin
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import androidx.activity.ComponentActivity
+<span class="lineno">   4 </span><span class="error">i</span>mport androidx.compose.foundation.layout.*
+<span class="lineno">   5 </span>import androidx.compose.foundation.layout.Column
+<span class="lineno">   6 </span>import androidx.compose.foundation.layout.padding
+<span class="lineno">   7 </span>import androidx.compose.foundation.lazy.LazyColumn
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/favorite/FavoriteScreen.kt:4:1</span><span class="message">Wildcard import</span>
+        <pre><code><span class="lineno">   1 </span>package com.iamkurtgoz.presentation.features.favorite
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import androidx.activity.ComponentActivity
+<span class="lineno">   4 </span><span class="error">i</span>mport androidx.compose.foundation.layout.*
+<span class="lineno">   5 </span>import androidx.compose.foundation.layout.Column
+<span class="lineno">   6 </span>import androidx.compose.foundation.layout.padding
+<span class="lineno">   7 </span>import androidx.compose.material3.ExperimentalMaterial3Api
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/login/LoginScreen.kt:4:1</span><span class="message">Wildcard import</span>
+        <pre><code><span class="lineno">   1 </span>package com.iamkurtgoz.presentation.features.login
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import androidx.activity.ComponentActivity
+<span class="lineno">   4 </span><span class="error">i</span>mport androidx.compose.foundation.layout.*
+<span class="lineno">   5 </span>import androidx.compose.foundation.layout.Column
+<span class="lineno">   6 </span>import androidx.compose.foundation.layout.padding
+<span class="lineno">   7 </span>import androidx.compose.material3.ExperimentalMaterial3Api
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <h3>naming: 118</h3>
   <details id="ConstructorParameterNaming" open="open">
-    <summary class="rule-container"><span class="rule">ConstructorParameterNaming: 158 </span><span class="description">Constructor parameter names should follow the naming convention set in the projects configuration.</span></summary>
+    <summary class="rule-container"><span class="rule">ConstructorParameterNaming: 89 </span><span class="description">Constructor parameter names should follow the naming convention set in the projects configuration.</span></summary>
 <a href="https://detekt.dev/docs/rules/naming#constructorparameternaming">Documentation</a>
     <ul>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/contract/src/main/java/com/iamkurtgoz/contract/model/ErrorNetworkException.kt:4:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   1 </span>package com.iamkurtgoz.contract.model
-<span class="lineno">   2 </span>
-<span class="lineno">   3 </span>data class ErrorNetworkException(
-<span class="lineno">   4 </span>    <span class="error">val errorMessage: String</span>,
-<span class="lineno">   5 </span>    val errorCode: Int
-<span class="lineno">   6 </span>) : Exception()
-<span class="lineno">   7 </span>
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/contract/src/main/java/com/iamkurtgoz/contract/model/ErrorNetworkException.kt:5:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   2 </span>
-<span class="lineno">   3 </span>data class ErrorNetworkException(
-<span class="lineno">   4 </span>    val errorMessage: String,
-<span class="lineno">   5 </span>    <span class="error">val errorCode: Int</span>
-<span class="lineno">   6 </span>) : Exception()
-<span class="lineno">   7 </span>
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/contract/src/main/java/com/iamkurtgoz/contract/model/NetworkState.kt:9:9</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   6 </span>sealed interface NetworkState {
-<span class="lineno">   7 </span>
-<span class="lineno">   8 </span>    data class Loading(
-<span class="lineno">   9 </span>        <span class="error">val loadingType: LoadingType</span>
-<span class="lineno">  10 </span>    ) : NetworkState
-<span class="lineno">  11 </span>
-<span class="lineno">  12 </span>    data class Error(
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/contract/src/main/java/com/iamkurtgoz/contract/model/NetworkState.kt:13:9</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  10 </span>    ) : NetworkState
-<span class="lineno">  11 </span>
-<span class="lineno">  12 </span>    data class Error(
-<span class="lineno">  13 </span>        <span class="error">val errorType: ErrorType</span>,
-<span class="lineno">  14 </span>        val error: ErrorNetworkException
-<span class="lineno">  15 </span>    ) : NetworkState
-<span class="lineno">  16 </span>
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/contract/src/main/java/com/iamkurtgoz/contract/model/NetworkState.kt:14:9</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  11 </span>
-<span class="lineno">  12 </span>    data class Error(
-<span class="lineno">  13 </span>        val errorType: ErrorType,
-<span class="lineno">  14 </span>        <span class="error">val error: ErrorNetworkException</span>
-<span class="lineno">  15 </span>    ) : NetworkState
-<span class="lineno">  16 </span>
-<span class="lineno">  17 </span>    object Success : NetworkState
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/contract/src/main/java/com/iamkurtgoz/contract/model/RestResult.kt:6:9</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   3 </span>sealed class RestResult&lt;out T&gt; {
-<span class="lineno">   4 </span>
-<span class="lineno">   5 </span>    class Success&lt;out T&gt;(
-<span class="lineno">   6 </span>        <span class="error">val result: T</span>
-<span class="lineno">   7 </span>    ) : RestResult&lt;T&gt;()
-<span class="lineno">   8 </span>
-<span class="lineno">   9 </span>    class Error(
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/contract/src/main/java/com/iamkurtgoz/contract/model/RestResult.kt:10:9</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   7 </span>    ) : RestResult&lt;T&gt;()
-<span class="lineno">   8 </span>
-<span class="lineno">   9 </span>    class Error(
-<span class="lineno">  10 </span>        <span class="error">val error: ErrorNetworkException</span>
-<span class="lineno">  11 </span>    ) : RestResult&lt;Nothing&gt;()
-<span class="lineno">  12 </span>
-<span class="lineno">  13 </span>    class Loading(val loading: Boolean) : RestResult&lt;Nothing&gt;()
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/contract/src/main/java/com/iamkurtgoz/contract/model/RestResult.kt:13:19</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  10 </span>        val error: ErrorNetworkException
-<span class="lineno">  11 </span>    ) : RestResult&lt;Nothing&gt;()
-<span class="lineno">  12 </span>
-<span class="lineno">  13 </span>    class Loading(<span class="error">val loading: Boolean</span>) : RestResult&lt;Nothing&gt;()
-<span class="lineno">  14 </span>}
-<span class="lineno">  15 </span>
-<span class="lineno">  16 </span>inline fun &lt;T&gt; RestResult&lt;T&gt;.onSuccess(action: (T) -&gt; Unit): RestResult&lt;T&gt; {
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/local/entity/LocalizationEntity.kt:11:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   8 </span>@Entity(tableName = &quot;table_localizations&quot;, indices = [Index(value = arrayOf(&quot;key&quot;), unique = true)])
-<span class="lineno">   9 </span>internal data class LocalizationEntity(
-<span class="lineno">  10 </span>
-<span class="lineno">  11 </span>    <span class="error">@PrimaryKey</span>
-<span class="lineno">  12 </span><span class="error">    @ColumnInfo(name = &quot;key&quot;)</span>
-<span class="lineno">  13 </span><span class="error">    val key: String</span>,
-<span class="lineno">  14 </span>
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/local/entity/LocalizationEntity.kt:15:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  12 </span>    @ColumnInfo(name = &quot;key&quot;)
-<span class="lineno">  13 </span>    val key: String,
-<span class="lineno">  14 </span>
-<span class="lineno">  15 </span>    <span class="error">@ColumnInfo(name = &quot;value&quot;)</span>
-<span class="lineno">  16 </span><span class="error">    val value: String</span>
-<span class="lineno">  17 </span>)
-<span class="lineno">  18 </span>
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/local/entity/ServicesEntity.kt:11:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   8 </span>@Entity(tableName = &quot;table_services&quot;, indices = [Index(value = arrayOf(&quot;id&quot;), unique = true)])
-<span class="lineno">   9 </span>internal data class ServicesEntity(
-<span class="lineno">  10 </span>
-<span class="lineno">  11 </span>    <span class="error">@PrimaryKey</span>
-<span class="lineno">  12 </span><span class="error">    @ColumnInfo(name = &quot;id&quot;)</span>
-<span class="lineno">  13 </span><span class="error">    val id: String</span>,
-<span class="lineno">  14 </span>
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/local/entity/ServicesEntity.kt:15:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  12 </span>    @ColumnInfo(name = &quot;id&quot;)
-<span class="lineno">  13 </span>    val id: String,
-<span class="lineno">  14 </span>
-<span class="lineno">  15 </span>    <span class="error">@ColumnInfo(name = &quot;country&quot;)</span>
-<span class="lineno">  16 </span><span class="error">    val country: String</span>,
-<span class="lineno">  17 </span>
-<span class="lineno">  18 </span>    @ColumnInfo(name = &quot;countryCode&quot;)
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/local/entity/ServicesEntity.kt:18:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  15 </span>    @ColumnInfo(name = &quot;country&quot;)
-<span class="lineno">  16 </span>    val country: String,
-<span class="lineno">  17 </span>
-<span class="lineno">  18 </span>    <span class="error">@ColumnInfo(name = &quot;countryCode&quot;)</span>
-<span class="lineno">  19 </span><span class="error">    val countryCode: String</span>,
-<span class="lineno">  20 </span>
-<span class="lineno">  21 </span>    @ColumnInfo(name = &quot;premium&quot;)
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/local/entity/ServicesEntity.kt:21:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  18 </span>    @ColumnInfo(name = &quot;countryCode&quot;)
-<span class="lineno">  19 </span>    val countryCode: String,
-<span class="lineno">  20 </span>
-<span class="lineno">  21 </span>    <span class="error">@ColumnInfo(name = &quot;premium&quot;)</span>
-<span class="lineno">  22 </span><span class="error">    val premium: Boolean</span>,
-<span class="lineno">  23 </span>
-<span class="lineno">  24 </span>    @ColumnInfo(name = &quot;recommended&quot;)
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/local/entity/ServicesEntity.kt:24:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  21 </span>    @ColumnInfo(name = &quot;premium&quot;)
-<span class="lineno">  22 </span>    val premium: Boolean,
-<span class="lineno">  23 </span>
-<span class="lineno">  24 </span>    <span class="error">@ColumnInfo(name = &quot;recommended&quot;)</span>
-<span class="lineno">  25 </span><span class="error">    val recommended: Boolean</span>,
-<span class="lineno">  26 </span>
-<span class="lineno">  27 </span>    @ColumnInfo(name = &quot;state&quot;)
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/local/entity/ServicesEntity.kt:27:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  24 </span>    @ColumnInfo(name = &quot;recommended&quot;)
-<span class="lineno">  25 </span>    val recommended: Boolean,
-<span class="lineno">  26 </span>
-<span class="lineno">  27 </span>    <span class="error">@ColumnInfo(name = &quot;state&quot;)</span>
-<span class="lineno">  28 </span><span class="error">    val state: String</span>,
-<span class="lineno">  29 </span>
-<span class="lineno">  30 </span>    @ColumnInfo(name = &quot;status&quot;)
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/local/entity/ServicesEntity.kt:30:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  27 </span>    @ColumnInfo(name = &quot;state&quot;)
-<span class="lineno">  28 </span>    val state: String,
-<span class="lineno">  29 </span>
-<span class="lineno">  30 </span>    <span class="error">@ColumnInfo(name = &quot;status&quot;)</span>
-<span class="lineno">  31 </span><span class="error">    val status: Boolean</span>,
-<span class="lineno">  32 </span>
-<span class="lineno">  33 </span>    @ColumnInfo(name = &quot;image&quot;)
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/local/entity/ServicesEntity.kt:33:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  30 </span>    @ColumnInfo(name = &quot;status&quot;)
-<span class="lineno">  31 </span>    val status: Boolean,
-<span class="lineno">  32 </span>
-<span class="lineno">  33 </span>    <span class="error">@ColumnInfo(name = &quot;image&quot;)</span>
-<span class="lineno">  34 </span><span class="error">    val image: String</span>
-<span class="lineno">  35 </span>)
-<span class="lineno">  36 </span>
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:6:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   3 </span>import com.google.gson.annotations.SerializedName
-<span class="lineno">   4 </span>
-<span class="lineno">   5 </span>data class CoinData(
-<span class="lineno">   6 </span>    <span class="error">@SerializedName(&quot;ath&quot;)</span>
-<span class="lineno">   7 </span><span class="error">    val ath: Int?</span>,
-<span class="lineno">   8 </span>    @SerializedName(&quot;ath_change_percentage&quot;)
-<span class="lineno">   9 </span>    val athChangePercentage: Double?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:8:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   5 </span>data class CoinData(
-<span class="lineno">   6 </span>    @SerializedName(&quot;ath&quot;)
-<span class="lineno">   7 </span>    val ath: Int?,
-<span class="lineno">   8 </span>    <span class="error">@SerializedName(&quot;ath_change_percentage&quot;)</span>
-<span class="lineno">   9 </span><span class="error">    val athChangePercentage: Double?</span>,
-<span class="lineno">  10 </span>    @SerializedName(&quot;ath_date&quot;)
-<span class="lineno">  11 </span>    val athDate: String?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:10:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   7 </span>    val ath: Int?,
-<span class="lineno">   8 </span>    @SerializedName(&quot;ath_change_percentage&quot;)
-<span class="lineno">   9 </span>    val athChangePercentage: Double?,
-<span class="lineno">  10 </span>    <span class="error">@SerializedName(&quot;ath_date&quot;)</span>
-<span class="lineno">  11 </span><span class="error">    val athDate: String?</span>,
-<span class="lineno">  12 </span>    @SerializedName(&quot;atl&quot;)
-<span class="lineno">  13 </span>    val atl: Double?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:12:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   9 </span>    val athChangePercentage: Double?,
-<span class="lineno">  10 </span>    @SerializedName(&quot;ath_date&quot;)
-<span class="lineno">  11 </span>    val athDate: String?,
-<span class="lineno">  12 </span>    <span class="error">@SerializedName(&quot;atl&quot;)</span>
-<span class="lineno">  13 </span><span class="error">    val atl: Double?</span>,
-<span class="lineno">  14 </span>    @SerializedName(&quot;atl_change_percentage&quot;)
-<span class="lineno">  15 </span>    val atlChangePercentage: Double?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:14:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  11 </span>    val athDate: String?,
-<span class="lineno">  12 </span>    @SerializedName(&quot;atl&quot;)
-<span class="lineno">  13 </span>    val atl: Double?,
-<span class="lineno">  14 </span>    <span class="error">@SerializedName(&quot;atl_change_percentage&quot;)</span>
-<span class="lineno">  15 </span><span class="error">    val atlChangePercentage: Double?</span>,
-<span class="lineno">  16 </span>    @SerializedName(&quot;atl_date&quot;)
-<span class="lineno">  17 </span>    val atlDate: String?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:16:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  13 </span>    val atl: Double?,
-<span class="lineno">  14 </span>    @SerializedName(&quot;atl_change_percentage&quot;)
-<span class="lineno">  15 </span>    val atlChangePercentage: Double?,
-<span class="lineno">  16 </span>    <span class="error">@SerializedName(&quot;atl_date&quot;)</span>
-<span class="lineno">  17 </span><span class="error">    val atlDate: String?</span>,
-<span class="lineno">  18 </span>    @SerializedName(&quot;circulating_supply&quot;)
-<span class="lineno">  19 </span>    val circulatingSupply: Int?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:18:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  15 </span>    val atlChangePercentage: Double?,
-<span class="lineno">  16 </span>    @SerializedName(&quot;atl_date&quot;)
-<span class="lineno">  17 </span>    val atlDate: String?,
-<span class="lineno">  18 </span>    <span class="error">@SerializedName(&quot;circulating_supply&quot;)</span>
-<span class="lineno">  19 </span><span class="error">    val circulatingSupply: Int?</span>,
-<span class="lineno">  20 </span>    @SerializedName(&quot;current_price&quot;)
-<span class="lineno">  21 </span>    val currentPrice: Int?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:20:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  17 </span>    val atlDate: String?,
-<span class="lineno">  18 </span>    @SerializedName(&quot;circulating_supply&quot;)
-<span class="lineno">  19 </span>    val circulatingSupply: Int?,
-<span class="lineno">  20 </span>    <span class="error">@SerializedName(&quot;current_price&quot;)</span>
-<span class="lineno">  21 </span><span class="error">    val currentPrice: Int?</span>,
-<span class="lineno">  22 </span>    @SerializedName(&quot;fully_diluted_valuation&quot;)
-<span class="lineno">  23 </span>    val fullyDilutedValuation: Long?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:22:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  19 </span>    val circulatingSupply: Int?,
-<span class="lineno">  20 </span>    @SerializedName(&quot;current_price&quot;)
-<span class="lineno">  21 </span>    val currentPrice: Int?,
-<span class="lineno">  22 </span>    <span class="error">@SerializedName(&quot;fully_diluted_valuation&quot;)</span>
-<span class="lineno">  23 </span><span class="error">    val fullyDilutedValuation: Long?</span>,
-<span class="lineno">  24 </span>    @SerializedName(&quot;high_24h&quot;)
-<span class="lineno">  25 </span>    val high24h: Int?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:24:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  21 </span>    val currentPrice: Int?,
-<span class="lineno">  22 </span>    @SerializedName(&quot;fully_diluted_valuation&quot;)
-<span class="lineno">  23 </span>    val fullyDilutedValuation: Long?,
-<span class="lineno">  24 </span>    <span class="error">@SerializedName(&quot;high_24h&quot;)</span>
-<span class="lineno">  25 </span><span class="error">    val high24h: Int?</span>,
-<span class="lineno">  26 </span>    @SerializedName(&quot;id&quot;)
-<span class="lineno">  27 </span>    val id: String?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:26:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  23 </span>    val fullyDilutedValuation: Long?,
-<span class="lineno">  24 </span>    @SerializedName(&quot;high_24h&quot;)
-<span class="lineno">  25 </span>    val high24h: Int?,
-<span class="lineno">  26 </span>    <span class="error">@SerializedName(&quot;id&quot;)</span>
-<span class="lineno">  27 </span><span class="error">    val id: String?</span>,
-<span class="lineno">  28 </span>    @SerializedName(&quot;image&quot;)
-<span class="lineno">  29 </span>    val image: String?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:28:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  25 </span>    val high24h: Int?,
-<span class="lineno">  26 </span>    @SerializedName(&quot;id&quot;)
-<span class="lineno">  27 </span>    val id: String?,
-<span class="lineno">  28 </span>    <span class="error">@SerializedName(&quot;image&quot;)</span>
-<span class="lineno">  29 </span><span class="error">    val image: String?</span>,
-<span class="lineno">  30 </span>    @SerializedName(&quot;last_updated&quot;)
-<span class="lineno">  31 </span>    val lastUpdated: String?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:30:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  27 </span>    val id: String?,
-<span class="lineno">  28 </span>    @SerializedName(&quot;image&quot;)
-<span class="lineno">  29 </span>    val image: String?,
-<span class="lineno">  30 </span>    <span class="error">@SerializedName(&quot;last_updated&quot;)</span>
-<span class="lineno">  31 </span><span class="error">    val lastUpdated: String?</span>,
-<span class="lineno">  32 </span>    @SerializedName(&quot;low_24h&quot;)
-<span class="lineno">  33 </span>    val low24h: Int?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:32:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  29 </span>    val image: String?,
-<span class="lineno">  30 </span>    @SerializedName(&quot;last_updated&quot;)
-<span class="lineno">  31 </span>    val lastUpdated: String?,
-<span class="lineno">  32 </span>    <span class="error">@SerializedName(&quot;low_24h&quot;)</span>
-<span class="lineno">  33 </span><span class="error">    val low24h: Int?</span>,
-<span class="lineno">  34 </span>    @SerializedName(&quot;market_cap&quot;)
-<span class="lineno">  35 </span>    val marketCap: Long?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:34:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  31 </span>    val lastUpdated: String?,
-<span class="lineno">  32 </span>    @SerializedName(&quot;low_24h&quot;)
-<span class="lineno">  33 </span>    val low24h: Int?,
-<span class="lineno">  34 </span>    <span class="error">@SerializedName(&quot;market_cap&quot;)</span>
-<span class="lineno">  35 </span><span class="error">    val marketCap: Long?</span>,
-<span class="lineno">  36 </span>    @SerializedName(&quot;market_cap_change_24h&quot;)
-<span class="lineno">  37 </span>    val marketCapChange24h: Long?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:36:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  33 </span>    val low24h: Int?,
-<span class="lineno">  34 </span>    @SerializedName(&quot;market_cap&quot;)
-<span class="lineno">  35 </span>    val marketCap: Long?,
-<span class="lineno">  36 </span>    <span class="error">@SerializedName(&quot;market_cap_change_24h&quot;)</span>
-<span class="lineno">  37 </span><span class="error">    val marketCapChange24h: Long?</span>,
-<span class="lineno">  38 </span>    @SerializedName(&quot;market_cap_change_percentage_24h&quot;)
-<span class="lineno">  39 </span>    val marketCapChangePercentage24h: Double?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:38:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  35 </span>    val marketCap: Long?,
-<span class="lineno">  36 </span>    @SerializedName(&quot;market_cap_change_24h&quot;)
-<span class="lineno">  37 </span>    val marketCapChange24h: Long?,
-<span class="lineno">  38 </span>    <span class="error">@SerializedName(&quot;market_cap_change_percentage_24h&quot;)</span>
-<span class="lineno">  39 </span><span class="error">    val marketCapChangePercentage24h: Double?</span>,
-<span class="lineno">  40 </span>    @SerializedName(&quot;market_cap_rank&quot;)
-<span class="lineno">  41 </span>    val marketCapRank: Int?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:40:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  37 </span>    val marketCapChange24h: Long?,
-<span class="lineno">  38 </span>    @SerializedName(&quot;market_cap_change_percentage_24h&quot;)
-<span class="lineno">  39 </span>    val marketCapChangePercentage24h: Double?,
-<span class="lineno">  40 </span>    <span class="error">@SerializedName(&quot;market_cap_rank&quot;)</span>
-<span class="lineno">  41 </span><span class="error">    val marketCapRank: Int?</span>,
-<span class="lineno">  42 </span>    @SerializedName(&quot;max_supply&quot;)
-<span class="lineno">  43 </span>    val maxSupply: Int?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:42:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  39 </span>    val marketCapChangePercentage24h: Double?,
-<span class="lineno">  40 </span>    @SerializedName(&quot;market_cap_rank&quot;)
-<span class="lineno">  41 </span>    val marketCapRank: Int?,
-<span class="lineno">  42 </span>    <span class="error">@SerializedName(&quot;max_supply&quot;)</span>
-<span class="lineno">  43 </span><span class="error">    val maxSupply: Int?</span>,
-<span class="lineno">  44 </span>    @SerializedName(&quot;name&quot;)
-<span class="lineno">  45 </span>    val name: String?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:44:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  41 </span>    val marketCapRank: Int?,
-<span class="lineno">  42 </span>    @SerializedName(&quot;max_supply&quot;)
-<span class="lineno">  43 </span>    val maxSupply: Int?,
-<span class="lineno">  44 </span>    <span class="error">@SerializedName(&quot;name&quot;)</span>
-<span class="lineno">  45 </span><span class="error">    val name: String?</span>,
-<span class="lineno">  46 </span>    @SerializedName(&quot;price_change_24h&quot;)
-<span class="lineno">  47 </span>    val priceChange24h: Double?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:46:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  43 </span>    val maxSupply: Int?,
-<span class="lineno">  44 </span>    @SerializedName(&quot;name&quot;)
-<span class="lineno">  45 </span>    val name: String?,
-<span class="lineno">  46 </span>    <span class="error">@SerializedName(&quot;price_change_24h&quot;)</span>
-<span class="lineno">  47 </span><span class="error">    val priceChange24h: Double?</span>,
-<span class="lineno">  48 </span>    @SerializedName(&quot;price_change_percentage_24h&quot;)
-<span class="lineno">  49 </span>    val priceChangePercentage24h: Double?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:48:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  45 </span>    val name: String?,
-<span class="lineno">  46 </span>    @SerializedName(&quot;price_change_24h&quot;)
-<span class="lineno">  47 </span>    val priceChange24h: Double?,
-<span class="lineno">  48 </span>    <span class="error">@SerializedName(&quot;price_change_percentage_24h&quot;)</span>
-<span class="lineno">  49 </span><span class="error">    val priceChangePercentage24h: Double?</span>,
-<span class="lineno">  50 </span>    @SerializedName(&quot;roi&quot;)
-<span class="lineno">  51 </span>    val roi: Any?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:50:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  47 </span>    val priceChange24h: Double?,
-<span class="lineno">  48 </span>    @SerializedName(&quot;price_change_percentage_24h&quot;)
-<span class="lineno">  49 </span>    val priceChangePercentage24h: Double?,
-<span class="lineno">  50 </span>    <span class="error">@SerializedName(&quot;roi&quot;)</span>
-<span class="lineno">  51 </span><span class="error">    val roi: Any?</span>,
-<span class="lineno">  52 </span>    @SerializedName(&quot;symbol&quot;)
-<span class="lineno">  53 </span>    val symbol: String?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:52:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  49 </span>    val priceChangePercentage24h: Double?,
-<span class="lineno">  50 </span>    @SerializedName(&quot;roi&quot;)
-<span class="lineno">  51 </span>    val roi: Any?,
-<span class="lineno">  52 </span>    <span class="error">@SerializedName(&quot;symbol&quot;)</span>
-<span class="lineno">  53 </span><span class="error">    val symbol: String?</span>,
-<span class="lineno">  54 </span>    @SerializedName(&quot;total_supply&quot;)
-<span class="lineno">  55 </span>    val totalSupply: Int?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:54:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  51 </span>    val roi: Any?,
-<span class="lineno">  52 </span>    @SerializedName(&quot;symbol&quot;)
-<span class="lineno">  53 </span>    val symbol: String?,
-<span class="lineno">  54 </span>    <span class="error">@SerializedName(&quot;total_supply&quot;)</span>
-<span class="lineno">  55 </span><span class="error">    val totalSupply: Int?</span>,
-<span class="lineno">  56 </span>    @SerializedName(&quot;total_volume&quot;)
-<span class="lineno">  57 </span>    val totalVolume: Long?
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/CoinData.kt:56:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  53 </span>    val symbol: String?,
-<span class="lineno">  54 </span>    @SerializedName(&quot;total_supply&quot;)
-<span class="lineno">  55 </span>    val totalSupply: Int?,
-<span class="lineno">  56 </span>    <span class="error">@SerializedName(&quot;total_volume&quot;)</span>
-<span class="lineno">  57 </span><span class="error">    val totalVolume: Long?</span>
-<span class="lineno">  58 </span>)
-<span class="lineno">  59 </span>
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/domain/src/main/java/com/iamkurtgoz/domain/model/CoinUIModel.kt:4:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   1 </span>package com.iamkurtgoz.domain.model
-<span class="lineno">   2 </span>
-<span class="lineno">   3 </span>data class CoinUIModel(
-<span class="lineno">   4 </span>    <span class="error">val id: String?</span>,
-<span class="lineno">   5 </span>    val symbol: String?,
-<span class="lineno">   6 </span>    val name: String?,
-<span class="lineno">   7 </span>    val image: String?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/domain/src/main/java/com/iamkurtgoz/domain/model/CoinUIModel.kt:5:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   2 </span>
-<span class="lineno">   3 </span>data class CoinUIModel(
-<span class="lineno">   4 </span>    val id: String?,
-<span class="lineno">   5 </span>    <span class="error">val symbol: String?</span>,
-<span class="lineno">   6 </span>    val name: String?,
-<span class="lineno">   7 </span>    val image: String?,
-<span class="lineno">   8 </span>    val currentPrice: Int?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/domain/src/main/java/com/iamkurtgoz/domain/model/CoinUIModel.kt:6:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   3 </span>data class CoinUIModel(
-<span class="lineno">   4 </span>    val id: String?,
-<span class="lineno">   5 </span>    val symbol: String?,
-<span class="lineno">   6 </span>    <span class="error">val name: String?</span>,
-<span class="lineno">   7 </span>    val image: String?,
-<span class="lineno">   8 </span>    val currentPrice: Int?,
-<span class="lineno">   9 </span>    val marketCap: Long?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/domain/src/main/java/com/iamkurtgoz/domain/model/CoinUIModel.kt:7:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   4 </span>    val id: String?,
-<span class="lineno">   5 </span>    val symbol: String?,
-<span class="lineno">   6 </span>    val name: String?,
-<span class="lineno">   7 </span>    <span class="error">val image: String?</span>,
-<span class="lineno">   8 </span>    val currentPrice: Int?,
-<span class="lineno">   9 </span>    val marketCap: Long?,
-<span class="lineno">  10 </span>    val totalVolume: Long?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/domain/src/main/java/com/iamkurtgoz/domain/model/CoinUIModel.kt:8:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   5 </span>    val symbol: String?,
-<span class="lineno">   6 </span>    val name: String?,
-<span class="lineno">   7 </span>    val image: String?,
-<span class="lineno">   8 </span>    <span class="error">val currentPrice: Int?</span>,
-<span class="lineno">   9 </span>    val marketCap: Long?,
-<span class="lineno">  10 </span>    val totalVolume: Long?,
-<span class="lineno">  11 </span>    val high24h: Int?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/domain/src/main/java/com/iamkurtgoz/domain/model/CoinUIModel.kt:9:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   6 </span>    val name: String?,
-<span class="lineno">   7 </span>    val image: String?,
-<span class="lineno">   8 </span>    val currentPrice: Int?,
-<span class="lineno">   9 </span>    <span class="error">val marketCap: Long?</span>,
-<span class="lineno">  10 </span>    val totalVolume: Long?,
-<span class="lineno">  11 </span>    val high24h: Int?,
-<span class="lineno">  12 </span>    val low24h: Int?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/domain/src/main/java/com/iamkurtgoz/domain/model/CoinUIModel.kt:10:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   7 </span>    val image: String?,
-<span class="lineno">   8 </span>    val currentPrice: Int?,
-<span class="lineno">   9 </span>    val marketCap: Long?,
-<span class="lineno">  10 </span>    <span class="error">val totalVolume: Long?</span>,
-<span class="lineno">  11 </span>    val high24h: Int?,
-<span class="lineno">  12 </span>    val low24h: Int?,
-<span class="lineno">  13 </span>    val priceChange24h: Double?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/domain/src/main/java/com/iamkurtgoz/domain/model/CoinUIModel.kt:11:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   8 </span>    val currentPrice: Int?,
-<span class="lineno">   9 </span>    val marketCap: Long?,
-<span class="lineno">  10 </span>    val totalVolume: Long?,
-<span class="lineno">  11 </span>    <span class="error">val high24h: Int?</span>,
-<span class="lineno">  12 </span>    val low24h: Int?,
-<span class="lineno">  13 </span>    val priceChange24h: Double?,
-<span class="lineno">  14 </span>    val priceChangePercentage24h: Double?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/domain/src/main/java/com/iamkurtgoz/domain/model/CoinUIModel.kt:12:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   9 </span>    val marketCap: Long?,
-<span class="lineno">  10 </span>    val totalVolume: Long?,
-<span class="lineno">  11 </span>    val high24h: Int?,
-<span class="lineno">  12 </span>    <span class="error">val low24h: Int?</span>,
-<span class="lineno">  13 </span>    val priceChange24h: Double?,
-<span class="lineno">  14 </span>    val priceChangePercentage24h: Double?,
-<span class="lineno">  15 </span>    val marketCapChange24h: Long?,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/domain/src/main/java/com/iamkurtgoz/domain/model/CoinUIModel.kt:13:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  10 </span>    val totalVolume: Long?,
-<span class="lineno">  11 </span>    val high24h: Int?,
-<span class="lineno">  12 </span>    val low24h: Int?,
-<span class="lineno">  13 </span>    <span class="error">val priceChange24h: Double?</span>,
-<span class="lineno">  14 </span>    val priceChangePercentage24h: Double?,
-<span class="lineno">  15 </span>    val marketCapChange24h: Long?,
-<span class="lineno">  16 </span>    val marketCapChangePercentage24h: Double?
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/domain/src/main/java/com/iamkurtgoz/domain/model/CoinUIModel.kt:14:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  11 </span>    val high24h: Int?,
-<span class="lineno">  12 </span>    val low24h: Int?,
-<span class="lineno">  13 </span>    val priceChange24h: Double?,
-<span class="lineno">  14 </span>    <span class="error">val priceChangePercentage24h: Double?</span>,
-<span class="lineno">  15 </span>    val marketCapChange24h: Long?,
-<span class="lineno">  16 </span>    val marketCapChangePercentage24h: Double?
-<span class="lineno">  17 </span>)
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/domain/src/main/java/com/iamkurtgoz/domain/model/CoinUIModel.kt:15:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  12 </span>    val low24h: Int?,
-<span class="lineno">  13 </span>    val priceChange24h: Double?,
-<span class="lineno">  14 </span>    val priceChangePercentage24h: Double?,
-<span class="lineno">  15 </span>    <span class="error">val marketCapChange24h: Long?</span>,
-<span class="lineno">  16 </span>    val marketCapChangePercentage24h: Double?
-<span class="lineno">  17 </span>)
-<span class="lineno">  18 </span>
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/domain/src/main/java/com/iamkurtgoz/domain/model/CoinUIModel.kt:16:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  13 </span>    val priceChange24h: Double?,
-<span class="lineno">  14 </span>    val priceChangePercentage24h: Double?,
-<span class="lineno">  15 </span>    val marketCapChange24h: Long?,
-<span class="lineno">  16 </span>    <span class="error">val marketCapChangePercentage24h: Double?</span>
-<span class="lineno">  17 </span>)
-<span class="lineno">  18 </span>
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/network/src/main/java/com/iamkurtgoz/network/interceptor/RequestHeaderInterceptor.kt:9:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   6 </span>import javax.inject.Inject
-<span class="lineno">   7 </span>
-<span class="lineno">   8 </span>internal class RequestHeaderInterceptor @Inject constructor(
-<span class="lineno">   9 </span>    <span class="error">@DeviceId val deviceId: String</span>
-<span class="lineno">  10 </span>) : Interceptor {
-<span class="lineno">  11 </span>
-<span class="lineno">  12 </span>    override fun intercept(chain: Interceptor.Chain): Response {
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/network/src/main/java/com/iamkurtgoz/network/model/DataResponseWrapper.kt:6:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   3 </span>import com.google.gson.annotations.SerializedName
-<span class="lineno">   4 </span>
-<span class="lineno">   5 </span>data class DataResponseWrapper&lt;out T&gt;(
-<span class="lineno">   6 </span>    <span class="error">@SerializedName(&quot;data&quot;)</span>
-<span class="lineno">   7 </span><span class="error">    val data: T? = null</span>,
-<span class="lineno">   8 </span>
-<span class="lineno">   9 </span>    @SerializedName(&quot;status&quot;)
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/network/src/main/java/com/iamkurtgoz/network/model/DataResponseWrapper.kt:9:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   6 </span>    @SerializedName(&quot;data&quot;)
-<span class="lineno">   7 </span>    val data: T? = null,
-<span class="lineno">   8 </span>
-<span class="lineno">   9 </span>    <span class="error">@SerializedName(&quot;status&quot;)</span>
-<span class="lineno">  10 </span><span class="error">    val status: Boolean = false</span>,
-<span class="lineno">  11 </span>
-<span class="lineno">  12 </span>    @SerializedName(&quot;message&quot;)
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/network/src/main/java/com/iamkurtgoz/network/model/DataResponseWrapper.kt:12:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   9 </span>    @SerializedName(&quot;status&quot;)
-<span class="lineno">  10 </span>    val status: Boolean = false,
-<span class="lineno">  11 </span>
-<span class="lineno">  12 </span>    <span class="error">@SerializedName(&quot;message&quot;)</span>
-<span class="lineno">  13 </span><span class="error">    val message: String? = null</span>
-<span class="lineno">  14 </span>)
-<span class="lineno">  15 </span>
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/core/CoreViewModel.kt:21:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  18 </span>import kotlinx.coroutines.launch
-<span class="lineno">  19 </span>
-<span class="lineno">  20 </span>abstract class CoreViewModel&lt;S : ViewState, A : ViewAction, E : SideEffect&gt;(
-<span class="lineno">  21 </span>    <span class="error">initialState: S</span>,
-<span class="lineno">  22 </span>    private val sharedUserState: SharedUserState
-<span class="lineno">  23 </span>) : ViewModel() {
-<span class="lineno">  24 </span>
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/core/CoreViewModel.kt:60:38</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  57 </span>    }
-<span class="lineno">  58 </span>
-<span class="lineno">  59 </span>    sealed class ViewModelState {
-<span class="lineno">  60 </span>        data class ShowLoadingDialog(<span class="error">val state: NetworkState.Loading</span>) : ViewModelState()
-<span class="lineno">  61 </span>        object ShowContent : ViewModelState()
-<span class="lineno">  62 </span>    }
-<span class="lineno">  63 </span>
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/core/SharedUserState.kt:24:13</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  21 </span>    sealed class Effect {
-<span class="lineno">  22 </span>        object None : Effect()
-<span class="lineno">  23 </span>        data class ShowAlertInfo(
-<span class="lineno">  24 </span>            <span class="error">val title: String? = null</span>,
-<span class="lineno">  25 </span>            val message: String? = null,
-<span class="lineno">  26 </span>            val buttonTitle: String = &quot;&quot;,
-<span class="lineno">  27 </span>            val cancelable: Boolean = true
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/core/SharedUserState.kt:25:13</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  22 </span>        object None : Effect()
-<span class="lineno">  23 </span>        data class ShowAlertInfo(
-<span class="lineno">  24 </span>            val title: String? = null,
-<span class="lineno">  25 </span>            <span class="error">val message: String? = null</span>,
-<span class="lineno">  26 </span>            val buttonTitle: String = &quot;&quot;,
-<span class="lineno">  27 </span>            val cancelable: Boolean = true
-<span class="lineno">  28 </span>        ) : Effect()
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/core/SharedUserState.kt:26:13</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  23 </span>        data class ShowAlertInfo(
-<span class="lineno">  24 </span>            val title: String? = null,
-<span class="lineno">  25 </span>            val message: String? = null,
-<span class="lineno">  26 </span>            <span class="error">val buttonTitle: String = &quot;&quot;</span>,
-<span class="lineno">  27 </span>            val cancelable: Boolean = true
-<span class="lineno">  28 </span>        ) : Effect()
-<span class="lineno">  29 </span>        object HideAlert : Effect()
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/core/SharedUserState.kt:27:13</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  24 </span>            val title: String? = null,
-<span class="lineno">  25 </span>            val message: String? = null,
-<span class="lineno">  26 </span>            val buttonTitle: String = &quot;&quot;,
-<span class="lineno">  27 </span>            <span class="error">val cancelable: Boolean = true</span>
-<span class="lineno">  28 </span>        ) : Effect()
-<span class="lineno">  29 </span>        object HideAlert : Effect()
-<span class="lineno">  30 </span>    }
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/home/HomeViewModel.kt:28:9</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  25 </span>    }
-<span class="lineno">  26 </span>
-<span class="lineno">  27 </span>    data class State(
-<span class="lineno">  28 </span>        <span class="error">val any: Any = Any()</span>
-<span class="lineno">  29 </span>    ) : ViewState
-<span class="lineno">  30 </span>
-<span class="lineno">  31 </span>    sealed class Action : ViewAction
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/navigation/Screen.kt:3:21</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">   1 </span>package com.iamkurtgoz.presentation.navigation
-<span class="lineno">   2 </span>
-<span class="lineno">   3 </span>sealed class Screen(<span class="error">val route: String</span>) {
-<span class="lineno">   4 </span>
-<span class="lineno">   5 </span>    // HOME
-<span class="lineno">   6 </span>    object Home : Screen(&quot;home&quot;)
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:11:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:11:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">   8 </span>import androidx.compose.ui.unit.dp
 <span class="lineno">   9 </span>
 <span class="lineno">  10 </span>data class Dimens(
@@ -921,7 +294,7 @@
 <span class="lineno">  14 </span>    val DP_3: Dp = 3.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:12:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:12:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">   9 </span>
 <span class="lineno">  10 </span>data class Dimens(
 <span class="lineno">  11 </span>    val DP_0: Dp = 0.dp,
@@ -931,7 +304,7 @@
 <span class="lineno">  15 </span>    val DP_4: Dp = 4.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:13:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:13:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  10 </span>data class Dimens(
 <span class="lineno">  11 </span>    val DP_0: Dp = 0.dp,
 <span class="lineno">  12 </span>    val DP_1: Dp = 1.dp,
@@ -941,7 +314,7 @@
 <span class="lineno">  16 </span>    val DP_5: Dp = 5.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:14:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:14:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  11 </span>    val DP_0: Dp = 0.dp,
 <span class="lineno">  12 </span>    val DP_1: Dp = 1.dp,
 <span class="lineno">  13 </span>    val DP_2: Dp = 2.dp,
@@ -951,7 +324,7 @@
 <span class="lineno">  17 </span>    val DP_6: Dp = 6.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:15:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:15:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  12 </span>    val DP_1: Dp = 1.dp,
 <span class="lineno">  13 </span>    val DP_2: Dp = 2.dp,
 <span class="lineno">  14 </span>    val DP_3: Dp = 3.dp,
@@ -961,7 +334,7 @@
 <span class="lineno">  18 </span>    val DP_7: Dp = 7.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:16:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:16:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  13 </span>    val DP_2: Dp = 2.dp,
 <span class="lineno">  14 </span>    val DP_3: Dp = 3.dp,
 <span class="lineno">  15 </span>    val DP_4: Dp = 4.dp,
@@ -971,7 +344,7 @@
 <span class="lineno">  19 </span>    val DP_8: Dp = 8.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:17:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:17:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  14 </span>    val DP_3: Dp = 3.dp,
 <span class="lineno">  15 </span>    val DP_4: Dp = 4.dp,
 <span class="lineno">  16 </span>    val DP_5: Dp = 5.dp,
@@ -981,7 +354,7 @@
 <span class="lineno">  20 </span>    val DP_9: Dp = 9.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:18:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:18:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  15 </span>    val DP_4: Dp = 4.dp,
 <span class="lineno">  16 </span>    val DP_5: Dp = 5.dp,
 <span class="lineno">  17 </span>    val DP_6: Dp = 6.dp,
@@ -991,7 +364,7 @@
 <span class="lineno">  21 </span>    val DP_10: Dp = 10.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:19:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:19:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  16 </span>    val DP_5: Dp = 5.dp,
 <span class="lineno">  17 </span>    val DP_6: Dp = 6.dp,
 <span class="lineno">  18 </span>    val DP_7: Dp = 7.dp,
@@ -1001,7 +374,7 @@
 <span class="lineno">  22 </span>    val DP_11: Dp = 11.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:20:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:20:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  17 </span>    val DP_6: Dp = 6.dp,
 <span class="lineno">  18 </span>    val DP_7: Dp = 7.dp,
 <span class="lineno">  19 </span>    val DP_8: Dp = 8.dp,
@@ -1011,7 +384,7 @@
 <span class="lineno">  23 </span>    val DP_12: Dp = 12.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:21:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:21:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  18 </span>    val DP_7: Dp = 7.dp,
 <span class="lineno">  19 </span>    val DP_8: Dp = 8.dp,
 <span class="lineno">  20 </span>    val DP_9: Dp = 9.dp,
@@ -1021,7 +394,7 @@
 <span class="lineno">  24 </span>    val DP_13: Dp = 13.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:22:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:22:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  19 </span>    val DP_8: Dp = 8.dp,
 <span class="lineno">  20 </span>    val DP_9: Dp = 9.dp,
 <span class="lineno">  21 </span>    val DP_10: Dp = 10.dp,
@@ -1031,7 +404,7 @@
 <span class="lineno">  25 </span>    val DP_14: Dp = 14.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:23:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:23:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  20 </span>    val DP_9: Dp = 9.dp,
 <span class="lineno">  21 </span>    val DP_10: Dp = 10.dp,
 <span class="lineno">  22 </span>    val DP_11: Dp = 11.dp,
@@ -1041,7 +414,7 @@
 <span class="lineno">  26 </span>    val DP_15: Dp = 15.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:24:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:24:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  21 </span>    val DP_10: Dp = 10.dp,
 <span class="lineno">  22 </span>    val DP_11: Dp = 11.dp,
 <span class="lineno">  23 </span>    val DP_12: Dp = 12.dp,
@@ -1051,7 +424,7 @@
 <span class="lineno">  27 </span>    val DP_16: Dp = 16.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:25:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:25:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  22 </span>    val DP_11: Dp = 11.dp,
 <span class="lineno">  23 </span>    val DP_12: Dp = 12.dp,
 <span class="lineno">  24 </span>    val DP_13: Dp = 13.dp,
@@ -1061,7 +434,7 @@
 <span class="lineno">  28 </span>    val DP_17: Dp = 17.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:26:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:26:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  23 </span>    val DP_12: Dp = 12.dp,
 <span class="lineno">  24 </span>    val DP_13: Dp = 13.dp,
 <span class="lineno">  25 </span>    val DP_14: Dp = 14.dp,
@@ -1071,7 +444,7 @@
 <span class="lineno">  29 </span>    val DP_18: Dp = 18.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:27:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:27:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  24 </span>    val DP_13: Dp = 13.dp,
 <span class="lineno">  25 </span>    val DP_14: Dp = 14.dp,
 <span class="lineno">  26 </span>    val DP_15: Dp = 15.dp,
@@ -1081,7 +454,7 @@
 <span class="lineno">  30 </span>    val DP_19: Dp = 19.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:28:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:28:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  25 </span>    val DP_14: Dp = 14.dp,
 <span class="lineno">  26 </span>    val DP_15: Dp = 15.dp,
 <span class="lineno">  27 </span>    val DP_16: Dp = 16.dp,
@@ -1091,7 +464,7 @@
 <span class="lineno">  31 </span>    val DP_20: Dp = 20.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:29:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:29:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  26 </span>    val DP_15: Dp = 15.dp,
 <span class="lineno">  27 </span>    val DP_16: Dp = 16.dp,
 <span class="lineno">  28 </span>    val DP_17: Dp = 17.dp,
@@ -1101,7 +474,7 @@
 <span class="lineno">  32 </span>    val DP_21: Dp = 21.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:30:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:30:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  27 </span>    val DP_16: Dp = 16.dp,
 <span class="lineno">  28 </span>    val DP_17: Dp = 17.dp,
 <span class="lineno">  29 </span>    val DP_18: Dp = 18.dp,
@@ -1111,7 +484,7 @@
 <span class="lineno">  33 </span>    val DP_22: Dp = 22.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:31:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:31:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  28 </span>    val DP_17: Dp = 17.dp,
 <span class="lineno">  29 </span>    val DP_18: Dp = 18.dp,
 <span class="lineno">  30 </span>    val DP_19: Dp = 19.dp,
@@ -1121,7 +494,7 @@
 <span class="lineno">  34 </span>    val DP_23: Dp = 23.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:32:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:32:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  29 </span>    val DP_18: Dp = 18.dp,
 <span class="lineno">  30 </span>    val DP_19: Dp = 19.dp,
 <span class="lineno">  31 </span>    val DP_20: Dp = 20.dp,
@@ -1131,7 +504,7 @@
 <span class="lineno">  35 </span>    val DP_24: Dp = 24.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:33:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:33:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  30 </span>    val DP_19: Dp = 19.dp,
 <span class="lineno">  31 </span>    val DP_20: Dp = 20.dp,
 <span class="lineno">  32 </span>    val DP_21: Dp = 21.dp,
@@ -1141,7 +514,7 @@
 <span class="lineno">  36 </span>    val DP_25: Dp = 25.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:34:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:34:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  31 </span>    val DP_20: Dp = 20.dp,
 <span class="lineno">  32 </span>    val DP_21: Dp = 21.dp,
 <span class="lineno">  33 </span>    val DP_22: Dp = 22.dp,
@@ -1151,7 +524,7 @@
 <span class="lineno">  37 </span>    val DP_26: Dp = 26.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:35:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:35:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  32 </span>    val DP_21: Dp = 21.dp,
 <span class="lineno">  33 </span>    val DP_22: Dp = 22.dp,
 <span class="lineno">  34 </span>    val DP_23: Dp = 23.dp,
@@ -1161,7 +534,7 @@
 <span class="lineno">  38 </span>    val DP_27: Dp = 27.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:36:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:36:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  33 </span>    val DP_22: Dp = 22.dp,
 <span class="lineno">  34 </span>    val DP_23: Dp = 23.dp,
 <span class="lineno">  35 </span>    val DP_24: Dp = 24.dp,
@@ -1171,7 +544,7 @@
 <span class="lineno">  39 </span>    val DP_28: Dp = 28.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:37:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:37:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  34 </span>    val DP_23: Dp = 23.dp,
 <span class="lineno">  35 </span>    val DP_24: Dp = 24.dp,
 <span class="lineno">  36 </span>    val DP_25: Dp = 25.dp,
@@ -1181,7 +554,7 @@
 <span class="lineno">  40 </span>    val DP_29: Dp = 29.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:38:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:38:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  35 </span>    val DP_24: Dp = 24.dp,
 <span class="lineno">  36 </span>    val DP_25: Dp = 25.dp,
 <span class="lineno">  37 </span>    val DP_26: Dp = 26.dp,
@@ -1191,7 +564,7 @@
 <span class="lineno">  41 </span>    val DP_30: Dp = 30.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:39:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:39:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  36 </span>    val DP_25: Dp = 25.dp,
 <span class="lineno">  37 </span>    val DP_26: Dp = 26.dp,
 <span class="lineno">  38 </span>    val DP_27: Dp = 27.dp,
@@ -1201,7 +574,7 @@
 <span class="lineno">  42 </span>    val DP_31: Dp = 31.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:40:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:40:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  37 </span>    val DP_26: Dp = 26.dp,
 <span class="lineno">  38 </span>    val DP_27: Dp = 27.dp,
 <span class="lineno">  39 </span>    val DP_28: Dp = 28.dp,
@@ -1211,7 +584,7 @@
 <span class="lineno">  43 </span>    val DP_32: Dp = 32.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:41:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:41:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  38 </span>    val DP_27: Dp = 27.dp,
 <span class="lineno">  39 </span>    val DP_28: Dp = 28.dp,
 <span class="lineno">  40 </span>    val DP_29: Dp = 29.dp,
@@ -1221,7 +594,7 @@
 <span class="lineno">  44 </span>    val DP_33: Dp = 33.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:42:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:42:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  39 </span>    val DP_28: Dp = 28.dp,
 <span class="lineno">  40 </span>    val DP_29: Dp = 29.dp,
 <span class="lineno">  41 </span>    val DP_30: Dp = 30.dp,
@@ -1231,7 +604,7 @@
 <span class="lineno">  45 </span>    val DP_34: Dp = 34.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:43:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:43:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  40 </span>    val DP_29: Dp = 29.dp,
 <span class="lineno">  41 </span>    val DP_30: Dp = 30.dp,
 <span class="lineno">  42 </span>    val DP_31: Dp = 31.dp,
@@ -1241,7 +614,7 @@
 <span class="lineno">  46 </span>    val DP_35: Dp = 35.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:44:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:44:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  41 </span>    val DP_30: Dp = 30.dp,
 <span class="lineno">  42 </span>    val DP_31: Dp = 31.dp,
 <span class="lineno">  43 </span>    val DP_32: Dp = 32.dp,
@@ -1251,7 +624,7 @@
 <span class="lineno">  47 </span>    val DP_36: Dp = 36.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:45:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:45:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  42 </span>    val DP_31: Dp = 31.dp,
 <span class="lineno">  43 </span>    val DP_32: Dp = 32.dp,
 <span class="lineno">  44 </span>    val DP_33: Dp = 33.dp,
@@ -1261,7 +634,7 @@
 <span class="lineno">  48 </span>    val DP_37: Dp = 37.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:46:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:46:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  43 </span>    val DP_32: Dp = 32.dp,
 <span class="lineno">  44 </span>    val DP_33: Dp = 33.dp,
 <span class="lineno">  45 </span>    val DP_34: Dp = 34.dp,
@@ -1271,7 +644,7 @@
 <span class="lineno">  49 </span>    val DP_38: Dp = 38.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:47:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:47:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  44 </span>    val DP_33: Dp = 33.dp,
 <span class="lineno">  45 </span>    val DP_34: Dp = 34.dp,
 <span class="lineno">  46 </span>    val DP_35: Dp = 35.dp,
@@ -1281,7 +654,7 @@
 <span class="lineno">  50 </span>    val DP_39: Dp = 39.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:48:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:48:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  45 </span>    val DP_34: Dp = 34.dp,
 <span class="lineno">  46 </span>    val DP_35: Dp = 35.dp,
 <span class="lineno">  47 </span>    val DP_36: Dp = 36.dp,
@@ -1291,7 +664,7 @@
 <span class="lineno">  51 </span>    val DP_40: Dp = 40.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:49:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:49:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  46 </span>    val DP_35: Dp = 35.dp,
 <span class="lineno">  47 </span>    val DP_36: Dp = 36.dp,
 <span class="lineno">  48 </span>    val DP_37: Dp = 37.dp,
@@ -1301,7 +674,7 @@
 <span class="lineno">  52 </span>    val DP_41: Dp = 41.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:50:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:50:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  47 </span>    val DP_36: Dp = 36.dp,
 <span class="lineno">  48 </span>    val DP_37: Dp = 37.dp,
 <span class="lineno">  49 </span>    val DP_38: Dp = 38.dp,
@@ -1311,7 +684,7 @@
 <span class="lineno">  53 </span>    val DP_42: Dp = 42.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:51:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:51:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  48 </span>    val DP_37: Dp = 37.dp,
 <span class="lineno">  49 </span>    val DP_38: Dp = 38.dp,
 <span class="lineno">  50 </span>    val DP_39: Dp = 39.dp,
@@ -1321,7 +694,7 @@
 <span class="lineno">  54 </span>    val DP_43: Dp = 43.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:52:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:52:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  49 </span>    val DP_38: Dp = 38.dp,
 <span class="lineno">  50 </span>    val DP_39: Dp = 39.dp,
 <span class="lineno">  51 </span>    val DP_40: Dp = 40.dp,
@@ -1331,7 +704,7 @@
 <span class="lineno">  55 </span>    val DP_44: Dp = 44.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:53:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:53:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  50 </span>    val DP_39: Dp = 39.dp,
 <span class="lineno">  51 </span>    val DP_40: Dp = 40.dp,
 <span class="lineno">  52 </span>    val DP_41: Dp = 41.dp,
@@ -1341,7 +714,7 @@
 <span class="lineno">  56 </span>    val DP_45: Dp = 45.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:54:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:54:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  51 </span>    val DP_40: Dp = 40.dp,
 <span class="lineno">  52 </span>    val DP_41: Dp = 41.dp,
 <span class="lineno">  53 </span>    val DP_42: Dp = 42.dp,
@@ -1351,7 +724,7 @@
 <span class="lineno">  57 </span>    val DP_46: Dp = 46.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:55:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:55:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  52 </span>    val DP_41: Dp = 41.dp,
 <span class="lineno">  53 </span>    val DP_42: Dp = 42.dp,
 <span class="lineno">  54 </span>    val DP_43: Dp = 43.dp,
@@ -1361,7 +734,7 @@
 <span class="lineno">  58 </span>    val DP_47: Dp = 47.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:56:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:56:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  53 </span>    val DP_42: Dp = 42.dp,
 <span class="lineno">  54 </span>    val DP_43: Dp = 43.dp,
 <span class="lineno">  55 </span>    val DP_44: Dp = 44.dp,
@@ -1371,7 +744,7 @@
 <span class="lineno">  59 </span>    val DP_48: Dp = 48.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:57:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:57:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  54 </span>    val DP_43: Dp = 43.dp,
 <span class="lineno">  55 </span>    val DP_44: Dp = 44.dp,
 <span class="lineno">  56 </span>    val DP_45: Dp = 45.dp,
@@ -1381,7 +754,7 @@
 <span class="lineno">  60 </span>    val DP_49: Dp = 49.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:58:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:58:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  55 </span>    val DP_44: Dp = 44.dp,
 <span class="lineno">  56 </span>    val DP_45: Dp = 45.dp,
 <span class="lineno">  57 </span>    val DP_46: Dp = 46.dp,
@@ -1391,7 +764,7 @@
 <span class="lineno">  61 </span>    val DP_50: Dp = 50.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:59:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:59:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  56 </span>    val DP_45: Dp = 45.dp,
 <span class="lineno">  57 </span>    val DP_46: Dp = 46.dp,
 <span class="lineno">  58 </span>    val DP_47: Dp = 47.dp,
@@ -1401,7 +774,7 @@
 <span class="lineno">  62 </span>    val DP_52: Dp = 52.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:60:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:60:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  57 </span>    val DP_46: Dp = 46.dp,
 <span class="lineno">  58 </span>    val DP_47: Dp = 47.dp,
 <span class="lineno">  59 </span>    val DP_48: Dp = 48.dp,
@@ -1411,7 +784,7 @@
 <span class="lineno">  63 </span>    val DP_56: Dp = 56.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:61:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:61:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  58 </span>    val DP_47: Dp = 47.dp,
 <span class="lineno">  59 </span>    val DP_48: Dp = 48.dp,
 <span class="lineno">  60 </span>    val DP_49: Dp = 49.dp,
@@ -1421,7 +794,7 @@
 <span class="lineno">  64 </span>    val DP_60: Dp = 60.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:62:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:62:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  59 </span>    val DP_48: Dp = 48.dp,
 <span class="lineno">  60 </span>    val DP_49: Dp = 49.dp,
 <span class="lineno">  61 </span>    val DP_50: Dp = 50.dp,
@@ -1431,7 +804,7 @@
 <span class="lineno">  65 </span>    val DP_64: Dp = 64.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:63:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:63:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  60 </span>    val DP_49: Dp = 49.dp,
 <span class="lineno">  61 </span>    val DP_50: Dp = 50.dp,
 <span class="lineno">  62 </span>    val DP_52: Dp = 52.dp,
@@ -1441,7 +814,7 @@
 <span class="lineno">  66 </span>    val DP_68: Dp = 68.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:64:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:64:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  61 </span>    val DP_50: Dp = 50.dp,
 <span class="lineno">  62 </span>    val DP_52: Dp = 52.dp,
 <span class="lineno">  63 </span>    val DP_56: Dp = 56.dp,
@@ -1451,7 +824,7 @@
 <span class="lineno">  67 </span>    val DP_72: Dp = 72.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:65:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:65:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  62 </span>    val DP_52: Dp = 52.dp,
 <span class="lineno">  63 </span>    val DP_56: Dp = 56.dp,
 <span class="lineno">  64 </span>    val DP_60: Dp = 60.dp,
@@ -1461,7 +834,7 @@
 <span class="lineno">  68 </span>    val DP_76: Dp = 76.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:66:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:66:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  63 </span>    val DP_56: Dp = 56.dp,
 <span class="lineno">  64 </span>    val DP_60: Dp = 60.dp,
 <span class="lineno">  65 </span>    val DP_64: Dp = 64.dp,
@@ -1471,7 +844,7 @@
 <span class="lineno">  69 </span>    val DP_80: Dp = 80.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:67:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:67:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  64 </span>    val DP_60: Dp = 60.dp,
 <span class="lineno">  65 </span>    val DP_64: Dp = 64.dp,
 <span class="lineno">  66 </span>    val DP_68: Dp = 68.dp,
@@ -1481,7 +854,7 @@
 <span class="lineno">  70 </span>    val DP_84: Dp = 84.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:68:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:68:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  65 </span>    val DP_64: Dp = 64.dp,
 <span class="lineno">  66 </span>    val DP_68: Dp = 68.dp,
 <span class="lineno">  67 </span>    val DP_72: Dp = 72.dp,
@@ -1491,7 +864,7 @@
 <span class="lineno">  71 </span>    val DP_88: Dp = 88.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:69:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:69:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  66 </span>    val DP_68: Dp = 68.dp,
 <span class="lineno">  67 </span>    val DP_72: Dp = 72.dp,
 <span class="lineno">  68 </span>    val DP_76: Dp = 76.dp,
@@ -1501,7 +874,7 @@
 <span class="lineno">  72 </span>    val DP_92: Dp = 92.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:70:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:70:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  67 </span>    val DP_72: Dp = 72.dp,
 <span class="lineno">  68 </span>    val DP_76: Dp = 76.dp,
 <span class="lineno">  69 </span>    val DP_80: Dp = 80.dp,
@@ -1511,7 +884,7 @@
 <span class="lineno">  73 </span>    val DP_96: Dp = 96.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:71:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:71:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  68 </span>    val DP_76: Dp = 76.dp,
 <span class="lineno">  69 </span>    val DP_80: Dp = 80.dp,
 <span class="lineno">  70 </span>    val DP_84: Dp = 84.dp,
@@ -1521,7 +894,7 @@
 <span class="lineno">  74 </span>    val DP_100: Dp = 100.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:72:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:72:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  69 </span>    val DP_80: Dp = 80.dp,
 <span class="lineno">  70 </span>    val DP_84: Dp = 84.dp,
 <span class="lineno">  71 </span>    val DP_88: Dp = 88.dp,
@@ -1531,7 +904,7 @@
 <span class="lineno">  75 </span>    val DP_104: Dp = 104.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:73:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:73:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  70 </span>    val DP_84: Dp = 84.dp,
 <span class="lineno">  71 </span>    val DP_88: Dp = 88.dp,
 <span class="lineno">  72 </span>    val DP_92: Dp = 92.dp,
@@ -1541,7 +914,7 @@
 <span class="lineno">  76 </span>    val DP_108: Dp = 108.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:74:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:74:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  71 </span>    val DP_88: Dp = 88.dp,
 <span class="lineno">  72 </span>    val DP_92: Dp = 92.dp,
 <span class="lineno">  73 </span>    val DP_96: Dp = 96.dp,
@@ -1551,7 +924,7 @@
 <span class="lineno">  77 </span>    val DP_112: Dp = 112.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:75:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:75:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  72 </span>    val DP_92: Dp = 92.dp,
 <span class="lineno">  73 </span>    val DP_96: Dp = 96.dp,
 <span class="lineno">  74 </span>    val DP_100: Dp = 100.dp,
@@ -1561,7 +934,7 @@
 <span class="lineno">  78 </span>    val DP_116: Dp = 116.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:76:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:76:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  73 </span>    val DP_96: Dp = 96.dp,
 <span class="lineno">  74 </span>    val DP_100: Dp = 100.dp,
 <span class="lineno">  75 </span>    val DP_104: Dp = 104.dp,
@@ -1571,7 +944,7 @@
 <span class="lineno">  79 </span>    val DP_120: Dp = 120.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:77:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:77:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  74 </span>    val DP_100: Dp = 100.dp,
 <span class="lineno">  75 </span>    val DP_104: Dp = 104.dp,
 <span class="lineno">  76 </span>    val DP_108: Dp = 108.dp,
@@ -1581,7 +954,7 @@
 <span class="lineno">  80 </span>    val DP_124: Dp = 124.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:78:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:78:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  75 </span>    val DP_104: Dp = 104.dp,
 <span class="lineno">  76 </span>    val DP_108: Dp = 108.dp,
 <span class="lineno">  77 </span>    val DP_112: Dp = 112.dp,
@@ -1591,7 +964,7 @@
 <span class="lineno">  81 </span>    val DP_128: Dp = 128.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:79:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:79:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  76 </span>    val DP_108: Dp = 108.dp,
 <span class="lineno">  77 </span>    val DP_112: Dp = 112.dp,
 <span class="lineno">  78 </span>    val DP_116: Dp = 116.dp,
@@ -1601,7 +974,7 @@
 <span class="lineno">  82 </span>    val DP_132: Dp = 132.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:80:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:80:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  77 </span>    val DP_112: Dp = 112.dp,
 <span class="lineno">  78 </span>    val DP_116: Dp = 116.dp,
 <span class="lineno">  79 </span>    val DP_120: Dp = 120.dp,
@@ -1611,7 +984,7 @@
 <span class="lineno">  83 </span>    val DP_136: Dp = 136.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:81:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:81:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  78 </span>    val DP_116: Dp = 116.dp,
 <span class="lineno">  79 </span>    val DP_120: Dp = 120.dp,
 <span class="lineno">  80 </span>    val DP_124: Dp = 124.dp,
@@ -1621,7 +994,7 @@
 <span class="lineno">  84 </span>    val DP_140: Dp = 140.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:82:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:82:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  79 </span>    val DP_120: Dp = 120.dp,
 <span class="lineno">  80 </span>    val DP_124: Dp = 124.dp,
 <span class="lineno">  81 </span>    val DP_128: Dp = 128.dp,
@@ -1631,7 +1004,7 @@
 <span class="lineno">  85 </span>    val DP_144: Dp = 144.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:83:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:83:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  80 </span>    val DP_124: Dp = 124.dp,
 <span class="lineno">  81 </span>    val DP_128: Dp = 128.dp,
 <span class="lineno">  82 </span>    val DP_132: Dp = 132.dp,
@@ -1641,7 +1014,7 @@
 <span class="lineno">  86 </span>    val DP_148: Dp = 148.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:84:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:84:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  81 </span>    val DP_128: Dp = 128.dp,
 <span class="lineno">  82 </span>    val DP_132: Dp = 132.dp,
 <span class="lineno">  83 </span>    val DP_136: Dp = 136.dp,
@@ -1651,7 +1024,7 @@
 <span class="lineno">  87 </span>    val DP_152: Dp = 152.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:85:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:85:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  82 </span>    val DP_132: Dp = 132.dp,
 <span class="lineno">  83 </span>    val DP_136: Dp = 136.dp,
 <span class="lineno">  84 </span>    val DP_140: Dp = 140.dp,
@@ -1661,7 +1034,7 @@
 <span class="lineno">  88 </span>    val DP_156: Dp = 156.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:86:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:86:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  83 </span>    val DP_136: Dp = 136.dp,
 <span class="lineno">  84 </span>    val DP_140: Dp = 140.dp,
 <span class="lineno">  85 </span>    val DP_144: Dp = 144.dp,
@@ -1671,7 +1044,7 @@
 <span class="lineno">  89 </span>    val DP_160: Dp = 160.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:87:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:87:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  84 </span>    val DP_140: Dp = 140.dp,
 <span class="lineno">  85 </span>    val DP_144: Dp = 144.dp,
 <span class="lineno">  86 </span>    val DP_148: Dp = 148.dp,
@@ -1681,7 +1054,7 @@
 <span class="lineno">  90 </span>    val DP_164: Dp = 164.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:88:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:88:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  85 </span>    val DP_144: Dp = 144.dp,
 <span class="lineno">  86 </span>    val DP_148: Dp = 148.dp,
 <span class="lineno">  87 </span>    val DP_152: Dp = 152.dp,
@@ -1691,7 +1064,7 @@
 <span class="lineno">  91 </span>    val DP_168: Dp = 168.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:89:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:89:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  86 </span>    val DP_148: Dp = 148.dp,
 <span class="lineno">  87 </span>    val DP_152: Dp = 152.dp,
 <span class="lineno">  88 </span>    val DP_156: Dp = 156.dp,
@@ -1701,7 +1074,7 @@
 <span class="lineno">  92 </span>    val DP_172: Dp = 172.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:90:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:90:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  87 </span>    val DP_152: Dp = 152.dp,
 <span class="lineno">  88 </span>    val DP_156: Dp = 156.dp,
 <span class="lineno">  89 </span>    val DP_160: Dp = 160.dp,
@@ -1711,7 +1084,7 @@
 <span class="lineno">  93 </span>    val DP_176: Dp = 176.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:91:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:91:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  88 </span>    val DP_156: Dp = 156.dp,
 <span class="lineno">  89 </span>    val DP_160: Dp = 160.dp,
 <span class="lineno">  90 </span>    val DP_164: Dp = 164.dp,
@@ -1721,7 +1094,7 @@
 <span class="lineno">  94 </span>    val DP_180: Dp = 180.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:92:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:92:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  89 </span>    val DP_160: Dp = 160.dp,
 <span class="lineno">  90 </span>    val DP_164: Dp = 164.dp,
 <span class="lineno">  91 </span>    val DP_168: Dp = 168.dp,
@@ -1731,7 +1104,7 @@
 <span class="lineno">  95 </span>    val DP_184: Dp = 184.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:93:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:93:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  90 </span>    val DP_164: Dp = 164.dp,
 <span class="lineno">  91 </span>    val DP_168: Dp = 168.dp,
 <span class="lineno">  92 </span>    val DP_172: Dp = 172.dp,
@@ -1741,7 +1114,7 @@
 <span class="lineno">  96 </span>    val DP_188: Dp = 188.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:94:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:94:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  91 </span>    val DP_168: Dp = 168.dp,
 <span class="lineno">  92 </span>    val DP_172: Dp = 172.dp,
 <span class="lineno">  93 </span>    val DP_176: Dp = 176.dp,
@@ -1751,7 +1124,7 @@
 <span class="lineno">  97 </span>    val DP_192: Dp = 192.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:95:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:95:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  92 </span>    val DP_172: Dp = 172.dp,
 <span class="lineno">  93 </span>    val DP_176: Dp = 176.dp,
 <span class="lineno">  94 </span>    val DP_180: Dp = 180.dp,
@@ -1761,7 +1134,7 @@
 <span class="lineno">  98 </span>    val DP_196: Dp = 196.dp,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:96:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:96:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  93 </span>    val DP_176: Dp = 176.dp,
 <span class="lineno">  94 </span>    val DP_180: Dp = 180.dp,
 <span class="lineno">  95 </span>    val DP_184: Dp = 184.dp,
@@ -1771,7 +1144,7 @@
 <span class="lineno">  99 </span>    val DP_200: Dp = 200.dp
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:97:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:97:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  94 </span>    val DP_180: Dp = 180.dp,
 <span class="lineno">  95 </span>    val DP_184: Dp = 184.dp,
 <span class="lineno">  96 </span>    val DP_188: Dp = 188.dp,
@@ -1781,7 +1154,7 @@
 <span class="lineno"> 100 </span>)
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:98:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:98:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  95 </span>    val DP_184: Dp = 184.dp,
 <span class="lineno">  96 </span>    val DP_188: Dp = 188.dp,
 <span class="lineno">  97 </span>    val DP_192: Dp = 192.dp,
@@ -1791,7 +1164,7 @@
 <span class="lineno"> 101 </span>
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:99:5</span><span class="message">Constructor parameter names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:99:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  96 </span>    val DP_188: Dp = 188.dp,
 <span class="lineno">  97 </span>    val DP_192: Dp = 192.dp,
 <span class="lineno">  98 </span>    val DP_196: Dp = 196.dp,
@@ -1803,8 +1176,244 @@
       </li>
     </ul>
   </details>
+  <details id="LambdaParameterNaming" open="open">
+    <summary class="rule-container"><span class="rule">LambdaParameterNaming: 23 </span><span class="description">Lambda parameter names should follow the naming convention set in the projects configuration.</span></summary>
+<a href="https://detekt.dev/docs/rules/naming#lambdaparameternaming">Documentation</a>
+    <ul>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/mapper/CoinMapper.kt:11:75</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">   8 </span>
+<span class="lineno">   9 </span>internal class CoinMapper @Inject constructor() {
+<span class="lineno">  10 </span>
+<span class="lineno">  11 </span>    fun map(response: List&lt;CoinData&gt;): List&lt;CoinUIModel&gt; = response.map { <span class="error">data</span> -&gt;
+<span class="lineno">  12 </span>        with(data) {
+<span class="lineno">  13 </span>            CoinUIModel(
+<span class="lineno">  14 </span>                id = this.id,
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/mapper/CoinMapper.kt:31:92</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">  28 </span>        }
+<span class="lineno">  29 </span>    }
+<span class="lineno">  30 </span>
+<span class="lineno">  31 </span>    fun mapUiModelToEntity(response: List&lt;CoinUIModel&gt;): List&lt;CoinEntity&gt; = response.map { <span class="error">data</span> -&gt;
+<span class="lineno">  32 </span>        with(data) {
+<span class="lineno">  33 </span>            CoinEntity(
+<span class="lineno">  34 </span>                id = this.id ?: UUID.randomUUID().toString(),
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/mapper/CoinMapper.kt:51:92</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">  48 </span>        }
+<span class="lineno">  49 </span>    }
+<span class="lineno">  50 </span>
+<span class="lineno">  51 </span>    fun mapEntityToUiModel(response: List&lt;CoinEntity&gt;): List&lt;CoinUIModel&gt; = response.map { <span class="error">data</span> -&gt;
+<span class="lineno">  52 </span>        with(data) {
+<span class="lineno">  53 </span>            CoinUIModel(
+<span class="lineno">  54 </span>                id = this.id,
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/repository/CoinRepositoryImpl.kt:32:33</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">  29 </span>        val cache = userDataStoreManager.read(key).firstOrNull()
+<span class="lineno">  30 </span>        val fiveMin = (1000 * 60) * 5
+<span class="lineno">  31 </span>        var useCache = false
+<span class="lineno">  32 </span>        page?.toString()?.let { <span class="error">safePage</span> -&gt;
+<span class="lineno">  33 </span>            val lastUpdate = cache?.toLongOrNull()
+<span class="lineno">  34 </span>            if (lastUpdate != null &amp;&amp; (Date().time - lastUpdate) &lt;= fiveMin) {
+<span class="lineno">  35 </span>                useCache = true
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/domain/src/main/java/com/iamkurtgoz/domain/UseCaseFlowExtension.kt:16:11</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">  13 </span>    dispatcher: CoroutineDispatcher = Dispatchers.IO
+<span class="lineno">  14 </span>): Flow&lt;RestResult&lt;T&gt;&gt; = onStart {
+<span class="lineno">  15 </span>    emit(RestResult.Loading)
+<span class="lineno">  16 </span>}.catch { <span class="error">e</span> -&gt;
+<span class="lineno">  17 </span>    emit(
+<span class="lineno">  18 </span>        RestResult.Error(
+<span class="lineno">  19 </span>            ErrorNetworkException(
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/core/extensions/RestResultExtensions.kt:9:24</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">   6 </span>import kotlinx.coroutines.flow.transform
+<span class="lineno">   7 </span>
+<span class="lineno">   8 </span>fun &lt;T&gt; Flow&lt;RestResult&lt;T&gt;&gt;.onSuccess(action: (T) -&gt; Unit): Flow&lt;RestResult&lt;T&gt;&gt; {
+<span class="lineno">   9 </span>    return transform { <span class="error">restResult</span> -&gt;
+<span class="lineno">  10 </span>        if (restResult is RestResult.Success) {
+<span class="lineno">  11 </span>            action.invoke(restResult.result)
+<span class="lineno">  12 </span>        }
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/core/extensions/RestResultExtensions.kt:18:24</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">  15 </span>}
+<span class="lineno">  16 </span>
+<span class="lineno">  17 </span>fun &lt;T&gt; Flow&lt;RestResult&lt;T&gt;&gt;.onError(action: (ErrorNetworkException) -&gt; Unit): Flow&lt;RestResult&lt;T&gt;&gt; {
+<span class="lineno">  18 </span>    return transform { <span class="error">restResult</span> -&gt;
+<span class="lineno">  19 </span>        if (restResult is RestResult.Error) {
+<span class="lineno">  20 </span>            action.invoke(restResult.error)
+<span class="lineno">  21 </span>        }
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/core/extensions/RestResultExtensions.kt:27:24</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">  24 </span>}
+<span class="lineno">  25 </span>
+<span class="lineno">  26 </span>fun &lt;T&gt; Flow&lt;RestResult&lt;T&gt;&gt;.onLoading(action: () -&gt; Unit): Flow&lt;RestResult&lt;T&gt;&gt; {
+<span class="lineno">  27 </span>    return transform { <span class="error">restResult</span> -&gt;
+<span class="lineno">  28 </span>        if (restResult is RestResult.Loading) {
+<span class="lineno">  29 </span>            action.invoke()
+<span class="lineno">  30 </span>        }
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/BottomNav.kt:52:29</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">  49 </span>                ),
+<span class="lineno">  50 </span>            containerColor = ColorBackground()
+<span class="lineno">  51 </span>        ) {
+<span class="lineno">  52 </span>            items.forEach { <span class="error">item</span> -&gt;
+<span class="lineno">  53 </span>                NavigationBarItem(
+<span class="lineno">  54 </span>                    selected = item.isSelected(navBackStackEntry),
+<span class="lineno">  55 </span>                    onClick = {
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/BottomNav.kt:57:78</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">  54 </span>                    selected = item.isSelected(navBackStackEntry),
+<span class="lineno">  55 </span>                    onClick = {
+<span class="lineno">  56 </span>                        navController.navigate(item.route) {
+<span class="lineno">  57 </span>                            navController.graph.startDestinationRoute?.let { <span class="error">screen_route</span> -&gt;
+<span class="lineno">  58 </span>                                popUpTo(screen_route) {
+<span class="lineno">  59 </span>                                    saveState = true
+<span class="lineno">  60 </span>                                }
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinScreen.kt:58:21</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">  55 </span>                onValueChange = viewModel::onSearchTextChange
+<span class="lineno">  56 </span>            )
+<span class="lineno">  57 </span>        },
+<span class="lineno">  58 </span>        content = { <span class="error">innerPadding</span> -&gt;
+<span class="lineno">  59 </span>            Column(
+<span class="lineno">  60 </span>                modifier = Modifier
+<span class="lineno">  61 </span>                    .padding(innerPadding)
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinScreen.kt:65:53</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">  62 </span>            ) {
+<span class="lineno">  63 </span>                if (searchText.isEmpty()) {
+<span class="lineno">  64 </span>                    LazyColumn {
+<span class="lineno">  65 </span>                        items(coinList.itemCount) { <span class="error">index</span> -&gt;
+<span class="lineno">  66 </span>                            coinList[index]?.let { item -&gt;
+<span class="lineno">  67 </span>                                CoinCard(
+<span class="lineno">  68 </span>                                    index,
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinScreen.kt:66:52</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">  63 </span>                if (searchText.isEmpty()) {
+<span class="lineno">  64 </span>                    LazyColumn {
+<span class="lineno">  65 </span>                        items(coinList.itemCount) { index -&gt;
+<span class="lineno">  66 </span>                            coinList[index]?.let { <span class="error">item</span> -&gt;
+<span class="lineno">  67 </span>                                CoinCard(
+<span class="lineno">  68 </span>                                    index,
+<span class="lineno">  69 </span>                                    item
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinScreen.kt:85:54</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">  82 </span>                        }
+<span class="lineno">  83 </span>                    } else {
+<span class="lineno">  84 </span>                        LazyColumn {
+<span class="lineno">  85 </span>                            items(searchList.size) { <span class="error">index</span> -&gt;
+<span class="lineno">  86 </span>                                searchList[index].let { item -&gt;
+<span class="lineno">  87 </span>                                    CoinCard(
+<span class="lineno">  88 </span>                                        index,
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinScreen.kt:86:57</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">  83 </span>                    } else {
+<span class="lineno">  84 </span>                        LazyColumn {
+<span class="lineno">  85 </span>                            items(searchList.size) { index -&gt;
+<span class="lineno">  86 </span>                                searchList[index].let { <span class="error">item</span> -&gt;
+<span class="lineno">  87 </span>                                    CoinCard(
+<span class="lineno">  88 </span>                                        index,
+<span class="lineno">  89 </span>                                        item
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinViewModel.kt:51:33</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">  48 </span>    val searchList = searchText
+<span class="lineno">  49 </span>        .debounce(1000L)
+<span class="lineno">  50 </span>        .onEach { _isSearching.update { true } }
+<span class="lineno">  51 </span>        .combine(_searchList) { <span class="error">text</span>, list -&gt;
+<span class="lineno">  52 </span>            if (text.isBlank()) {
+<span class="lineno">  53 </span>                return@combine list
+<span class="lineno">  54 </span>            } else {
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinViewModel.kt:51:39</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">  48 </span>    val searchList = searchText
+<span class="lineno">  49 </span>        .debounce(1000L)
+<span class="lineno">  50 </span>        .onEach { _isSearching.update { true } }
+<span class="lineno">  51 </span>        .combine(_searchList) { text, <span class="error">list</span> -&gt;
+<span class="lineno">  52 </span>            if (text.isBlank()) {
+<span class="lineno">  53 </span>                return@combine list
+<span class="lineno">  54 </span>            } else {
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/components/SearchViewTextField.kt:44:31</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">  41 </span>                .fillMaxWidth(),
+<span class="lineno">  42 </span>            singleLine = true,
+<span class="lineno">  43 </span>            maxLines = 1,
+<span class="lineno">  44 </span>            decorationBox = { <span class="error">innerTextField</span> -&gt;
+<span class="lineno">  45 </span>                Row(
+<span class="lineno">  46 </span>                    verticalAlignment = Alignment.CenterVertically,
+<span class="lineno">  47 </span>                    modifier = Modifier.padding(horizontal = 10.dp)
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/source/CoinPagingSource.kt:14:44</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">  11 </span>) : PagingSource&lt;CoinPagingSource.Params, CoinUIModel&gt;() {
+<span class="lineno">  12 </span>
+<span class="lineno">  13 </span>    override fun getRefreshKey(state: PagingState&lt;Params, CoinUIModel&gt;): Params? {
+<span class="lineno">  14 </span>        return state.anchorPosition?.let { <span class="error">anchorPosition</span> -&gt;
+<span class="lineno">  15 </span>            val prevKey = state.closestPageToPosition(anchorPosition)?.prevKey
+<span class="lineno">  16 </span>            prevKey?.copy(
+<span class="lineno">  17 </span>                page = prevKey.page?.plus(DEFAULT_PAGE_INCREMENT) ?: prevKey.page?.minus(DEFAULT_PAGE_INCREMENT)
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/favorite/FavoriteScreen.kt:26:21</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">  23 </span>    val dialogState = viewModel.dialogState.value
+<span class="lineno">  24 </span>
+<span class="lineno">  25 </span>    Scaffold(
+<span class="lineno">  26 </span>        content = { <span class="error">innerPadding</span> -&gt;
+<span class="lineno">  27 </span>            Column(
+<span class="lineno">  28 </span>                modifier = Modifier
+<span class="lineno">  29 </span>                    .padding(innerPadding)
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/login/LoginScreen.kt:26:21</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">  23 </span>    val dialogState = viewModel.dialogState.value
+<span class="lineno">  24 </span>
+<span class="lineno">  25 </span>    Scaffold(
+<span class="lineno">  26 </span>        content = { <span class="error">innerPadding</span> -&gt;
+<span class="lineno">  27 </span>            Column(
+<span class="lineno">  28 </span>                modifier = Modifier
+<span class="lineno">  29 </span>                    .padding(innerPadding)
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/navigation/Navigator.kt:71:9</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">  68 </span>    Scaffold(
+<span class="lineno">  69 </span>        modifier = Modifier.fillMaxWidth(),
+<span class="lineno">  70 </span>        bottomBar = { BottomNav(navController = navController) }
+<span class="lineno">  71 </span>    ) { <span class="error">innerPadding</span> -&gt;
+<span class="lineno">  72 </span>        NavHost(
+<span class="lineno">  73 </span>            navController = navController,
+<span class="lineno">  74 </span>            startDestination = Screen.Coin.route,
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/navigation/Navigator.kt:93:23</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+        <pre><code><span class="lineno">  90 </span>        }
+<span class="lineno">  91 </span>    }
+<span class="lineno">  92 </span>
+<span class="lineno">  93 </span>    alertState?.let { <span class="error">state</span> -&gt;
+<span class="lineno">  94 </span>        AlertDialog(
+<span class="lineno">  95 </span>            shape = AppShapes.extraSmall,
+<span class="lineno">  96 </span>            containerColor = ColorBackground(),
+</code></pre>
+      </li>
+    </ul>
+  </details>
   <details id="ObjectPropertyNaming" open="open">
-    <summary class="rule-container"><span class="rule">ObjectPropertyNaming: 1 </span><span class="description">Property names inside objects should follow the naming convention set in the projects configuration.</span></summary>
+    <summary class="rule-container"><span class="rule">ObjectPropertyNaming: 5 </span><span class="description">Property names inside objects should follow the naming convention set in the projects configuration.</span></summary>
 <a href="https://detekt.dev/docs/rules/naming#objectpropertynaming">Documentation</a>
     <ul>
       <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/network/src/main/java/com/iamkurtgoz/network/di/GsonModule.kt:14:23</span><span class="message">Object constant names should match the pattern: [A-Z][A-Za-z0-9]*</span>
@@ -1817,67 +1426,310 @@
 <span class="lineno">  17 </span>    fun buildWithTimeZone(): Gson {
 </code></pre>
       </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/source/CoinPagingSource.kt:55:19</span><span class="message">Object constant names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+        <pre><code><span class="lineno">  52 </span>    )
+<span class="lineno">  53 </span>
+<span class="lineno">  54 </span>    companion object {
+<span class="lineno">  55 </span>        const val <span class="error">DEFAULT_PAGE</span> = 1
+<span class="lineno">  56 </span>        const val DEFAULT_PAGE_INCREMENT = 1
+<span class="lineno">  57 </span>        const val DEFAULT_PAGE_DECREMENT = 1
+<span class="lineno">  58 </span>        const val DEFAULT_PER_PAGE = 250
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/source/CoinPagingSource.kt:56:19</span><span class="message">Object constant names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+        <pre><code><span class="lineno">  53 </span>
+<span class="lineno">  54 </span>    companion object {
+<span class="lineno">  55 </span>        const val DEFAULT_PAGE = 1
+<span class="lineno">  56 </span>        const val <span class="error">DEFAULT_PAGE_INCREMENT</span> = 1
+<span class="lineno">  57 </span>        const val DEFAULT_PAGE_DECREMENT = 1
+<span class="lineno">  58 </span>        const val DEFAULT_PER_PAGE = 250
+<span class="lineno">  59 </span>        const val CURRENCY = &quot;TRY&quot;
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/source/CoinPagingSource.kt:57:19</span><span class="message">Object constant names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+        <pre><code><span class="lineno">  54 </span>    companion object {
+<span class="lineno">  55 </span>        const val DEFAULT_PAGE = 1
+<span class="lineno">  56 </span>        const val DEFAULT_PAGE_INCREMENT = 1
+<span class="lineno">  57 </span>        const val <span class="error">DEFAULT_PAGE_DECREMENT</span> = 1
+<span class="lineno">  58 </span>        const val DEFAULT_PER_PAGE = 250
+<span class="lineno">  59 </span>        const val CURRENCY = &quot;TRY&quot;
+<span class="lineno">  60 </span>    }
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/source/CoinPagingSource.kt:58:19</span><span class="message">Object constant names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+        <pre><code><span class="lineno">  55 </span>        const val DEFAULT_PAGE = 1
+<span class="lineno">  56 </span>        const val DEFAULT_PAGE_INCREMENT = 1
+<span class="lineno">  57 </span>        const val DEFAULT_PAGE_DECREMENT = 1
+<span class="lineno">  58 </span>        const val <span class="error">DEFAULT_PER_PAGE</span> = 250
+<span class="lineno">  59 </span>        const val CURRENCY = &quot;TRY&quot;
+<span class="lineno">  60 </span>    }
+<span class="lineno">  61 </span>}
+</code></pre>
+      </li>
     </ul>
   </details>
-  <h3>style: 5</h3>
-  <details id="MaxLineLength" open="open">
-    <summary class="rule-container"><span class="rule">MaxLineLength: 1 </span><span class="description">Line detected, which is longer than the defined maximum line length in the code style.</span></summary>
-<a href="https://detekt.dev/docs/rules/style#maxlinelength">Documentation</a>
+  <details id="TopLevelPropertyNaming" open="open">
+    <summary class="rule-container"><span class="rule">TopLevelPropertyNaming: 1 </span><span class="description">Top level property names should follow the naming convention set in the projects configuration.</span></summary>
+<a href="https://detekt.dev/docs/rules/naming#toplevelpropertynaming">Documentation</a>
     <ul>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/repository/CoinRepositoryImpl.kt:11:5</span><span class="message">Line detected, which is longer than the defined maximum line length in the code style.</span>
-        <pre><code><span class="lineno">   8 </span>
-<span class="lineno">   9 </span>internal class CoinRepositoryImpl @Inject constructor() : CoinRepository, CoreRepository() {
-<span class="lineno">  10 </span>
-<span class="lineno">  11 </span>    <span class="error">/*</span>
-<span class="lineno">  12 </span><span class="error">    override suspend fun getCoinList(vsCurrency: String, page: Int, perPage: Int): RestResult&lt;List&lt;CoinUIModel&gt;&gt; = request {</span>
-<span class="lineno">  13 </span><span class="error">        apiService.getCoinList(vsCurrency, perPage, page)</span>
-<span class="lineno">  14 </span><span class="error">    }.mapOnSuccess {</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/network/src/main/java/com/iamkurtgoz/network/di/RetrofitModule.kt:22:19</span><span class="message">Top level constant names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+        <pre><code><span class="lineno">  19 </span>import java.util.concurrent.TimeUnit
+<span class="lineno">  20 </span>import javax.inject.Singleton
+<span class="lineno">  21 </span>
+<span class="lineno">  22 </span>private const val <span class="error">TIMEOUT_MS</span> = 60L
+<span class="lineno">  23 </span>
+<span class="lineno">  24 </span>@Module
+<span class="lineno">  25 </span>@InstallIn(SingletonComponent::class)
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <h3>style: 22</h3>
+  <details id="ClassOrdering" open="open">
+    <summary class="rule-container"><span class="rule">ClassOrdering: 1 </span><span class="description">Class contents should be in this order: Property declarations/initializer blocks; secondary constructors; method declarations then companion objects.</span></summary>
+<a href="https://detekt.dev/docs/rules/style#classordering">Documentation</a>
+    <ul>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinViewModel.kt:72:5</span><span class="message">property `coinPager` should be declared before method declarations.</span>
+        <pre><code><span class="lineno">  69 </span>        _searchText.value = text
+<span class="lineno">  70 </span>    }
+<span class="lineno">  71 </span>
+<span class="lineno">  72 </span>    <span class="error">val coinPager: Flow&lt;PagingData&lt;CoinUIModel&gt;&gt; = Pager(</span>
+<span class="lineno">  73 </span><span class="error">        config = PagingConfig(</span>
+<span class="lineno">  74 </span><span class="error">            pageSize = CoinPagingSource.DEFAULT_PER_PAGE</span>
+<span class="lineno">  75 </span><span class="error">        ),</span>
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="MagicNumber" open="open">
+    <summary class="rule-container"><span class="rule">MagicNumber: 4 </span><span class="description">Report magic numbers. Magic number is a numeric literal that is not defined as a constant and hence it's unclear what the purpose of this number is. It's better to declare such numbers as constants and give them a proper name. By default, -1, 0, 1, and 2 are not considered to be magic numbers.</span></summary>
+<a href="https://detekt.dev/docs/rules/style#magicnumber">Documentation</a>
+    <ul>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/repository/CoinRepositoryImpl.kt:30:24</span><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
+        <pre><code><span class="lineno">  27 </span>        val keyName = &quot;CACHE_$page&quot;
+<span class="lineno">  28 </span>        val key = stringPreferencesKey(keyName)
+<span class="lineno">  29 </span>        val cache = userDataStoreManager.read(key).firstOrNull()
+<span class="lineno">  30 </span>        val fiveMin = (<span class="error">1000</span> * 60) * 5
+<span class="lineno">  31 </span>        var useCache = false
+<span class="lineno">  32 </span>        page?.toString()?.let { safePage -&gt;
+<span class="lineno">  33 </span>            val lastUpdate = cache?.toLongOrNull()
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/repository/CoinRepositoryImpl.kt:30:31</span><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
+        <pre><code><span class="lineno">  27 </span>        val keyName = &quot;CACHE_$page&quot;
+<span class="lineno">  28 </span>        val key = stringPreferencesKey(keyName)
+<span class="lineno">  29 </span>        val cache = userDataStoreManager.read(key).firstOrNull()
+<span class="lineno">  30 </span>        val fiveMin = (1000 * <span class="error">60</span>) * 5
+<span class="lineno">  31 </span>        var useCache = false
+<span class="lineno">  32 </span>        page?.toString()?.let { safePage -&gt;
+<span class="lineno">  33 </span>            val lastUpdate = cache?.toLongOrNull()
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/repository/CoinRepositoryImpl.kt:30:37</span><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
+        <pre><code><span class="lineno">  27 </span>        val keyName = &quot;CACHE_$page&quot;
+<span class="lineno">  28 </span>        val key = stringPreferencesKey(keyName)
+<span class="lineno">  29 </span>        val cache = userDataStoreManager.read(key).firstOrNull()
+<span class="lineno">  30 </span>        val fiveMin = (1000 * 60) * <span class="error">5</span>
+<span class="lineno">  31 </span>        var useCache = false
+<span class="lineno">  32 </span>        page?.toString()?.let { safePage -&gt;
+<span class="lineno">  33 </span>            val lastUpdate = cache?.toLongOrNull()
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/repository/CoinRepositoryImpl.kt:41:61</span><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
+        <pre><code><span class="lineno">  38 </span>
+<span class="lineno">  39 </span>        println(useCache)
+<span class="lineno">  40 </span>        return if (useCache) {
+<span class="lineno">  41 </span>            val offset = (page ?: 1).minus(1) * (perPage ?: <span class="error">250</span>)
+<span class="lineno">  42 </span>            coinMapper.mapEntityToUiModel(coinDao.getCoins(limit = perPage, offset = offset))
+<span class="lineno">  43 </span>        } else {
+<span class="lineno">  44 </span>            /*
 </code></pre>
       </li>
     </ul>
   </details>
   <details id="UnusedPrivateMember" open="open">
-    <summary class="rule-container"><span class="rule">UnusedPrivateMember: 4 </span><span class="description">Private member is unused and should be removed.</span></summary>
+    <summary class="rule-container"><span class="rule">UnusedPrivateMember: 10 </span><span class="description">Private member is unused and should be removed.</span></summary>
 <a href="https://detekt.dev/docs/rules/style#unusedprivatemember">Documentation</a>
     <ul>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/home/HomeScreen.kt:9:16</span><span class="message">Function parameter `viewModel` is unused.</span>
-        <pre><code><span class="lineno">   6 </span>import androidx.navigation.NavController
-<span class="lineno">   7 </span>
-<span class="lineno">   8 </span>@Composable
-<span class="lineno">   9 </span>fun HomeScreen(<span class="error">viewModel</span>: HomeViewModel = hiltViewModel(), navController: NavController) {
-<span class="lineno">  10 </span>    Text(text = &quot;Home123&quot;)
-<span class="lineno">  11 </span>}
-<span class="lineno">  12 </span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/repository/CoinRepositoryImpl.kt:16:17</span><span class="message">Private property `apiService` is unused.</span>
+        <pre><code><span class="lineno">  13 </span>import javax.inject.Inject
+<span class="lineno">  14 </span>
+<span class="lineno">  15 </span>internal class CoinRepositoryImpl @Inject constructor(
+<span class="lineno">  16 </span>    private val <span class="error">apiService</span>: CoinApiService,
+<span class="lineno">  17 </span>    private val coinDao: CoinDao,
+<span class="lineno">  18 </span>    private val coinMapper: CoinMapper,
+<span class="lineno">  19 </span>    private val userDataStoreManager: UserDataStoreManager
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/home/HomeScreen.kt:9:60</span><span class="message">Function parameter `navController` is unused.</span>
-        <pre><code><span class="lineno">   6 </span>import androidx.navigation.NavController
-<span class="lineno">   7 </span>
-<span class="lineno">   8 </span>@Composable
-<span class="lineno">   9 </span>fun HomeScreen(viewModel: HomeViewModel = hiltViewModel(), <span class="error">navController</span>: NavController) {
-<span class="lineno">  10 </span>    Text(text = &quot;Home123&quot;)
-<span class="lineno">  11 </span>}
-<span class="lineno">  12 </span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinScreen.kt:36:60</span><span class="message">Function parameter `navController` is unused.</span>
+        <pre><code><span class="lineno">  33 </span>
+<span class="lineno">  34 </span>@ExperimentalMaterial3Api
+<span class="lineno">  35 </span>@Composable
+<span class="lineno">  36 </span>fun HomeScreen(viewModel: CoinViewModel = hiltViewModel(), <span class="error">navController</span>: NavController) {
+<span class="lineno">  37 </span>    val context = LocalContext.current
+<span class="lineno">  38 </span>    val activity = context as ComponentActivity
+<span class="lineno">  39 </span>    val viewState = viewModel.state.value
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/home/HomeViewModel.kt:15:17</span><span class="message">Private property `g` is unused.</span>
-        <pre><code><span class="lineno">  12 </span>@HiltViewModel
-<span class="lineno">  13 </span>class HomeViewModel @Inject constructor(
-<span class="lineno">  14 </span>    private val sharedUserState: SharedUserState,
-<span class="lineno">  15 </span>    private val <span class="error">g</span>: GetCoinsListUseCase
-<span class="lineno">  16 </span>) : CoreViewModel&lt;HomeViewModel.State, HomeViewModel.Action, HomeViewModel.Effect&gt;(
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinScreen.kt:39:9</span><span class="message">Private property `viewState` is unused.</span>
+        <pre><code><span class="lineno">  36 </span>fun HomeScreen(viewModel: CoinViewModel = hiltViewModel(), navController: NavController) {
+<span class="lineno">  37 </span>    val context = LocalContext.current
+<span class="lineno">  38 </span>    val activity = context as ComponentActivity
+<span class="lineno">  39 </span>    val <span class="error">viewState</span> = viewModel.state.value
+<span class="lineno">  40 </span>    val dialogState = viewModel.dialogState.value
+<span class="lineno">  41 </span>    val coinList = viewModel.coinPager.collectAsLazyPagingItems()
+<span class="lineno">  42 </span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinViewModel.kt:33:17</span><span class="message">Private property `application` is unused.</span>
+        <pre><code><span class="lineno">  30 </span>@OptIn(FlowPreview::class)
+<span class="lineno">  31 </span>@HiltViewModel
+<span class="lineno">  32 </span>class CoinViewModel @Inject constructor(
+<span class="lineno">  33 </span>    private val <span class="error">application</span>: Application,
+<span class="lineno">  34 </span>    private val sharedUserState: SharedUserState,
+<span class="lineno">  35 </span>    private val coinPagingSource: CoinPagingSource
+<span class="lineno">  36 </span>) : CoreViewModel&lt;CoinViewModel.State, CoinViewModel.Action, CoinViewModel.Effect&gt;(
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/favorite/FavoriteScreen.kt:19:68</span><span class="message">Function parameter `navController` is unused.</span>
+        <pre><code><span class="lineno">  16 </span>
+<span class="lineno">  17 </span>@ExperimentalMaterial3Api
+<span class="lineno">  18 </span>@Composable
+<span class="lineno">  19 </span>fun FavoriteScreen(viewModel: FavoriteViewModel = hiltViewModel(), <span class="error">navController</span>: NavController) {
+<span class="lineno">  20 </span>    val context = LocalContext.current
+<span class="lineno">  21 </span>    val activity = context as ComponentActivity
+<span class="lineno">  22 </span>    val viewState = viewModel.state.value
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/favorite/FavoriteScreen.kt:22:9</span><span class="message">Private property `viewState` is unused.</span>
+        <pre><code><span class="lineno">  19 </span>fun FavoriteScreen(viewModel: FavoriteViewModel = hiltViewModel(), navController: NavController) {
+<span class="lineno">  20 </span>    val context = LocalContext.current
+<span class="lineno">  21 </span>    val activity = context as ComponentActivity
+<span class="lineno">  22 </span>    val <span class="error">viewState</span> = viewModel.state.value
+<span class="lineno">  23 </span>    val dialogState = viewModel.dialogState.value
+<span class="lineno">  24 </span>
+<span class="lineno">  25 </span>    Scaffold(
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/favorite/FavoriteViewModel.kt:14:17</span><span class="message">Private property `application` is unused.</span>
+        <pre><code><span class="lineno">  11 </span>
+<span class="lineno">  12 </span>@HiltViewModel
+<span class="lineno">  13 </span>class FavoriteViewModel @Inject constructor(
+<span class="lineno">  14 </span>    private val <span class="error">application</span>: Application,
+<span class="lineno">  15 </span>    private val sharedUserState: SharedUserState
+<span class="lineno">  16 </span>) : CoreViewModel&lt;FavoriteViewModel.State, FavoriteViewModel.Action, FavoriteViewModel.Effect&gt;(
 <span class="lineno">  17 </span>    initialState = State(),
-<span class="lineno">  18 </span>    sharedUserState = sharedUserState
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/navigation/Navigator.kt:46:9</span><span class="message">Private property `coroutineScope` is unused.</span>
-        <pre><code><span class="lineno">  43 </span>@Composable
-<span class="lineno">  44 </span>fun Navigator(sharedUserState: SharedUserState) {
-<span class="lineno">  45 </span>    val navController = rememberNavController()
-<span class="lineno">  46 </span>    val <span class="error">coroutineScope</span> = rememberCoroutineScope()
-<span class="lineno">  47 </span>    var alertState by remember { mutableStateOf&lt;SharedUserState.Effect.ShowAlertInfo?&gt;(null) }
-<span class="lineno">  48 </span>
-<span class="lineno">  49 </span>    LaunchedEffect(key1 = &quot;&quot;) {
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/login/LoginScreen.kt:19:62</span><span class="message">Function parameter `navController` is unused.</span>
+        <pre><code><span class="lineno">  16 </span>
+<span class="lineno">  17 </span>@ExperimentalMaterial3Api
+<span class="lineno">  18 </span>@Composable
+<span class="lineno">  19 </span>fun LoginScreen(viewModel: LoginViewModel = hiltViewModel(), <span class="error">navController</span>: NavController) {
+<span class="lineno">  20 </span>    val context = LocalContext.current
+<span class="lineno">  21 </span>    val activity = context as ComponentActivity
+<span class="lineno">  22 </span>    val viewState = viewModel.state.value
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/login/LoginScreen.kt:22:9</span><span class="message">Private property `viewState` is unused.</span>
+        <pre><code><span class="lineno">  19 </span>fun LoginScreen(viewModel: LoginViewModel = hiltViewModel(), navController: NavController) {
+<span class="lineno">  20 </span>    val context = LocalContext.current
+<span class="lineno">  21 </span>    val activity = context as ComponentActivity
+<span class="lineno">  22 </span>    val <span class="error">viewState</span> = viewModel.state.value
+<span class="lineno">  23 </span>    val dialogState = viewModel.dialogState.value
+<span class="lineno">  24 </span>
+<span class="lineno">  25 </span>    Scaffold(
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/navigation/Navigator.kt:50:9</span><span class="message">Private property `coroutineScope` is unused.</span>
+        <pre><code><span class="lineno">  47 </span>@Composable
+<span class="lineno">  48 </span>fun Navigator(sharedUserState: SharedUserState) {
+<span class="lineno">  49 </span>    val navController = rememberNavController()
+<span class="lineno">  50 </span>    val <span class="error">coroutineScope</span> = rememberCoroutineScope()
+<span class="lineno">  51 </span>    var alertState by remember { mutableStateOf&lt;SharedUserState.Effect.ShowAlertInfo?&gt;(null) }
+<span class="lineno">  52 </span>
+<span class="lineno">  53 </span>    LaunchedEffect(key1 = &quot;&quot;) {
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="UseIfInsteadOfWhen" open="open">
+    <summary class="rule-container"><span class="rule">UseIfInsteadOfWhen: 1 </span><span class="description">Binary expressions are better expressed using an `if` expression than a `when` expression.</span></summary>
+<a href="https://detekt.dev/docs/rules/style#useifinsteadofwhen">Documentation</a>
+    <ul>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/navigation/Navigator.kt:136:5</span><span class="message">Prefer using 'if' for binary conditions instead of 'when'.</span>
+        <pre><code><span class="lineno"> 133 </span>inline fun &lt;S, A, E, reified VM : CoreViewModel&lt;S, A, E&gt;&gt; customHiltViewModel(): VM {
+<span class="lineno"> 134 </span>    val hiltViewModel = hiltViewModel&lt;VM&gt;()
+<span class="lineno"> 135 </span>
+<span class="lineno"> 136 </span>    <span class="error">when (hiltViewModel.viewModelState.value) {</span>
+<span class="lineno"> 137 </span><span class="error">        is CoreViewModel.ViewModelState.ShowLoadingDialog -&gt; {</span>
+<span class="lineno"> 138 </span><span class="error">            KLottieProgressHUD(</span>
+<span class="lineno"> 139 </span><span class="error">                size = MaterialTheme.dimens.DP_56</span>
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="WildcardImport" open="open">
+    <summary class="rule-container"><span class="rule">WildcardImport: 6 </span><span class="description">Wildcard imports should be replaced with imports using fully qualified class names. Wildcard imports can lead to naming conflicts. A library update can introduce naming clashes with your classes which results in compilation errors.</span></summary>
+<a href="https://detekt.dev/docs/rules/style#wildcardimport">Documentation</a>
+    <ul>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/BottomNav.kt:3:1</span><span class="message">androidx.compose.foundation.* is a wildcard import. Replace it with fully qualified imports.</span>
+        <pre><code><span class="lineno">   1 </span>package com.iamkurtgoz.presentation.features
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span><span class="error">import androidx.compose.foundation.*</span>
+<span class="lineno">   4 </span>import androidx.compose.foundation.layout.*
+<span class="lineno">   5 </span>import androidx.compose.material.*
+<span class="lineno">   6 </span>import androidx.compose.material3.Icon
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/BottomNav.kt:4:1</span><span class="message">androidx.compose.foundation.layout.* is a wildcard import. Replace it with fully qualified imports.</span>
+        <pre><code><span class="lineno">   1 </span>package com.iamkurtgoz.presentation.features
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import androidx.compose.foundation.*
+<span class="lineno">   4 </span><span class="error">import androidx.compose.foundation.layout.*</span>
+<span class="lineno">   5 </span>import androidx.compose.material.*
+<span class="lineno">   6 </span>import androidx.compose.material3.Icon
+<span class="lineno">   7 </span>import androidx.compose.material3.MaterialTheme
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/BottomNav.kt:5:1</span><span class="message">androidx.compose.material.* is a wildcard import. Replace it with fully qualified imports.</span>
+        <pre><code><span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import androidx.compose.foundation.*
+<span class="lineno">   4 </span>import androidx.compose.foundation.layout.*
+<span class="lineno">   5 </span><span class="error">import androidx.compose.material.*</span>
+<span class="lineno">   6 </span>import androidx.compose.material3.Icon
+<span class="lineno">   7 </span>import androidx.compose.material3.MaterialTheme
+<span class="lineno">   8 </span>import androidx.compose.material3.NavigationBar
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinScreen.kt:4:1</span><span class="message">androidx.compose.foundation.layout.* is a wildcard import. Replace it with fully qualified imports.</span>
+        <pre><code><span class="lineno">   1 </span>package com.iamkurtgoz.presentation.features.coin
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import androidx.activity.ComponentActivity
+<span class="lineno">   4 </span><span class="error">import androidx.compose.foundation.layout.*</span>
+<span class="lineno">   5 </span>import androidx.compose.foundation.layout.Column
+<span class="lineno">   6 </span>import androidx.compose.foundation.layout.padding
+<span class="lineno">   7 </span>import androidx.compose.foundation.lazy.LazyColumn
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/favorite/FavoriteScreen.kt:4:1</span><span class="message">androidx.compose.foundation.layout.* is a wildcard import. Replace it with fully qualified imports.</span>
+        <pre><code><span class="lineno">   1 </span>package com.iamkurtgoz.presentation.features.favorite
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import androidx.activity.ComponentActivity
+<span class="lineno">   4 </span><span class="error">import androidx.compose.foundation.layout.*</span>
+<span class="lineno">   5 </span>import androidx.compose.foundation.layout.Column
+<span class="lineno">   6 </span>import androidx.compose.foundation.layout.padding
+<span class="lineno">   7 </span>import androidx.compose.material3.ExperimentalMaterial3Api
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/login/LoginScreen.kt:4:1</span><span class="message">androidx.compose.foundation.layout.* is a wildcard import. Replace it with fully qualified imports.</span>
+        <pre><code><span class="lineno">   1 </span>package com.iamkurtgoz.presentation.features.login
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import androidx.activity.ComponentActivity
+<span class="lineno">   4 </span><span class="error">import androidx.compose.foundation.layout.*</span>
+<span class="lineno">   5 </span>import androidx.compose.foundation.layout.Column
+<span class="lineno">   6 </span>import androidx.compose.foundation.layout.padding
+<span class="lineno">   7 </span>import androidx.compose.material3.ExperimentalMaterial3Api
 </code></pre>
       </li>
     </ul>
@@ -1885,7 +1737,7 @@
 </div>
 
 
-generated with <a href="https://detekt.dev/">detekt version 1.22.0</a> on 2023-06-11 09:38:14 UTC.
+generated with <a href="https://detekt.dev/">detekt version 1.22.0</a> on 2023-06-12 14:15:18 UTC.
 
 </body>
 </html>

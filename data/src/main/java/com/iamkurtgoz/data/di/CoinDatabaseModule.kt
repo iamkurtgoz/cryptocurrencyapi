@@ -15,6 +15,5 @@ internal interface CoinDatabaseModule {
         @DatabaseName
         @Provides
         fun provideDatabaseName() = "CoinLocalDatabase"
-
     }
 }

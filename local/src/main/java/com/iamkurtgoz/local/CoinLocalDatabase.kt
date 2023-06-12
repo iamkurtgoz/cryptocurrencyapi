@@ -9,5 +9,4 @@ import com.iamkurtgoz.local.entity.CoinEntity
 internal abstract class CoinLocalDatabase : RoomDatabase() {
 
     abstract fun getCoinDao(): CoinDao
-
 }

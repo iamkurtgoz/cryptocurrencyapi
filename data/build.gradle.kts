@@ -17,6 +17,7 @@ dependencies {
     implementation(project(Modules.domain))
     implementation(project(Modules.networdk))
     implementation(project(Modules.local))
+    implementation(project(Modules.firebase))
 
     implementation(Deps.AndroidX.datastore)
 

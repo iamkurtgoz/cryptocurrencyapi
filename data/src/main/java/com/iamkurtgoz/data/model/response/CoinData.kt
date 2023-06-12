@@ -20,7 +20,7 @@ data class CoinData(
     @SerializedName("current_price")
     val currentPrice: String?,
     @SerializedName("fully_diluted_valuation")
-    val fullyDilutedValuation: Long?,
+    val fullyDilutedValuation: String?,
     @SerializedName("high_24h")
     val high24h: String?,
     @SerializedName("id")

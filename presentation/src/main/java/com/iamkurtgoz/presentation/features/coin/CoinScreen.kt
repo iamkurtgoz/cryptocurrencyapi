@@ -1,41 +1,40 @@
-package com.iamkurtgoz.presentation.features.home
+package com.iamkurtgoz.presentation.features.coin
 
 import androidx.activity.ComponentActivity
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyListScope
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
-import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
-import androidx.paging.compose.collectAsLazyPagingItems
-import kotlinx.coroutines.flow.collectLatest
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyItemScope
-import androidx.compose.foundation.lazy.LazyListScope
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import androidx.paging.LoadState
+import androidx.paging.compose.collectAsLazyPagingItems
+import com.iamkurtgoz.cryptocurrencyapi.presentation.R
 import com.iamkurtgoz.presentation.core.animation.KLottieView
+import com.iamkurtgoz.presentation.features.coin.components.CoinCard
+import com.iamkurtgoz.presentation.features.coin.components.SearchViewTextField
 import com.iamkurtgoz.presentation.theme.ColorTextPrimary
 import com.iamkurtgoz.presentation.theme.dimens
-import com.iamkurtgoz.cryptocurrencyapi.presentation.R
 
 @ExperimentalMaterial3Api
 @Composable
-fun HomeScreen(viewModel: HomeViewModel = hiltViewModel(), navController: NavController) {
+fun HomeScreen(viewModel: CoinViewModel = hiltViewModel(), navController: NavController) {
     val context = LocalContext.current
     val activity = context as ComponentActivity
     val viewState = viewModel.state.value
@@ -43,7 +42,7 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel(), navController: NavCon
     val coinList = viewModel.coinPager.collectAsLazyPagingItems()
 
     LaunchedEffect(key1 = coinList.itemSnapshotList.items) {
-        viewModel.dispatch(HomeViewModel.Action.UpdateList(coinList.itemSnapshotList.items))
+        viewModel.dispatch(CoinViewModel.Action.UpdateList(coinList.itemSnapshotList.items))
     }
 
     val searchText by viewModel.searchText.collectAsState()
@@ -54,7 +53,7 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel(), navController: NavCon
         topBar = {
             SearchViewTextField(
                 value = searchText,
-                onValueChange = viewModel::onSearchTextChange,
+                onValueChange = viewModel::onSearchTextChange
             )
         },
         content = { innerPadding ->
@@ -67,7 +66,8 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel(), navController: NavCon
                         items(coinList.itemCount) { index ->
                             coinList[index]?.let { item ->
                                 CoinCard(
-                                    index, item
+                                    index,
+                                    item
                                 )
                             }
                         }
@@ -75,7 +75,7 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel(), navController: NavCon
                         loadStateItem(coinList.loadState.append)
                     }
                 } else {
-                    if(isSearching) {
+                    if (isSearching) {
                         Box(modifier = Modifier.fillMaxSize()) {
                             CircularProgressIndicator(
                                 modifier = Modifier.align(Alignment.Center)
@@ -86,16 +86,15 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel(), navController: NavCon
                             items(searchList.size) { index ->
                                 searchList[index].let { item ->
                                     CoinCard(
-                                        index, item
+                                        index,
+                                        item
                                     )
                                 }
                             }
                         }
                     }
                 }
-
             }
-
         }
     )
 }
@@ -108,7 +107,7 @@ private fun LazyListScope.loadStateItem(loadState: LoadState) {
                     modifier = Modifier
                         .fillParentMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.Center,
+                    verticalArrangement = Arrangement.Center
                 ) {
                     Text(
                         modifier = Modifier
@@ -125,15 +124,19 @@ private fun LazyListScope.loadStateItem(loadState: LoadState) {
                     modifier = Modifier
                         .fillParentMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.Center,
+                    verticalArrangement = Arrangement.Center
                 ) {
                     Text(
                         modifier = Modifier
                             .padding(8.dp),
-                        text = "Loading"
+                        text = stringResource(id = R.string.loading),
+                        color = ColorTextPrimary()
                     )
 
-                    CircularProgressIndicator(color = Color.Black)
+                    KLottieView(
+                        modifier = Modifier.size(MaterialTheme.dimens.DP_48),
+                        res = R.raw.anim_loading
+                    )
                 }
             }
         }

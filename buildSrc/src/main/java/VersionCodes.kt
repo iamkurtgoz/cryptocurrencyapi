@@ -29,7 +29,8 @@ object VersionCodes {
     }
 
     object Google {
-        const val firebaseBom = "2022.10.00"
+        const val googleService = "4.3.15"
+        const val firebaseBom = "32.1.0"
     }
 
     object Network {

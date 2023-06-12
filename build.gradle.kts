@@ -19,6 +19,7 @@ plugins {
 buildscript {
     dependencies {
         classpath(Deps.Detekt.detekt)
+        classpath(Deps.Google.googleServices)
     }
     repositories {
         mavenCentral()

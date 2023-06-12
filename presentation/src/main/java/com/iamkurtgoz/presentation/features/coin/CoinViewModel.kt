@@ -1,8 +1,7 @@
-package com.iamkurtgoz.presentation.features.home
+package com.iamkurtgoz.presentation.features.coin
 
 import android.app.Application
 import androidx.lifecycle.viewModelScope
-import androidx.paging.LoadState
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
@@ -13,6 +12,7 @@ import com.iamkurtgoz.presentation.core.SharedUserState
 import com.iamkurtgoz.presentation.core.SideEffect
 import com.iamkurtgoz.presentation.core.ViewAction
 import com.iamkurtgoz.presentation.core.ViewState
+import com.iamkurtgoz.presentation.features.coin.source.CoinPagingSource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.delay
@@ -29,14 +29,13 @@ import javax.inject.Inject
 
 @OptIn(FlowPreview::class)
 @HiltViewModel
-class HomeViewModel @Inject constructor(
+class CoinViewModel @Inject constructor(
     private val application: Application,
     private val sharedUserState: SharedUserState,
     private val coinPagingSource: CoinPagingSource
-) : CoreViewModel<HomeViewModel.State, HomeViewModel.Action, HomeViewModel.Effect>(
+) : CoreViewModel<CoinViewModel.State, CoinViewModel.Action, CoinViewModel.Effect>(
     initialState = State(),
-    sharedUserState = sharedUserState,
-    application
+    sharedUserState = sharedUserState
 ) {
 
     private val _searchText = MutableStateFlow("")
@@ -50,7 +49,7 @@ class HomeViewModel @Inject constructor(
         .debounce(1000L)
         .onEach { _isSearching.update { true } }
         .combine(_searchList) { text, list ->
-            if(text.isBlank()) {
+            if (text.isBlank()) {
                 return@combine list
             } else {
                 delay(2000L)
@@ -85,7 +84,7 @@ class HomeViewModel @Inject constructor(
     ).flow.cachedIn(viewModelScope)
 
     override fun dispatch(action: Action) {
-        when(action){
+        when (action) {
             is Action.UpdateList -> {
                 _searchList.value = action.list
             }
@@ -97,7 +96,7 @@ class HomeViewModel @Inject constructor(
     ) : ViewState
 
     sealed class Action : ViewAction {
-        data class UpdateList(val list: List<CoinUIModel>): Action()
+        data class UpdateList(val list: List<CoinUIModel>) : Action()
     }
 
     sealed class Effect : SideEffect

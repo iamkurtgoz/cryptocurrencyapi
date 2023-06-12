@@ -7,4 +7,5 @@ object Modules {
     const val core = ":core"
     const val networdk = ":network"
     const val local = ":local"
+    const val firebase = ":firebase"
 }

@@ -3,4 +3,12 @@
     <string name="ok">Ok</string>
     <string name="error_unknown">Error unknown</string>
     <string name="search">Search</string>
+    <string name="coin_title">Coins</string>
+    <string name="favorite_title">Favorite</string>
+    <string name="login_required_favorites_title">Login for Favorites</string>
+    <string name="login_required_favorites_description">You must create an account or log in to use favourites</string>
+    <string name="login">Login\n</string>
+    <string name="loading">Loading</string>
+    <string name="emailAddress">Email Address</string>
+    <string name="password">Password</string>
 </resources>

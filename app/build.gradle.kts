@@ -63,6 +63,7 @@ android {
 dependencies {
 
     //Project
+    implementation(project(Modules.firebase))
     implementation(project(Modules.contract))
     implementation(project(Modules.data))
     implementation(project(Modules.domain))

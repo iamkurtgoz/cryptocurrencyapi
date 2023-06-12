@@ -42,7 +42,6 @@ dependencies {
     implementation(Deps.Compose.composeLottie)
     implementation(Deps.Compose.composeHilt)
     implementation(Deps.Compose.composePagination)
-
     //Glide
     implementation(Deps.Glide.glideLandscapist)
 

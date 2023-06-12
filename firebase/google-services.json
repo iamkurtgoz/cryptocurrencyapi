@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1087987431834:android:a9b48a792155e1bbe06223",
+        "mobilesdk_app_id": "1:1087987431834:android:56586071d5c9d6d6e06223",
         "android_client_info": {
-          "package_name": "com.iamkurtgoz.cryptocurrencyapi"
+          "package_name": "com.iamkurtgoz.cryptocurrencyapi.firebase"
         }
       },
       "oauth_client": [

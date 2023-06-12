@@ -14,6 +14,10 @@ val ColorTextPrimaryLight = Color(0xFF000000)
 val ColorTextPrimaryNight = Color(0xFFFFFFFF)
 val ColorTextSecondaryLight = Color(0xFF8D8E8E)
 val ColorTextSecondaryNight = Color(0xFF8D8E8E)
+val ColorTextFieldBackgroundGrayLight = Color(0xFFEBEBEE)
+val ColorTextFieldBackgroundGrayNight = Color(0xFF383838)
+val ColorTextFieldPlaceholderLight = Color(0xFF838383)
+val ColorTextFieldPlaceholderNight = Color(0xFF838383)
 
 @Composable
 fun ColorBackground(): Color = if (!isSystemInDarkTheme()) LightGray else DarkGray
@@ -25,3 +29,9 @@ fun ColorTextPrimary(): Color =
 @Composable
 fun ColorTextSecondary(): Color =
     if (!isSystemInDarkTheme()) ColorTextSecondaryLight else ColorTextSecondaryNight
+
+@Composable
+fun ColorTextFieldPlaceholder(): Color = if (!isSystemInDarkTheme()) ColorTextFieldPlaceholderLight else ColorTextFieldPlaceholderNight
+
+@Composable
+fun ColorTextFieldBackgroundGray(): Color = if (!isSystemInDarkTheme()) ColorTextFieldBackgroundGrayLight else ColorTextFieldBackgroundGrayNight

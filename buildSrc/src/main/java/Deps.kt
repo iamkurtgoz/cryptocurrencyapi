@@ -70,6 +70,23 @@ object Deps {
         }
     }
 
+    object Google {
+        val googleServices = buildString {
+            append("com.google.gms:google-services:")
+            append(VersionCodes.Google.googleService)
+        }
+        val firebaseBom = buildString {
+            append("com.google.firebase:firebase-bom:")
+            append(VersionCodes.Google.firebaseBom)
+        }
+        val firebaseAnalytics = buildString {
+            append("com.google.firebase:firebase-analytics-ktx")
+        }
+        val firebaseAuth = buildString {
+            append("com.google.firebase:firebase-auth-ktx")
+        }
+    }
+
     object Hilt {
         val hilt = buildString {
             append("com.google.dagger:hilt-android:")

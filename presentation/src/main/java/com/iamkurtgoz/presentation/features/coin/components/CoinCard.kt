@@ -1,12 +1,9 @@
-package com.iamkurtgoz.presentation.features.home
+package com.iamkurtgoz.presentation.features.coin.components
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -24,15 +21,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import com.iamkurtgoz.domain.model.CoinUIModel
 import com.iamkurtgoz.presentation.theme.AppShapes
+import com.iamkurtgoz.presentation.theme.ColorTextPrimary
 import com.iamkurtgoz.presentation.theme.dimens
 import com.skydoves.landscapist.ImageOptions
 import com.skydoves.landscapist.glide.GlideImage
 
 @Composable
-fun CoinCard(
-    index: Int,
-    item: CoinUIModel
-){
+fun CoinCard(index: Int, item: CoinUIModel) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -40,7 +35,7 @@ fun CoinCard(
             .padding(top = if (index == 0) MaterialTheme.dimens.DP_16 else MaterialTheme.dimens.DP_12),
         shape = AppShapes.extraSmall,
         elevation = CardDefaults.cardElevation(
-            defaultElevation = MaterialTheme.dimens.DP_8
+            defaultElevation = MaterialTheme.dimens.DP_2
         )
     ) {
         Row(
@@ -70,7 +65,8 @@ fun CoinCard(
                 modifier = Modifier
                     .padding(start = MaterialTheme.dimens.DP_16)
                     .weight(1f),
-                maxLines = 1
+                maxLines = 1,
+                color = ColorTextPrimary()
             )
 
             Spacer(modifier = Modifier.weight(1f))

@@ -45,19 +45,5 @@ data class CoinEntity(
     val marketCapChange24h: String?,
 
     @ColumnInfo(name = "marketCapChangePercentage24h")
-    val marketCapChangePercentage24h: Double?,
+    val marketCapChangePercentage24h: Double?
 )
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -54,11 +54,11 @@ fun CryptoCurrencyApiTheme(
         SideEffect {
             val window = (view.context as Activity).window
 
-            //Status Bar Color
+            // Status Bar Color
             window.statusBarColor = colorScheme.background.toArgb()
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = !darkTheme
 
-            //Navigation Bar Color
+            // Navigation Bar Color
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 window.navigationBarColor = colorScheme.background.toArgb()
                 WindowCompat.getInsetsController(window, view).isAppearanceLightNavigationBars = !darkTheme

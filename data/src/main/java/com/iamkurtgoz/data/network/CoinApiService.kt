@@ -1,8 +1,6 @@
 package com.iamkurtgoz.data.network
 
 import com.iamkurtgoz.data.model.response.CoinData
-import com.iamkurtgoz.network.model.DataResponseWrapper
-import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 

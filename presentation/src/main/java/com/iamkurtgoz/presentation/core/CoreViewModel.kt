@@ -1,7 +1,5 @@
 package com.iamkurtgoz.presentation.core
 
-import android.app.Application
-import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
@@ -23,8 +21,7 @@ import kotlinx.coroutines.launch
 
 abstract class CoreViewModel<S : ViewState, A : ViewAction, E : SideEffect>(
     initialState: S,
-    private val sharedUserState: SharedUserState,
-    private val application: Application,
+    private val sharedUserState: SharedUserState
 ) : ViewModel() {
 
     private var _viewModelState: MutableState<ViewModelState> = mutableStateOf(ViewModelState.ShowContent)
@@ -88,7 +85,9 @@ abstract class CoreViewModel<S : ViewState, A : ViewAction, E : SideEffect>(
         @StringRes buttonTitleResource: Int = R.string.ok,
         cancelable: Boolean = true
     ) = viewModelScope.launch {
-        sharedUserState.setUserEffect(SharedUserState.Effect.ShowAlertInfo(title, message, buttonTitleResource, cancelable))
+        sharedUserState.setUserEffect(
+            SharedUserState.Effect.ShowAlertInfo(title, message, buttonTitleResource, cancelable)
+        )
     }
 
     protected fun <T : Any> sendRequest(
@@ -120,7 +119,6 @@ abstract class CoreViewModel<S : ViewState, A : ViewAction, E : SideEffect>(
                 onSuccess.invoke(it)
             }
             .launchIn(viewModelScope)
-
     }
 }
 

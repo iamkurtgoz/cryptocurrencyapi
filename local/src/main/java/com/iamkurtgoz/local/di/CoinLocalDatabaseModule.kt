@@ -10,7 +10,6 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 
-
 @Module
 @InstallIn(SingletonComponent::class)
 internal class CoinLocalDatabaseModule {
@@ -29,5 +28,4 @@ internal class CoinLocalDatabaseModule {
 
     @Provides
     fun provideCoinDao(db: CoinLocalDatabase) = db.getCoinDao()
-
 }
