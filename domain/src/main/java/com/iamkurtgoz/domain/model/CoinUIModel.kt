@@ -41,7 +41,8 @@ data class CoinUIModel(
     fun doesMatchSearchQuery(query: String): Boolean {
         val matchingCombinations = listOf(
             id ?: "-",
-            name ?: "-"
+            name ?: "-",
+            symbol ?: "-"
         )
 
         return matchingCombinations.any {

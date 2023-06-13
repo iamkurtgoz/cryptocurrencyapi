@@ -7,12 +7,14 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.iamkurtgoz.domain.model.CoinUIModel
+import com.iamkurtgoz.domain.usecase.GetUserIsLoginUseCase
 import com.iamkurtgoz.presentation.core.CoreViewModel
 import com.iamkurtgoz.presentation.core.SharedUserState
 import com.iamkurtgoz.presentation.core.SideEffect
 import com.iamkurtgoz.presentation.core.ViewAction
 import com.iamkurtgoz.presentation.core.ViewState
 import com.iamkurtgoz.presentation.features.coin.source.CoinPagingSource
+import com.iamkurtgoz.presentation.features.favorite.FavoriteViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.delay
@@ -25,12 +27,12 @@ import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @OptIn(FlowPreview::class)
 @HiltViewModel
 class CoinViewModel @Inject constructor(
-    private val application: Application,
     private val sharedUserState: SharedUserState,
     private val coinPagingSource: CoinPagingSource
 ) : CoreViewModel<CoinViewModel.State, CoinViewModel.Action, CoinViewModel.Effect>(
@@ -99,5 +101,7 @@ class CoinViewModel @Inject constructor(
         data class UpdateList(val list: List<CoinUIModel>) : Action()
     }
 
-    sealed class Effect : SideEffect
+    sealed class Effect : SideEffect {
+        data class RouteToCoinDetail(val id: String): Effect()
+    }
 }

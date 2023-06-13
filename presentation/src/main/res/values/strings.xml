@@ -11,4 +11,11 @@
     <string name="loading">Loading</string>
     <string name="emailAddress">Email Address</string>
     <string name="password">Password</string>
+    <string name="email_address_not_verify">Email address not verify</string>
+    <string name="password_more_than_4_characters">Password must be more than 4 characters</string>
+    <string name="last_24h_change">Last 24 Hour Changes</string>
+    <string name="hash">Hash</string>
+    <string name="refresh">Refresh</string>
+    <string name="remove_from_favorites">Remote from favorites</string>
+    <string name="add_to_favorites">Add to favorites</string>
 </resources>

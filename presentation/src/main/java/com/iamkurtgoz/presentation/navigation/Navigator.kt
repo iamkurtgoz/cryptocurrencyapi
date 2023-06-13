@@ -24,15 +24,19 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.iamkurtgoz.cryptocurrencyapi.presentation.R
 import com.iamkurtgoz.presentation.core.CoreViewModel
 import com.iamkurtgoz.presentation.core.SharedUserState
 import com.iamkurtgoz.presentation.core.animation.KLottieProgressHUD
 import com.iamkurtgoz.presentation.features.BottomNav
 import com.iamkurtgoz.presentation.features.coin.HomeScreen
+import com.iamkurtgoz.presentation.features.detail.CoinDetailScreen
+import com.iamkurtgoz.presentation.features.detail.CoinDetailScreenNavArg
 import com.iamkurtgoz.presentation.features.favorite.FavoriteScreen
 import com.iamkurtgoz.presentation.features.login.LoginScreen
 import com.iamkurtgoz.presentation.theme.AppShapes
@@ -89,8 +93,15 @@ fun Navigator(sharedUserState: SharedUserState) {
                 )
             }
 
-            composable(Screen.CoinDetail.route) {
-                LoginScreen(
+            composable(
+                route = Screen.CoinDetail.route + "?${CoinDetailScreenNavArg.key}={${CoinDetailScreenNavArg.key}}",
+                arguments = listOf(
+                    navArgument(name = CoinDetailScreenNavArg.key) {
+                        type = NavType.StringType
+                    },
+                )
+            ) {
+                CoinDetailScreen(
                     viewModel = customHiltViewModel(),
                     navController = navController
                 )

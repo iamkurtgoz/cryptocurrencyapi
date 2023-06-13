@@ -3,6 +3,9 @@ package com.iamkurtgoz.data.repository
 import com.iamkurtgoz.data.core.CoreRepository
 import com.iamkurtgoz.domain.repository.AuthRepository
 import com.iamkurtgoz.firebase.FirebaseInitializer
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 internal class AuthRepositoryImpl @Inject constructor(
@@ -13,11 +16,8 @@ internal class AuthRepositoryImpl @Inject constructor(
         return firebase.auth.currentUser != null
     }
 
-    override suspend fun loginOrRegister(email: String?, password: String?): Boolean {
-        if (email != null && password != null) {
-            return firebase.loginOrRegister(email, password) != null
-        }
-        return false
+    override suspend fun loginOrRegister(email: String, password: String): Flow<Boolean> {
+        return firebase.loginOrRegister(email, password).map { it != null }
     }
 
 }

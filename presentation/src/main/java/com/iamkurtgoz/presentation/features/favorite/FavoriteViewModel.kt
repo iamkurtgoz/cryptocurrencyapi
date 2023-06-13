@@ -23,22 +23,27 @@ class FavoriteViewModel @Inject constructor(
 ) {
 
     init {
-        viewModelScope.launch {
-            val newState = state.value.copy(
-                isSignedIn = getUserIsLoginUseCase.invoke()
-            )
-            updateState(newState)
-        }
+        dispatch(Action.SyncLoginStatus)
     }
 
     override fun dispatch(action: Action) {
+        when(action) {
+            is Action.SyncLoginStatus -> viewModelScope.launch {
+                val newState = state.value.copy(
+                    isSignedIn = getUserIsLoginUseCase.invoke()
+                )
+                updateState(newState)
+            }
+        }
     }
 
     data class State(
         val isSignedIn: Boolean = false
     ) : ViewState
 
-    sealed class Action : ViewAction
+    sealed class Action : ViewAction {
+        object SyncLoginStatus: Action()
+    }
 
     sealed class Effect : SideEffect {
         object RouteToLogin: Effect()

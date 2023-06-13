@@ -19,6 +19,7 @@ dependencies {
     api(platform(Deps.Google.firebaseBom))
     api(Deps.Google.firebaseAnalytics)
     api(Deps.Google.firebaseAuth)
+    api(Deps.Google.firebaseFirestore)
 
     implementation(Deps.Hilt.hilt)
     kapt(Deps.Hilt.hiltKapt)

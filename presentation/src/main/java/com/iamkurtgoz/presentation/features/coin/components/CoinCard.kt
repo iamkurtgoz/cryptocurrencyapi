@@ -1,5 +1,6 @@
 package com.iamkurtgoz.presentation.features.coin.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -27,9 +28,10 @@ import com.skydoves.landscapist.ImageOptions
 import com.skydoves.landscapist.glide.GlideImage
 
 @Composable
-fun CoinCard(index: Int, item: CoinUIModel) {
+fun CoinCard(index: Int, item: CoinUIModel, onClick: (CoinUIModel) -> Unit) {
     Card(
         modifier = Modifier
+            .clickable { onClick.invoke(item) }
             .fillMaxWidth()
             .padding(horizontal = MaterialTheme.dimens.DP_16)
             .padding(top = if (index == 0) MaterialTheme.dimens.DP_16 else MaterialTheme.dimens.DP_12),

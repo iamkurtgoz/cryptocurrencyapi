@@ -1,40 +1,25 @@
 package com.iamkurtgoz.presentation.features.login
 
 import androidx.activity.ComponentActivity
-import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.Button
 import androidx.compose.material3.Card
-import androidx.compose.material3.LocalMinimumInteractiveComponentEnforcement
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -43,15 +28,14 @@ import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
-import androidx.hilt.navigation.compose.hiltViewModel
 import com.iamkurtgoz.cryptocurrencyapi.presentation.R
 import com.iamkurtgoz.presentation.core.components.KButtonBackground
 import com.iamkurtgoz.presentation.core.components.KTextFieldBackground
+import com.iamkurtgoz.presentation.features.favorite.FavoriteViewModel
 import com.iamkurtgoz.presentation.navigation.Screen
-import com.iamkurtgoz.presentation.theme.AppShapes
+import com.iamkurtgoz.presentation.navigation.ScreenState
 import com.iamkurtgoz.presentation.theme.Blue
 import com.iamkurtgoz.presentation.theme.ColorTextPrimary
-import com.iamkurtgoz.presentation.theme.ColorTextSecondary
 import com.iamkurtgoz.presentation.theme.dimens
 import kotlinx.coroutines.flow.collectLatest
 
@@ -62,6 +46,20 @@ fun LoginScreen(viewModel: LoginViewModel = hiltViewModel(), navController: NavC
     val activity = context as ComponentActivity
     val viewState = viewModel.state.value
     val dialogState = viewModel.dialogState.value
+
+    LaunchedEffect(key1 = "") {
+        viewModel.sideEffect.collectLatest {
+            when(it) {
+                is LoginViewModel.Effect.RouteToBack -> {
+                    navController
+                        .previousBackStackEntry
+                        ?.savedStateHandle
+                        ?.set(ScreenState.RouteToBackStackAfterLogin, true)
+                    navController.popBackStack()
+                }
+            }
+        }
+    }
 
     Scaffold(
         content = { innerPadding ->
@@ -108,7 +106,7 @@ fun LoginScreen(viewModel: LoginViewModel = hiltViewModel(), navController: NavC
                         )
 
                         KTextFieldBackground(
-                            text = viewModel.passwordAddress,
+                            text = viewModel.password,
                             placeholder = stringResource(id = R.string.password),
                             rootModifier = Modifier
                                 .padding(top = MaterialTheme.dimens.DP_16),

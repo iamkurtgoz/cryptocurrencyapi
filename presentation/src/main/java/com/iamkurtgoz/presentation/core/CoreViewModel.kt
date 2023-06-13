@@ -16,7 +16,10 @@ import com.iamkurtgoz.presentation.core.extensions.onSuccess
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
 abstract class CoreViewModel<S : ViewState, A : ViewAction, E : SideEffect>(
@@ -119,6 +122,40 @@ abstract class CoreViewModel<S : ViewState, A : ViewAction, E : SideEffect>(
                 onSuccess.invoke(it)
             }
             .launchIn(viewModelScope)
+    }
+
+    protected fun <T> sendRequestWithoutRest(
+        loadingType: LoadingType,
+        errorType: ErrorType,
+        call: suspend () -> Flow<T>,
+        onLoadingCallback: (LoadingType) -> Unit = {},
+        onErrorCallback: (Throwable) -> Unit = {},
+        onSuccess: (T) -> Unit = {}
+    ) {
+        viewModelScope.launch {
+            call.invoke()
+                .onStart {
+                    showContent()
+                    if (loadingType == LoadingType.Popup) {
+                        showBaseViewModelStateLoading()
+                    } else {
+                        onLoadingCallback(loadingType)
+                    }
+                }
+                .catch {
+                    showContent()
+                    if (errorType == ErrorType.Popup) {
+                        showAlertInfo(title = null, message = it.message, buttonTitleResource = R.string.ok)
+                    } else {
+                        onErrorCallback(it)
+                    }
+                    println(it.localizedMessage)
+                }
+                .onEach {
+                    onSuccess.invoke(it)
+                }
+                .launchIn(viewModelScope)
+        }
     }
 }
 

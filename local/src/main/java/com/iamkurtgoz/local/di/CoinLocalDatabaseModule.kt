@@ -28,4 +28,7 @@ internal class CoinLocalDatabaseModule {
 
     @Provides
     fun provideCoinDao(db: CoinLocalDatabase) = db.getCoinDao()
+
+    @Provides
+    fun provideCoinDetailDao(db: CoinLocalDatabase) = db.getCoinDetailDao()
 }

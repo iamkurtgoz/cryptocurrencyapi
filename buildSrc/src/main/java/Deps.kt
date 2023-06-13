@@ -85,6 +85,9 @@ object Deps {
         val firebaseAuth = buildString {
             append("com.google.firebase:firebase-auth-ktx")
         }
+        val firebaseFirestore = buildString {
+            append("com.google.firebase:firebase-firestore-ktx")
+        }
     }
 
     object Hilt {

@@ -23,14 +23,19 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.iamkurtgoz.cryptocurrencyapi.presentation.R
 import com.iamkurtgoz.presentation.core.animation.KLottieView
 import com.iamkurtgoz.presentation.features.coin.components.CoinCard
 import com.iamkurtgoz.presentation.features.coin.components.SearchViewTextField
+import com.iamkurtgoz.presentation.features.detail.CoinDetailScreenNavArg
+import com.iamkurtgoz.presentation.features.favorite.FavoriteViewModel
+import com.iamkurtgoz.presentation.navigation.ScreenState
 import com.iamkurtgoz.presentation.theme.ColorTextPrimary
 import com.iamkurtgoz.presentation.theme.dimens
+import kotlinx.coroutines.flow.collectLatest
 
 @ExperimentalMaterial3Api
 @Composable
@@ -40,9 +45,20 @@ fun HomeScreen(viewModel: CoinViewModel = hiltViewModel(), navController: NavCon
     val viewState = viewModel.state.value
     val dialogState = viewModel.dialogState.value
     val coinList = viewModel.coinPager.collectAsLazyPagingItems()
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
 
     LaunchedEffect(key1 = coinList.itemSnapshotList.items) {
         viewModel.dispatch(CoinViewModel.Action.UpdateList(coinList.itemSnapshotList.items))
+    }
+
+    LaunchedEffect(key1 = "") {
+        viewModel.sideEffect.collectLatest {
+            when(it) {
+                is CoinViewModel.Effect.RouteToCoinDetail -> {
+                    navController.navigate(CoinDetailScreenNavArg.getRoute(it.id))
+                }
+            }
+        }
     }
 
     val searchText by viewModel.searchText.collectAsState()
@@ -67,7 +83,12 @@ fun HomeScreen(viewModel: CoinViewModel = hiltViewModel(), navController: NavCon
                             coinList[index]?.let { item ->
                                 CoinCard(
                                     index,
-                                    item
+                                    item,
+                                    onClick = {
+                                        it.id?.let {
+                                            viewModel.updateSideEffect(CoinViewModel.Effect.RouteToCoinDetail("bitcoin"))
+                                        }
+                                    }
                                 )
                             }
                         }
@@ -87,7 +108,12 @@ fun HomeScreen(viewModel: CoinViewModel = hiltViewModel(), navController: NavCon
                                 searchList[index].let { item ->
                                     CoinCard(
                                         index,
-                                        item
+                                        item,
+                                        onClick = {
+                                            it.id?.let {
+                                                viewModel.updateSideEffect(CoinViewModel.Effect.RouteToCoinDetail("bitcoin"))
+                                            }
+                                        }
                                     )
                                 }
                             }

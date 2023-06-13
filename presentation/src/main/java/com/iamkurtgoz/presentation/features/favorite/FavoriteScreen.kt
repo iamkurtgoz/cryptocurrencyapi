@@ -20,6 +20,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
@@ -30,9 +31,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import androidx.navigation.compose.currentBackStackEntryAsState
 import com.iamkurtgoz.cryptocurrencyapi.presentation.R
 import com.iamkurtgoz.presentation.core.components.KButtonBackground
 import com.iamkurtgoz.presentation.navigation.Screen
+import com.iamkurtgoz.presentation.navigation.ScreenState
 import com.iamkurtgoz.presentation.theme.AppShapes
 import com.iamkurtgoz.presentation.theme.Blue
 import com.iamkurtgoz.presentation.theme.ColorTextPrimary
@@ -47,6 +50,7 @@ fun FavoriteScreen(viewModel: FavoriteViewModel = hiltViewModel(), navController
     val activity = context as ComponentActivity
     val viewState = viewModel.state.value
     val dialogState = viewModel.dialogState.value
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
 
     LaunchedEffect(key1 = "") {
         viewModel.sideEffect.collectLatest {
@@ -55,6 +59,13 @@ fun FavoriteScreen(viewModel: FavoriteViewModel = hiltViewModel(), navController
                     navController.navigate(Screen.Login.route)
                 }
             }
+        }
+    }
+
+    LaunchedEffect(key1 = navBackStackEntry?.savedStateHandle) {
+        navBackStackEntry?.savedStateHandle?.get<Boolean?>(ScreenState.RouteToBackStackAfterLogin)?.let {
+            navBackStackEntry?.savedStateHandle?.remove<Boolean?>(ScreenState.RouteToBackStackAfterLogin)
+            viewModel.dispatch(FavoriteViewModel.Action.SyncLoginStatus)
         }
     }
 
