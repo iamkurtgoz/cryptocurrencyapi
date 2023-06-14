@@ -1,20 +1,17 @@
 package com.iamkurtgoz.presentation.features.coin
 
-import android.app.Application
 import androidx.lifecycle.viewModelScope
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.iamkurtgoz.domain.model.CoinUIModel
-import com.iamkurtgoz.domain.usecase.GetUserIsLoginUseCase
 import com.iamkurtgoz.presentation.core.CoreViewModel
 import com.iamkurtgoz.presentation.core.SharedUserState
 import com.iamkurtgoz.presentation.core.SideEffect
 import com.iamkurtgoz.presentation.core.ViewAction
 import com.iamkurtgoz.presentation.core.ViewState
 import com.iamkurtgoz.presentation.features.coin.source.CoinPagingSource
-import com.iamkurtgoz.presentation.features.favorite.FavoriteViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.delay
@@ -26,8 +23,6 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @OptIn(FlowPreview::class)
@@ -43,13 +38,16 @@ class CoinViewModel @Inject constructor(
     private val _searchText = MutableStateFlow("")
     val searchText = _searchText.asStateFlow()
 
-    private val _isSearching = MutableStateFlow(false)
-    val isSearching = _isSearching.asStateFlow()
-
     private val _searchList = MutableStateFlow(emptyList<CoinUIModel>())
     val searchList = searchText
         .debounce(1000L)
-        .onEach { _isSearching.update { true } }
+        .onEach {
+            updateState(
+                state.value.copy(
+                    isSearching = true
+                )
+            )
+        }
         .combine(_searchList) { text, list ->
             if (text.isBlank()) {
                 return@combine list
@@ -60,7 +58,13 @@ class CoinViewModel @Inject constructor(
                 }
             }
         }
-        .onEach { _isSearching.update { false } }
+        .onEach {
+            updateState(
+                state.value.copy(
+                    isSearching = false
+                )
+            )
+        }
         .stateIn(
             viewModelScope,
             SharingStarted.WhileSubscribed(5000),
@@ -95,7 +99,7 @@ class CoinViewModel @Inject constructor(
     }
 
     data class State(
-        val any: Any = Any()
+        val isSearching: Boolean = false
     ) : ViewState
 
     sealed class Action : ViewAction {
@@ -103,6 +107,6 @@ class CoinViewModel @Inject constructor(
     }
 
     sealed class Effect : SideEffect {
-        data class RouteToCoinDetail(val id: String): Effect()
+        data class RouteToCoinDetail(val id: String) : Effect()
     }
 }

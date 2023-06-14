@@ -157,11 +157,11 @@
 
 <div>
   <ul>
-    <li>107 number of properties</li>
-    <li>112 number of functions</li>
-    <li>71 number of classes</li>
-    <li>39 number of packages</li>
-    <li>68 number of kt files</li>
+    <li>191 number of properties</li>
+    <li>174 number of functions</li>
+    <li>106 number of classes</li>
+    <li>48 number of packages</li>
+    <li>103 number of kt files</li>
   </ul>
 </div>
 
@@ -170,52 +170,110 @@
 
 <div>
   <ul>
-    <li>2,860 lines of code (loc)</li>
-    <li>2,419 source lines of code (sloc)</li>
-    <li>1,504 logical lines of code (lloc)</li>
-    <li>64 comment lines of code (cloc)</li>
-    <li>203 cyclomatic complexity (mcc)</li>
-    <li>81 cognitive complexity</li>
-    <li>148 number of total code smells</li>
-    <li>2% comment source ratio</li>
-    <li>134 mcc per 1,000 lloc</li>
-    <li>98 code smells per 1,000 lloc</li>
+    <li>5,408 lines of code (loc)</li>
+    <li>4,704 source lines of code (sloc)</li>
+    <li>3,083 logical lines of code (lloc)</li>
+    <li>73 comment lines of code (cloc)</li>
+    <li>374 cyclomatic complexity (mcc)</li>
+    <li>255 cognitive complexity</li>
+    <li>147 number of total code smells</li>
+    <li>1% comment source ratio</li>
+    <li>121 mcc per 1,000 lloc</li>
+    <li>47 code smells per 1,000 lloc</li>
   </ul>
 </div>
 
 
 <h2>Findings</h2>
-<div>Total: 148
-  <h3>empty-blocks: 2</h3>
-  <details id="EmptyFunctionBlock" open="open">
-    <summary class="rule-container"><span class="rule">EmptyFunctionBlock: 2 </span><span class="description">Empty block of code detected. As they serve no purpose they should be removed.</span></summary>
-<a href="https://detekt.dev/docs/rules/empty-blocks#emptyfunctionblock">Documentation</a>
+<div>Total: 147
+  <h3>complexity: 3</h3>
+  <details id="ComplexCondition" open="open">
+    <summary class="rule-container"><span class="rule">ComplexCondition: 1 </span><span class="description">Complex conditions should be simplified and extracted into well-named methods if necessary.</span></summary>
+<a href="https://detekt.dev/docs/rules/complexity#complexcondition">Documentation</a>
     <ul>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/favorite/FavoriteViewModel.kt:21:43</span><span class="message">This empty block of code can be removed.</span>
-        <pre><code><span class="lineno">  18 </span>    sharedUserState = sharedUserState
-<span class="lineno">  19 </span>) {
-<span class="lineno">  20 </span>
-<span class="lineno">  21 </span>    override fun dispatch(action: Action) <span class="error">{</span>
-<span class="lineno">  22 </span><span class="error">    }</span>
-<span class="lineno">  23 </span>
-<span class="lineno">  24 </span>    data class State(
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/login/LoginViewModel.kt:19:43</span><span class="message">This empty block of code can be removed.</span>
-        <pre><code><span class="lineno">  16 </span>    sharedUserState = sharedUserState
-<span class="lineno">  17 </span>) {
-<span class="lineno">  18 </span>
-<span class="lineno">  19 </span>    override fun dispatch(action: Action) <span class="error">{</span>
-<span class="lineno">  20 </span><span class="error">    }</span>
-<span class="lineno">  21 </span>
-<span class="lineno">  22 </span>    data class State(
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/repository/CoinRepositoryImpl.kt:86:20</span><span class="message">This condition is too complex (5). Defined complexity threshold for conditions is set to '5'</span>
+        <pre><code><span class="lineno">  83 </span>        }
+<span class="lineno">  84 </span>
+<span class="lineno">  85 </span>        val cacheData = coinDetailDao.getCoinDetailById(id)
+<span class="lineno">  86 </span>        return if (<span class="error">withCache &amp;&amp; useCache &amp;&amp; cacheData != null || cacheData != null &amp;&amp; !connectivityHelper.isNetworkAvailable()</span>) {
+<span class="lineno">  87 </span>            coinDetailMapper.mapEntityToUiModel(cacheData)
+<span class="lineno">  88 </span>        } else {
+<span class="lineno">  89 </span>            // Save cache time
 </code></pre>
       </li>
     </ul>
   </details>
-  <h3>formatting: 6</h3>
+  <details id="CyclomaticComplexMethod" open="open">
+    <summary class="rule-container"><span class="rule">CyclomaticComplexMethod: 1 </span><span class="description">Prefer splitting up complex methods into smaller, easier to test methods.</span></summary>
+<a href="https://detekt.dev/docs/rules/complexity#cyclomaticcomplexmethod">Documentation</a>
+    <ul>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/detail/CoinDetailScreen.kt:47:5</span><span class="message">The function CoinDetailScreen appears to be too complex based on Cyclomatic Complexity (complexity: 17). Defined complexity threshold for methods is set to '15'</span>
+        <pre><code><span class="lineno">  44 </span>
+<span class="lineno">  45 </span>@ExperimentalMaterial3Api
+<span class="lineno">  46 </span>@Composable
+<span class="lineno">  47 </span>fun <span class="error">CoinDetailScreen</span>(
+<span class="lineno">  48 </span>    viewModel: CoinDetailViewModel = hiltViewModel(),
+<span class="lineno">  49 </span>    navController: NavController
+<span class="lineno">  50 </span>) {
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="LongMethod" open="open">
+    <summary class="rule-container"><span class="rule">LongMethod: 1 </span><span class="description">One method should have one responsibility. Long methods tend to handle many things at once. Prefer smaller methods to make them easier to understand.</span></summary>
+<a href="https://detekt.dev/docs/rules/complexity#longmethod">Documentation</a>
+    <ul>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/detail/CoinDetailScreen.kt:47:5</span><span class="message">The function CoinDetailScreen is too long (175). The maximum length is 100.</span>
+        <pre><code><span class="lineno">  44 </span>
+<span class="lineno">  45 </span>@ExperimentalMaterial3Api
+<span class="lineno">  46 </span>@Composable
+<span class="lineno">  47 </span>fun <span class="error">CoinDetailScreen</span>(
+<span class="lineno">  48 </span>    viewModel: CoinDetailViewModel = hiltViewModel(),
+<span class="lineno">  49 </span>    navController: NavController
+<span class="lineno">  50 </span>) {
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <h3>formatting: 7</h3>
+  <details id="MaximumLineLength" open="open">
+    <summary class="rule-container"><span class="rule">MaximumLineLength: 3 </span><span class="description">Reports lines with exceeded length</span></summary>
+<a href="https://detekt.dev/docs/rules/formatting#maximumlinelength">Documentation</a>
+    <ul>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/repository/CoinRepositoryImpl.kt:86:1</span><span class="message">Exceeded max line length (120)</span>
+        <pre><code><span class="lineno">  83 </span>        }
+<span class="lineno">  84 </span>
+<span class="lineno">  85 </span>        val cacheData = coinDetailDao.getCoinDetailById(id)
+<span class="lineno">  86 </span><span class="error"> </span>       return if (withCache &amp;&amp; useCache &amp;&amp; cacheData != null || cacheData != null &amp;&amp; !connectivityHelper.isNetworkAvailable()) {
+<span class="lineno">  87 </span>            coinDetailMapper.mapEntityToUiModel(cacheData)
+<span class="lineno">  88 </span>        } else {
+<span class="lineno">  89 </span>            // Save cache time
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/detail/CoinDetailScreen.kt:172:1</span><span class="message">Exceeded max line length (120)</span>
+        <pre><code><span class="lineno"> 169 </span>                            )
+<span class="lineno"> 170 </span>
+<span class="lineno"> 171 </span>                            Text(
+<span class="lineno"> 172 </span><span class="error"> </span>                               text = viewState.coinData.priceChangePercentage24h?.let { &quot;$it%&quot; } ?: kotlin.run { &quot;-&quot; },
+<span class="lineno"> 173 </span>                                color = if (viewState.coinData.isPricePercentage24hUpper) Color.Green else Color.Red,
+<span class="lineno"> 174 </span>                                style = MaterialTheme.typography.headlineMedium.copy(
+<span class="lineno"> 175 </span>                                    fontWeight = FontWeight.Bold
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/detail/CoinDetailScreen.kt:204:1</span><span class="message">Exceeded max line length (120)</span>
+        <pre><code><span class="lineno"> 201 </span>
+<span class="lineno"> 202 </span>                        KButtonBackground(
+<span class="lineno"> 203 </span>                            text = stringResource(
+<span class="lineno"> 204 </span><span class="error"> </span>                               id = if (viewState.isFavorite) R.string.remove_from_favorites else R.string.add_to_favorites
+<span class="lineno"> 205 </span>                            ),
+<span class="lineno"> 206 </span>                            isFullWidth = false,
+<span class="lineno"> 207 </span>                            rootModifier = Modifier.weight(1f)
+</code></pre>
+      </li>
+    </ul>
+  </details>
   <details id="NoWildcardImports" open="open">
-    <summary class="rule-container"><span class="rule">NoWildcardImports: 6 </span><span class="description">Detects wildcast import usages</span></summary>
+    <summary class="rule-container"><span class="rule">NoWildcardImports: 4 </span><span class="description">Detects wildcast import usages</span></summary>
 <a href="https://detekt.dev/docs/rules/formatting#nowildcardimports">Documentation</a>
     <ul>
       <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/BottomNav.kt:3:1</span><span class="message">Wildcard import</span>
@@ -257,33 +315,23 @@
 <span class="lineno">   7 </span>import androidx.compose.foundation.lazy.LazyColumn
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/favorite/FavoriteScreen.kt:4:1</span><span class="message">Wildcard import</span>
-        <pre><code><span class="lineno">   1 </span>package com.iamkurtgoz.presentation.features.favorite
-<span class="lineno">   2 </span>
-<span class="lineno">   3 </span>import androidx.activity.ComponentActivity
-<span class="lineno">   4 </span><span class="error">i</span>mport androidx.compose.foundation.layout.*
-<span class="lineno">   5 </span>import androidx.compose.foundation.layout.Column
-<span class="lineno">   6 </span>import androidx.compose.foundation.layout.padding
-<span class="lineno">   7 </span>import androidx.compose.material3.ExperimentalMaterial3Api
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/login/LoginScreen.kt:4:1</span><span class="message">Wildcard import</span>
-        <pre><code><span class="lineno">   1 </span>package com.iamkurtgoz.presentation.features.login
-<span class="lineno">   2 </span>
-<span class="lineno">   3 </span>import androidx.activity.ComponentActivity
-<span class="lineno">   4 </span><span class="error">i</span>mport androidx.compose.foundation.layout.*
-<span class="lineno">   5 </span>import androidx.compose.foundation.layout.Column
-<span class="lineno">   6 </span>import androidx.compose.foundation.layout.padding
-<span class="lineno">   7 </span>import androidx.compose.material3.ExperimentalMaterial3Api
-</code></pre>
-      </li>
     </ul>
   </details>
-  <h3>naming: 118</h3>
+  <h3>naming: 102</h3>
   <details id="ConstructorParameterNaming" open="open">
-    <summary class="rule-container"><span class="rule">ConstructorParameterNaming: 89 </span><span class="description">Constructor parameter names should follow the naming convention set in the projects configuration.</span></summary>
+    <summary class="rule-container"><span class="rule">ConstructorParameterNaming: 90 </span><span class="description">Constructor parameter names should follow the naming convention set in the projects configuration.</span></summary>
 <a href="https://detekt.dev/docs/rules/naming#constructorparameternaming">Documentation</a>
     <ul>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/coinDetail/DescriptionData.kt:36:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
+        <pre><code><span class="lineno">  33 </span>    val hu: String?,
+<span class="lineno">  34 </span>    @SerializedName(&quot;id&quot;)
+<span class="lineno">  35 </span>    val id: String?,
+<span class="lineno">  36 </span>    <span class="error">@SerializedName(&quot;it&quot;)</span>
+<span class="lineno">  37 </span><span class="error">    val `it`: String?</span>,
+<span class="lineno">  38 </span>    @SerializedName(&quot;ja&quot;)
+<span class="lineno">  39 </span>    val ja: String?,
+</code></pre>
+      </li>
       <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/theme/Dimens.kt:11:5</span><span class="message">Constructor parameter names should match the pattern: [a-z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">   8 </span>import androidx.compose.ui.unit.dp
 <span class="lineno">   9 </span>
@@ -1177,100 +1225,10 @@
     </ul>
   </details>
   <details id="LambdaParameterNaming" open="open">
-    <summary class="rule-container"><span class="rule">LambdaParameterNaming: 23 </span><span class="description">Lambda parameter names should follow the naming convention set in the projects configuration.</span></summary>
+    <summary class="rule-container"><span class="rule">LambdaParameterNaming: 1 </span><span class="description">Lambda parameter names should follow the naming convention set in the projects configuration.</span></summary>
 <a href="https://detekt.dev/docs/rules/naming#lambdaparameternaming">Documentation</a>
     <ul>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/mapper/CoinMapper.kt:11:75</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
-        <pre><code><span class="lineno">   8 </span>
-<span class="lineno">   9 </span>internal class CoinMapper @Inject constructor() {
-<span class="lineno">  10 </span>
-<span class="lineno">  11 </span>    fun map(response: List&lt;CoinData&gt;): List&lt;CoinUIModel&gt; = response.map { <span class="error">data</span> -&gt;
-<span class="lineno">  12 </span>        with(data) {
-<span class="lineno">  13 </span>            CoinUIModel(
-<span class="lineno">  14 </span>                id = this.id,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/mapper/CoinMapper.kt:31:92</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
-        <pre><code><span class="lineno">  28 </span>        }
-<span class="lineno">  29 </span>    }
-<span class="lineno">  30 </span>
-<span class="lineno">  31 </span>    fun mapUiModelToEntity(response: List&lt;CoinUIModel&gt;): List&lt;CoinEntity&gt; = response.map { <span class="error">data</span> -&gt;
-<span class="lineno">  32 </span>        with(data) {
-<span class="lineno">  33 </span>            CoinEntity(
-<span class="lineno">  34 </span>                id = this.id ?: UUID.randomUUID().toString(),
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/mapper/CoinMapper.kt:51:92</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
-        <pre><code><span class="lineno">  48 </span>        }
-<span class="lineno">  49 </span>    }
-<span class="lineno">  50 </span>
-<span class="lineno">  51 </span>    fun mapEntityToUiModel(response: List&lt;CoinEntity&gt;): List&lt;CoinUIModel&gt; = response.map { <span class="error">data</span> -&gt;
-<span class="lineno">  52 </span>        with(data) {
-<span class="lineno">  53 </span>            CoinUIModel(
-<span class="lineno">  54 </span>                id = this.id,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/repository/CoinRepositoryImpl.kt:32:33</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
-        <pre><code><span class="lineno">  29 </span>        val cache = userDataStoreManager.read(key).firstOrNull()
-<span class="lineno">  30 </span>        val fiveMin = (1000 * 60) * 5
-<span class="lineno">  31 </span>        var useCache = false
-<span class="lineno">  32 </span>        page?.toString()?.let { <span class="error">safePage</span> -&gt;
-<span class="lineno">  33 </span>            val lastUpdate = cache?.toLongOrNull()
-<span class="lineno">  34 </span>            if (lastUpdate != null &amp;&amp; (Date().time - lastUpdate) &lt;= fiveMin) {
-<span class="lineno">  35 </span>                useCache = true
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/domain/src/main/java/com/iamkurtgoz/domain/UseCaseFlowExtension.kt:16:11</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
-        <pre><code><span class="lineno">  13 </span>    dispatcher: CoroutineDispatcher = Dispatchers.IO
-<span class="lineno">  14 </span>): Flow&lt;RestResult&lt;T&gt;&gt; = onStart {
-<span class="lineno">  15 </span>    emit(RestResult.Loading)
-<span class="lineno">  16 </span>}.catch { <span class="error">e</span> -&gt;
-<span class="lineno">  17 </span>    emit(
-<span class="lineno">  18 </span>        RestResult.Error(
-<span class="lineno">  19 </span>            ErrorNetworkException(
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/core/extensions/RestResultExtensions.kt:9:24</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
-        <pre><code><span class="lineno">   6 </span>import kotlinx.coroutines.flow.transform
-<span class="lineno">   7 </span>
-<span class="lineno">   8 </span>fun &lt;T&gt; Flow&lt;RestResult&lt;T&gt;&gt;.onSuccess(action: (T) -&gt; Unit): Flow&lt;RestResult&lt;T&gt;&gt; {
-<span class="lineno">   9 </span>    return transform { <span class="error">restResult</span> -&gt;
-<span class="lineno">  10 </span>        if (restResult is RestResult.Success) {
-<span class="lineno">  11 </span>            action.invoke(restResult.result)
-<span class="lineno">  12 </span>        }
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/core/extensions/RestResultExtensions.kt:18:24</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
-        <pre><code><span class="lineno">  15 </span>}
-<span class="lineno">  16 </span>
-<span class="lineno">  17 </span>fun &lt;T&gt; Flow&lt;RestResult&lt;T&gt;&gt;.onError(action: (ErrorNetworkException) -&gt; Unit): Flow&lt;RestResult&lt;T&gt;&gt; {
-<span class="lineno">  18 </span>    return transform { <span class="error">restResult</span> -&gt;
-<span class="lineno">  19 </span>        if (restResult is RestResult.Error) {
-<span class="lineno">  20 </span>            action.invoke(restResult.error)
-<span class="lineno">  21 </span>        }
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/core/extensions/RestResultExtensions.kt:27:24</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
-        <pre><code><span class="lineno">  24 </span>}
-<span class="lineno">  25 </span>
-<span class="lineno">  26 </span>fun &lt;T&gt; Flow&lt;RestResult&lt;T&gt;&gt;.onLoading(action: () -&gt; Unit): Flow&lt;RestResult&lt;T&gt;&gt; {
-<span class="lineno">  27 </span>    return transform { <span class="error">restResult</span> -&gt;
-<span class="lineno">  28 </span>        if (restResult is RestResult.Loading) {
-<span class="lineno">  29 </span>            action.invoke()
-<span class="lineno">  30 </span>        }
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/BottomNav.kt:52:29</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
-        <pre><code><span class="lineno">  49 </span>                ),
-<span class="lineno">  50 </span>            containerColor = ColorBackground()
-<span class="lineno">  51 </span>        ) {
-<span class="lineno">  52 </span>            items.forEach { <span class="error">item</span> -&gt;
-<span class="lineno">  53 </span>                NavigationBarItem(
-<span class="lineno">  54 </span>                    selected = item.isSelected(navBackStackEntry),
-<span class="lineno">  55 </span>                    onClick = {
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/BottomNav.kt:57:78</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/BottomNav.kt:57:78</span><span class="message">Lambda parameter names should match the pattern: [a-z][A-Za-z0-9]*|_</span>
         <pre><code><span class="lineno">  54 </span>                    selected = item.isSelected(navBackStackEntry),
 <span class="lineno">  55 </span>                    onClick = {
 <span class="lineno">  56 </span>                        navController.navigate(item.route) {
@@ -1280,142 +1238,52 @@
 <span class="lineno">  60 </span>                                }
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinScreen.kt:58:21</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
-        <pre><code><span class="lineno">  55 </span>                onValueChange = viewModel::onSearchTextChange
-<span class="lineno">  56 </span>            )
-<span class="lineno">  57 </span>        },
-<span class="lineno">  58 </span>        content = { <span class="error">innerPadding</span> -&gt;
-<span class="lineno">  59 </span>            Column(
-<span class="lineno">  60 </span>                modifier = Modifier
-<span class="lineno">  61 </span>                    .padding(innerPadding)
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinScreen.kt:65:53</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
-        <pre><code><span class="lineno">  62 </span>            ) {
-<span class="lineno">  63 </span>                if (searchText.isEmpty()) {
-<span class="lineno">  64 </span>                    LazyColumn {
-<span class="lineno">  65 </span>                        items(coinList.itemCount) { <span class="error">index</span> -&gt;
-<span class="lineno">  66 </span>                            coinList[index]?.let { item -&gt;
-<span class="lineno">  67 </span>                                CoinCard(
-<span class="lineno">  68 </span>                                    index,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinScreen.kt:66:52</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
-        <pre><code><span class="lineno">  63 </span>                if (searchText.isEmpty()) {
-<span class="lineno">  64 </span>                    LazyColumn {
-<span class="lineno">  65 </span>                        items(coinList.itemCount) { index -&gt;
-<span class="lineno">  66 </span>                            coinList[index]?.let { <span class="error">item</span> -&gt;
-<span class="lineno">  67 </span>                                CoinCard(
-<span class="lineno">  68 </span>                                    index,
-<span class="lineno">  69 </span>                                    item
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinScreen.kt:85:54</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
-        <pre><code><span class="lineno">  82 </span>                        }
-<span class="lineno">  83 </span>                    } else {
-<span class="lineno">  84 </span>                        LazyColumn {
-<span class="lineno">  85 </span>                            items(searchList.size) { <span class="error">index</span> -&gt;
-<span class="lineno">  86 </span>                                searchList[index].let { item -&gt;
-<span class="lineno">  87 </span>                                    CoinCard(
-<span class="lineno">  88 </span>                                        index,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinScreen.kt:86:57</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
-        <pre><code><span class="lineno">  83 </span>                    } else {
-<span class="lineno">  84 </span>                        LazyColumn {
-<span class="lineno">  85 </span>                            items(searchList.size) { index -&gt;
-<span class="lineno">  86 </span>                                searchList[index].let { <span class="error">item</span> -&gt;
-<span class="lineno">  87 </span>                                    CoinCard(
-<span class="lineno">  88 </span>                                        index,
-<span class="lineno">  89 </span>                                        item
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinViewModel.kt:51:33</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
-        <pre><code><span class="lineno">  48 </span>    val searchList = searchText
-<span class="lineno">  49 </span>        .debounce(1000L)
-<span class="lineno">  50 </span>        .onEach { _isSearching.update { true } }
-<span class="lineno">  51 </span>        .combine(_searchList) { <span class="error">text</span>, list -&gt;
-<span class="lineno">  52 </span>            if (text.isBlank()) {
-<span class="lineno">  53 </span>                return@combine list
-<span class="lineno">  54 </span>            } else {
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinViewModel.kt:51:39</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
-        <pre><code><span class="lineno">  48 </span>    val searchList = searchText
-<span class="lineno">  49 </span>        .debounce(1000L)
-<span class="lineno">  50 </span>        .onEach { _isSearching.update { true } }
-<span class="lineno">  51 </span>        .combine(_searchList) { text, <span class="error">list</span> -&gt;
-<span class="lineno">  52 </span>            if (text.isBlank()) {
-<span class="lineno">  53 </span>                return@combine list
-<span class="lineno">  54 </span>            } else {
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/components/SearchViewTextField.kt:44:31</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
-        <pre><code><span class="lineno">  41 </span>                .fillMaxWidth(),
-<span class="lineno">  42 </span>            singleLine = true,
-<span class="lineno">  43 </span>            maxLines = 1,
-<span class="lineno">  44 </span>            decorationBox = { <span class="error">innerTextField</span> -&gt;
-<span class="lineno">  45 </span>                Row(
-<span class="lineno">  46 </span>                    verticalAlignment = Alignment.CenterVertically,
-<span class="lineno">  47 </span>                    modifier = Modifier.padding(horizontal = 10.dp)
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/source/CoinPagingSource.kt:14:44</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
-        <pre><code><span class="lineno">  11 </span>) : PagingSource&lt;CoinPagingSource.Params, CoinUIModel&gt;() {
-<span class="lineno">  12 </span>
-<span class="lineno">  13 </span>    override fun getRefreshKey(state: PagingState&lt;Params, CoinUIModel&gt;): Params? {
-<span class="lineno">  14 </span>        return state.anchorPosition?.let { <span class="error">anchorPosition</span> -&gt;
-<span class="lineno">  15 </span>            val prevKey = state.closestPageToPosition(anchorPosition)?.prevKey
-<span class="lineno">  16 </span>            prevKey?.copy(
-<span class="lineno">  17 </span>                page = prevKey.page?.plus(DEFAULT_PAGE_INCREMENT) ?: prevKey.page?.minus(DEFAULT_PAGE_INCREMENT)
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/favorite/FavoriteScreen.kt:26:21</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
-        <pre><code><span class="lineno">  23 </span>    val dialogState = viewModel.dialogState.value
-<span class="lineno">  24 </span>
-<span class="lineno">  25 </span>    Scaffold(
-<span class="lineno">  26 </span>        content = { <span class="error">innerPadding</span> -&gt;
-<span class="lineno">  27 </span>            Column(
-<span class="lineno">  28 </span>                modifier = Modifier
-<span class="lineno">  29 </span>                    .padding(innerPadding)
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/login/LoginScreen.kt:26:21</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
-        <pre><code><span class="lineno">  23 </span>    val dialogState = viewModel.dialogState.value
-<span class="lineno">  24 </span>
-<span class="lineno">  25 </span>    Scaffold(
-<span class="lineno">  26 </span>        content = { <span class="error">innerPadding</span> -&gt;
-<span class="lineno">  27 </span>            Column(
-<span class="lineno">  28 </span>                modifier = Modifier
-<span class="lineno">  29 </span>                    .padding(innerPadding)
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/navigation/Navigator.kt:71:9</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
-        <pre><code><span class="lineno">  68 </span>    Scaffold(
-<span class="lineno">  69 </span>        modifier = Modifier.fillMaxWidth(),
-<span class="lineno">  70 </span>        bottomBar = { BottomNav(navController = navController) }
-<span class="lineno">  71 </span>    ) { <span class="error">innerPadding</span> -&gt;
-<span class="lineno">  72 </span>        NavHost(
-<span class="lineno">  73 </span>            navController = navController,
-<span class="lineno">  74 </span>            startDestination = Screen.Coin.route,
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/navigation/Navigator.kt:93:23</span><span class="message">Lambda parameter names should match the pattern: [A-Z][A-Za-z0-9]*|_</span>
-        <pre><code><span class="lineno">  90 </span>        }
-<span class="lineno">  91 </span>    }
-<span class="lineno">  92 </span>
-<span class="lineno">  93 </span>    alertState?.let { <span class="error">state</span> -&gt;
-<span class="lineno">  94 </span>        AlertDialog(
-<span class="lineno">  95 </span>            shape = AppShapes.extraSmall,
-<span class="lineno">  96 </span>            containerColor = ColorBackground(),
-</code></pre>
-      </li>
     </ul>
   </details>
   <details id="ObjectPropertyNaming" open="open">
-    <summary class="rule-container"><span class="rule">ObjectPropertyNaming: 5 </span><span class="description">Property names inside objects should follow the naming convention set in the projects configuration.</span></summary>
+    <summary class="rule-container"><span class="rule">ObjectPropertyNaming: 10 </span><span class="description">Property names inside objects should follow the naming convention set in the projects configuration.</span></summary>
 <a href="https://detekt.dev/docs/rules/naming#objectpropertynaming">Documentation</a>
     <ul>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/notification/NotificationCreator.kt:14:23</span><span class="message">Object constant names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+        <pre><code><span class="lineno">  11 </span>import com.iamkurtgoz.cryptocurrencyapi.data.R
+<span class="lineno">  12 </span>
+<span class="lineno">  13 </span>object NotificationCreator {
+<span class="lineno">  14 </span>    private const val <span class="error">CHANNEL_ID</span> = &quot;my_notification_channel&quot;
+<span class="lineno">  15 </span>
+<span class="lineno">  16 </span>    fun createNotification(context: Context, title: String, content: String): Notification {
+<span class="lineno">  17 </span>        createNotificationChannel(context)
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/worker/CheckBitcoinCurrencyWorker.kt:67:27</span><span class="message">Object constant names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+        <pre><code><span class="lineno">  64 </span>
+<span class="lineno">  65 </span>    companion object {
+<span class="lineno">  66 </span>        private val TAG = &quot;${CheckBitcoinCurrencyWorker::class.java.simpleName}PeriodicWork&quot;
+<span class="lineno">  67 </span>        private const val <span class="error">REPEAT_INTERVAL</span> = 15L
+<span class="lineno">  68 </span>        private const val DEFAULT_PAGE = 1
+<span class="lineno">  69 </span>        private const val DEFAULT_PER_PAGE = 250
+<span class="lineno">  70 </span>        private const val CURRENCY = &quot;TRY&quot;
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/worker/CheckBitcoinCurrencyWorker.kt:68:27</span><span class="message">Object constant names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+        <pre><code><span class="lineno">  65 </span>    companion object {
+<span class="lineno">  66 </span>        private val TAG = &quot;${CheckBitcoinCurrencyWorker::class.java.simpleName}PeriodicWork&quot;
+<span class="lineno">  67 </span>        private const val REPEAT_INTERVAL = 15L
+<span class="lineno">  68 </span>        private const val <span class="error">DEFAULT_PAGE</span> = 1
+<span class="lineno">  69 </span>        private const val DEFAULT_PER_PAGE = 250
+<span class="lineno">  70 </span>        private const val CURRENCY = &quot;TRY&quot;
+<span class="lineno">  71 </span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/worker/CheckBitcoinCurrencyWorker.kt:69:27</span><span class="message">Object constant names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+        <pre><code><span class="lineno">  66 </span>        private val TAG = &quot;${CheckBitcoinCurrencyWorker::class.java.simpleName}PeriodicWork&quot;
+<span class="lineno">  67 </span>        private const val REPEAT_INTERVAL = 15L
+<span class="lineno">  68 </span>        private const val DEFAULT_PAGE = 1
+<span class="lineno">  69 </span>        private const val <span class="error">DEFAULT_PER_PAGE</span> = 250
+<span class="lineno">  70 </span>        private const val CURRENCY = &quot;TRY&quot;
+<span class="lineno">  71 </span>
+<span class="lineno">  72 </span>        fun start(workManager: WorkManager) {
+</code></pre>
+      </li>
       <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/network/src/main/java/com/iamkurtgoz/network/di/GsonModule.kt:14:23</span><span class="message">Object constant names should match the pattern: [A-Z][A-Za-z0-9]*</span>
         <pre><code><span class="lineno">  11 </span>@InstallIn(SingletonComponent::class)
 <span class="lineno">  12 </span>object GsonModule {
@@ -1426,44 +1294,54 @@
 <span class="lineno">  17 </span>    fun buildWithTimeZone(): Gson {
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/source/CoinPagingSource.kt:55:19</span><span class="message">Object constant names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  52 </span>    )
-<span class="lineno">  53 </span>
-<span class="lineno">  54 </span>    companion object {
-<span class="lineno">  55 </span>        const val <span class="error">DEFAULT_PAGE</span> = 1
-<span class="lineno">  56 </span>        const val DEFAULT_PAGE_INCREMENT = 1
-<span class="lineno">  57 </span>        const val DEFAULT_PAGE_DECREMENT = 1
-<span class="lineno">  58 </span>        const val DEFAULT_PER_PAGE = 250
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/source/CoinPagingSource.kt:62:19</span><span class="message">Object constant names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+        <pre><code><span class="lineno">  59 </span>    )
+<span class="lineno">  60 </span>
+<span class="lineno">  61 </span>    companion object {
+<span class="lineno">  62 </span>        const val <span class="error">DEFAULT_PAGE</span> = 1
+<span class="lineno">  63 </span>        const val DEFAULT_PAGE_INCREMENT = 1
+<span class="lineno">  64 </span>        const val DEFAULT_PAGE_DECREMENT = 1
+<span class="lineno">  65 </span>        const val DEFAULT_PER_PAGE = 250
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/source/CoinPagingSource.kt:56:19</span><span class="message">Object constant names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  53 </span>
-<span class="lineno">  54 </span>    companion object {
-<span class="lineno">  55 </span>        const val DEFAULT_PAGE = 1
-<span class="lineno">  56 </span>        const val <span class="error">DEFAULT_PAGE_INCREMENT</span> = 1
-<span class="lineno">  57 </span>        const val DEFAULT_PAGE_DECREMENT = 1
-<span class="lineno">  58 </span>        const val DEFAULT_PER_PAGE = 250
-<span class="lineno">  59 </span>        const val CURRENCY = &quot;TRY&quot;
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/source/CoinPagingSource.kt:63:19</span><span class="message">Object constant names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+        <pre><code><span class="lineno">  60 </span>
+<span class="lineno">  61 </span>    companion object {
+<span class="lineno">  62 </span>        const val DEFAULT_PAGE = 1
+<span class="lineno">  63 </span>        const val <span class="error">DEFAULT_PAGE_INCREMENT</span> = 1
+<span class="lineno">  64 </span>        const val DEFAULT_PAGE_DECREMENT = 1
+<span class="lineno">  65 </span>        const val DEFAULT_PER_PAGE = 250
+<span class="lineno">  66 </span>        const val CURRENCY = &quot;TRY&quot;
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/source/CoinPagingSource.kt:57:19</span><span class="message">Object constant names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  54 </span>    companion object {
-<span class="lineno">  55 </span>        const val DEFAULT_PAGE = 1
-<span class="lineno">  56 </span>        const val DEFAULT_PAGE_INCREMENT = 1
-<span class="lineno">  57 </span>        const val <span class="error">DEFAULT_PAGE_DECREMENT</span> = 1
-<span class="lineno">  58 </span>        const val DEFAULT_PER_PAGE = 250
-<span class="lineno">  59 </span>        const val CURRENCY = &quot;TRY&quot;
-<span class="lineno">  60 </span>    }
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/source/CoinPagingSource.kt:64:19</span><span class="message">Object constant names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+        <pre><code><span class="lineno">  61 </span>    companion object {
+<span class="lineno">  62 </span>        const val DEFAULT_PAGE = 1
+<span class="lineno">  63 </span>        const val DEFAULT_PAGE_INCREMENT = 1
+<span class="lineno">  64 </span>        const val <span class="error">DEFAULT_PAGE_DECREMENT</span> = 1
+<span class="lineno">  65 </span>        const val DEFAULT_PER_PAGE = 250
+<span class="lineno">  66 </span>        const val CURRENCY = &quot;TRY&quot;
+<span class="lineno">  67 </span>    }
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/source/CoinPagingSource.kt:58:19</span><span class="message">Object constant names should match the pattern: [A-Z][A-Za-z0-9]*</span>
-        <pre><code><span class="lineno">  55 </span>        const val DEFAULT_PAGE = 1
-<span class="lineno">  56 </span>        const val DEFAULT_PAGE_INCREMENT = 1
-<span class="lineno">  57 </span>        const val DEFAULT_PAGE_DECREMENT = 1
-<span class="lineno">  58 </span>        const val <span class="error">DEFAULT_PER_PAGE</span> = 250
-<span class="lineno">  59 </span>        const val CURRENCY = &quot;TRY&quot;
-<span class="lineno">  60 </span>    }
-<span class="lineno">  61 </span>}
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/source/CoinPagingSource.kt:65:19</span><span class="message">Object constant names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+        <pre><code><span class="lineno">  62 </span>        const val DEFAULT_PAGE = 1
+<span class="lineno">  63 </span>        const val DEFAULT_PAGE_INCREMENT = 1
+<span class="lineno">  64 </span>        const val DEFAULT_PAGE_DECREMENT = 1
+<span class="lineno">  65 </span>        const val <span class="error">DEFAULT_PER_PAGE</span> = 250
+<span class="lineno">  66 </span>        const val CURRENCY = &quot;TRY&quot;
+<span class="lineno">  67 </span>    }
+<span class="lineno">  68 </span>}
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/detail/CoinDetailScreenNavArg.kt:7:15</span><span class="message">Object constant names should match the pattern: [A-Z][A-Za-z0-9]*</span>
+        <pre><code><span class="lineno">   4 </span>import com.iamkurtgoz.presentation.navigation.Screen
+<span class="lineno">   5 </span>
+<span class="lineno">   6 </span>object CoinDetailScreenNavArg : CustomNavigationArgument&lt;String&gt; {
+<span class="lineno">   7 </span>    const val <span class="error">key</span>: String = &quot;AddressScreenNavArg_key&quot;
+<span class="lineno">   8 </span>
+<span class="lineno">   9 </span>    override fun getRoute(param: String): String {
+<span class="lineno">  10 </span>        return &quot;${Screen.CoinDetail.route}?$key=$param&quot;
 </code></pre>
       </li>
     </ul>
@@ -1484,171 +1362,346 @@
       </li>
     </ul>
   </details>
-  <h3>style: 22</h3>
+  <h3>potential-bugs: 1</h3>
+  <details id="CastToNullableType" open="open">
+    <summary class="rule-container"><span class="rule">CastToNullableType: 1 </span><span class="description">Disallow to cast to nullable types.</span></summary>
+<a href="https://detekt.dev/docs/rules/potential-bugs#casttonullabletype">Documentation</a>
+    <ul>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/network/src/main/java/com/iamkurtgoz/network/helper/ConnectivityHelper.kt:15:90</span><span class="message">Use the safe cast ('as? ConnectivityManager') instead of 'as ConnectivityManager?'.</span>
+        <pre><code><span class="lineno">  12 </span>) {
+<span class="lineno">  13 </span>
+<span class="lineno">  14 </span>    fun isNetworkAvailable(): Boolean {
+<span class="lineno">  15 </span>        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) <span class="error">as</span> ConnectivityManager?
+<span class="lineno">  16 </span>        val networkInfo = connectivityManager?.activeNetworkInfo
+<span class="lineno">  17 </span>        return networkInfo != null &amp;&amp; networkInfo.isConnected
+<span class="lineno">  18 </span>    }
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <h3>style: 34</h3>
   <details id="ClassOrdering" open="open">
-    <summary class="rule-container"><span class="rule">ClassOrdering: 1 </span><span class="description">Class contents should be in this order: Property declarations/initializer blocks; secondary constructors; method declarations then companion objects.</span></summary>
+    <summary class="rule-container"><span class="rule">ClassOrdering: 9 </span><span class="description">Class contents should be in this order: Property declarations/initializer blocks; secondary constructors; method declarations then companion objects.</span></summary>
 <a href="https://detekt.dev/docs/rules/style#classordering">Documentation</a>
     <ul>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinViewModel.kt:72:5</span><span class="message">property `coinPager` should be declared before method declarations.</span>
-        <pre><code><span class="lineno">  69 </span>        _searchText.value = text
-<span class="lineno">  70 </span>    }
-<span class="lineno">  71 </span>
-<span class="lineno">  72 </span>    <span class="error">val coinPager: Flow&lt;PagingData&lt;CoinUIModel&gt;&gt; = Pager(</span>
-<span class="lineno">  73 </span><span class="error">        config = PagingConfig(</span>
-<span class="lineno">  74 </span><span class="error">            pageSize = CoinPagingSource.DEFAULT_PER_PAGE</span>
-<span class="lineno">  75 </span><span class="error">        ),</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/app/src/main/java/com/iamkurtgoz/cryptocurrencyapi/presentation/MainActivity.kt:47:5</span><span class="message">property `notificationPermissionLauncher` should be declared before method declarations.</span>
+        <pre><code><span class="lineno">  44 </span>        }
+<span class="lineno">  45 </span>    }
+<span class="lineno">  46 </span>
+<span class="lineno">  47 </span>    <span class="error">private val notificationPermissionLauncher = registerForActivityResult(</span>
+<span class="lineno">  48 </span><span class="error">        ActivityResultContracts.RequestPermission()</span>
+<span class="lineno">  49 </span><span class="error">    ) { isGranted -&gt;</span>
+<span class="lineno">  50 </span><span class="error">        if (!isGranted) {</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/firebase/src/main/java/com/iamkurtgoz/firebase/FirebaseInitializer.kt:30:5</span><span class="message">method `init()` should be declared before companion object.</span>
+        <pre><code><span class="lineno">  27 </span>        const val FAVORITES = &quot;favorites&quot;
+<span class="lineno">  28 </span>    }
+<span class="lineno">  29 </span>
+<span class="lineno">  30 </span>    <span class="error">fun init() {</span>
+<span class="lineno">  31 </span><span class="error">        FirebaseApp.initializeApp(context)</span>
+<span class="lineno">  32 </span><span class="error">    }</span>
+<span class="lineno">  33 </span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/firebase/src/main/java/com/iamkurtgoz/firebase/FirebaseInitializer.kt:34:5</span><span class="message">property `auth` should be declared before companion object.</span>
+        <pre><code><span class="lineno">  31 </span>        FirebaseApp.initializeApp(context)
+<span class="lineno">  32 </span>    }
+<span class="lineno">  33 </span>
+<span class="lineno">  34 </span>    <span class="error">val auth: FirebaseAuth</span>
+<span class="lineno">  35 </span><span class="error">        get() = Firebase.auth</span>
+<span class="lineno">  36 </span>
+<span class="lineno">  37 </span>    val firestore: FirebaseFirestore
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/firebase/src/main/java/com/iamkurtgoz/firebase/FirebaseInitializer.kt:37:5</span><span class="message">property `firestore` should be declared before companion object.</span>
+        <pre><code><span class="lineno">  34 </span>    val auth: FirebaseAuth
+<span class="lineno">  35 </span>        get() = Firebase.auth
+<span class="lineno">  36 </span>
+<span class="lineno">  37 </span>    <span class="error">val firestore: FirebaseFirestore</span>
+<span class="lineno">  38 </span><span class="error">        get() = Firebase.firestore</span>
+<span class="lineno">  39 </span>
+<span class="lineno">  40 </span>    suspend fun loginOrRegister(email: String, password: String): Flow&lt;FirebaseUser?&gt; = flow {
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/firebase/src/main/java/com/iamkurtgoz/firebase/FirebaseInitializer.kt:40:5</span><span class="message">method `loginOrRegister()` should be declared before companion object.</span>
+        <pre><code><span class="lineno">  37 </span>    val firestore: FirebaseFirestore
+<span class="lineno">  38 </span>        get() = Firebase.firestore
+<span class="lineno">  39 </span>
+<span class="lineno">  40 </span>    <span class="error">suspend fun loginOrRegister(email: String, password: String): Flow&lt;FirebaseUser?&gt; = flow {</span>
+<span class="lineno">  41 </span><span class="error">        val user = try {</span>
+<span class="lineno">  42 </span><span class="error">            auth.signInWithEmailAndPassword(email, password).await().user</span>
+<span class="lineno">  43 </span><span class="error">        } catch (e: FirebaseAuthException) {</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/firebase/src/main/java/com/iamkurtgoz/firebase/FirebaseInitializer.kt:53:5</span><span class="message">method `readFavorites()` should be declared before companion object.</span>
+        <pre><code><span class="lineno">  50 </span>        emit(user)
+<span class="lineno">  51 </span>    }
+<span class="lineno">  52 </span>
+<span class="lineno">  53 </span>    <span class="error">suspend fun readFavorites(email: String?): List&lt;DocumentSnapshot&gt; {</span>
+<span class="lineno">  54 </span><span class="error">        if (auth.currentUser == null) return emptyList()</span>
+<span class="lineno">  55 </span><span class="error">        val favorites = firestore.collection(FAVORITES)</span>
+<span class="lineno">  56 </span><span class="error">            .whereEqualTo(&quot;email&quot;, email)</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/firebase/src/main/java/com/iamkurtgoz/firebase/FirebaseInitializer.kt:62:5</span><span class="message">method `addFavorites()` should be declared before companion object.</span>
+        <pre><code><span class="lineno">  59 </span>        return favorites.documents
+<span class="lineno">  60 </span>    }
+<span class="lineno">  61 </span>
+<span class="lineno">  62 </span>    <span class="error">suspend fun addFavorites(email: String?, id: String?): DocumentReference? {</span>
+<span class="lineno">  63 </span><span class="error">        val isExist = readFavorites(email).count { it.get(&quot;id&quot;) == id } &gt; 0</span>
+<span class="lineno">  64 </span><span class="error">        if (!isExist) {</span>
+<span class="lineno">  65 </span><span class="error">            val data = hashMapOf(</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/firebase/src/main/java/com/iamkurtgoz/firebase/FirebaseInitializer.kt:76:5</span><span class="message">method `removeFavorites()` should be declared before companion object.</span>
+        <pre><code><span class="lineno">  73 </span>        return null
+<span class="lineno">  74 </span>    }
+<span class="lineno">  75 </span>
+<span class="lineno">  76 </span>    <span class="error">suspend fun removeFavorites(documentId: String): Any {</span>
+<span class="lineno">  77 </span><span class="error">        val docRef = firestore.collection(FAVORITES).document(documentId)</span>
+<span class="lineno">  78 </span><span class="error">        val doc = docRef.get().await()</span>
+<span class="lineno">  79 </span><span class="error"></span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinViewModel.kt:78:5</span><span class="message">property `coinPager` should be declared before method declarations.</span>
+        <pre><code><span class="lineno">  75 </span>        _searchText.value = text
+<span class="lineno">  76 </span>    }
+<span class="lineno">  77 </span>
+<span class="lineno">  78 </span>    <span class="error">val coinPager: Flow&lt;PagingData&lt;CoinUIModel&gt;&gt; = Pager(</span>
+<span class="lineno">  79 </span><span class="error">        config = PagingConfig(</span>
+<span class="lineno">  80 </span><span class="error">            pageSize = CoinPagingSource.DEFAULT_PER_PAGE</span>
+<span class="lineno">  81 </span><span class="error">        ),</span>
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="CollapsibleIfStatements" open="open">
+    <summary class="rule-container"><span class="rule">CollapsibleIfStatements: 1 </span><span class="description">Two if statements which could be collapsed were detected. These statements can be merged to improve readability.</span></summary>
+<a href="https://detekt.dev/docs/rules/style#collapsibleifstatements">Documentation</a>
+    <ul>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/app/src/main/java/com/iamkurtgoz/cryptocurrencyapi/presentation/MainActivity.kt:50:9</span><span class="message">Two if statements which could be collapsed were detected. These statements can be merged to improve readability.</span>
+        <pre><code><span class="lineno">  47 </span>    private val notificationPermissionLauncher = registerForActivityResult(
+<span class="lineno">  48 </span>        ActivityResultContracts.RequestPermission()
+<span class="lineno">  49 </span>    ) { isGranted -&gt;
+<span class="lineno">  50 </span>        <span class="error">if (!isGranted) {</span>
+<span class="lineno">  51 </span><span class="error">            if (Build.VERSION.SDK_INT &gt;= 33) {</span>
+<span class="lineno">  52 </span><span class="error">                Toast.makeText(this, getString(R.string.permission_denied), Toast.LENGTH_SHORT).show()</span>
+<span class="lineno">  53 </span><span class="error">            }</span>
 </code></pre>
       </li>
     </ul>
   </details>
   <details id="MagicNumber" open="open">
-    <summary class="rule-container"><span class="rule">MagicNumber: 4 </span><span class="description">Report magic numbers. Magic number is a numeric literal that is not defined as a constant and hence it's unclear what the purpose of this number is. It's better to declare such numbers as constants and give them a proper name. By default, -1, 0, 1, and 2 are not considered to be magic numbers.</span></summary>
+    <summary class="rule-container"><span class="rule">MagicNumber: 10 </span><span class="description">Report magic numbers. Magic number is a numeric literal that is not defined as a constant and hence it's unclear what the purpose of this number is. It's better to declare such numbers as constants and give them a proper name. By default, -1, 0, 1, and 2 are not considered to be magic numbers.</span></summary>
 <a href="https://detekt.dev/docs/rules/style#magicnumber">Documentation</a>
     <ul>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/repository/CoinRepositoryImpl.kt:30:24</span><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
-        <pre><code><span class="lineno">  27 </span>        val keyName = &quot;CACHE_$page&quot;
-<span class="lineno">  28 </span>        val key = stringPreferencesKey(keyName)
-<span class="lineno">  29 </span>        val cache = userDataStoreManager.read(key).firstOrNull()
-<span class="lineno">  30 </span>        val fiveMin = (<span class="error">1000</span> * 60) * 5
-<span class="lineno">  31 </span>        var useCache = false
-<span class="lineno">  32 </span>        page?.toString()?.let { safePage -&gt;
-<span class="lineno">  33 </span>            val lastUpdate = cache?.toLongOrNull()
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/app/src/main/java/com/iamkurtgoz/cryptocurrencyapi/presentation/MainActivity.kt:31:46</span><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
+        <pre><code><span class="lineno">  28 </span>        setContent {
+<span class="lineno">  29 </span>            val viewState = viewModel.state.value
+<span class="lineno">  30 </span>            if (!viewState.keepSplashScreenOn) {
+<span class="lineno">  31 </span>                if (Build.VERSION.SDK_INT &gt;= <span class="error">33</span>) {
+<span class="lineno">  32 </span>                    notificationPermissionLauncher.launch(android.Manifest.permission.POST_NOTIFICATIONS)
+<span class="lineno">  33 </span>                }
+<span class="lineno">  34 </span>                PresentationView(sharedUserState)
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/repository/CoinRepositoryImpl.kt:30:31</span><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
-        <pre><code><span class="lineno">  27 </span>        val keyName = &quot;CACHE_$page&quot;
-<span class="lineno">  28 </span>        val key = stringPreferencesKey(keyName)
-<span class="lineno">  29 </span>        val cache = userDataStoreManager.read(key).firstOrNull()
-<span class="lineno">  30 </span>        val fiveMin = (1000 * <span class="error">60</span>) * 5
-<span class="lineno">  31 </span>        var useCache = false
-<span class="lineno">  32 </span>        page?.toString()?.let { safePage -&gt;
-<span class="lineno">  33 </span>            val lastUpdate = cache?.toLongOrNull()
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/repository/CoinRepositoryImpl.kt:43:24</span><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
+        <pre><code><span class="lineno">  40 </span>        val keyName = &quot;CACHE_$page&quot;
+<span class="lineno">  41 </span>        val key = stringPreferencesKey(keyName)
+<span class="lineno">  42 </span>        val cache = userDataStoreManager.read(key).firstOrNull()
+<span class="lineno">  43 </span>        val fiveMin = (<span class="error">1000</span> * 60) * 5
+<span class="lineno">  44 </span>        var useCache = false
+<span class="lineno">  45 </span>        page?.toString()?.let { safePage -&gt;
+<span class="lineno">  46 </span>            val lastUpdate = cache?.toLongOrNull()
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/repository/CoinRepositoryImpl.kt:30:37</span><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
-        <pre><code><span class="lineno">  27 </span>        val keyName = &quot;CACHE_$page&quot;
-<span class="lineno">  28 </span>        val key = stringPreferencesKey(keyName)
-<span class="lineno">  29 </span>        val cache = userDataStoreManager.read(key).firstOrNull()
-<span class="lineno">  30 </span>        val fiveMin = (1000 * 60) * <span class="error">5</span>
-<span class="lineno">  31 </span>        var useCache = false
-<span class="lineno">  32 </span>        page?.toString()?.let { safePage -&gt;
-<span class="lineno">  33 </span>            val lastUpdate = cache?.toLongOrNull()
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/repository/CoinRepositoryImpl.kt:43:31</span><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
+        <pre><code><span class="lineno">  40 </span>        val keyName = &quot;CACHE_$page&quot;
+<span class="lineno">  41 </span>        val key = stringPreferencesKey(keyName)
+<span class="lineno">  42 </span>        val cache = userDataStoreManager.read(key).firstOrNull()
+<span class="lineno">  43 </span>        val fiveMin = (1000 * <span class="error">60</span>) * 5
+<span class="lineno">  44 </span>        var useCache = false
+<span class="lineno">  45 </span>        page?.toString()?.let { safePage -&gt;
+<span class="lineno">  46 </span>            val lastUpdate = cache?.toLongOrNull()
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/repository/CoinRepositoryImpl.kt:41:61</span><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
-        <pre><code><span class="lineno">  38 </span>
-<span class="lineno">  39 </span>        println(useCache)
-<span class="lineno">  40 </span>        return if (useCache) {
-<span class="lineno">  41 </span>            val offset = (page ?: 1).minus(1) * (perPage ?: <span class="error">250</span>)
-<span class="lineno">  42 </span>            coinMapper.mapEntityToUiModel(coinDao.getCoins(limit = perPage, offset = offset))
-<span class="lineno">  43 </span>        } else {
-<span class="lineno">  44 </span>            /*
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/repository/CoinRepositoryImpl.kt:43:37</span><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
+        <pre><code><span class="lineno">  40 </span>        val keyName = &quot;CACHE_$page&quot;
+<span class="lineno">  41 </span>        val key = stringPreferencesKey(keyName)
+<span class="lineno">  42 </span>        val cache = userDataStoreManager.read(key).firstOrNull()
+<span class="lineno">  43 </span>        val fiveMin = (1000 * 60) * <span class="error">5</span>
+<span class="lineno">  44 </span>        var useCache = false
+<span class="lineno">  45 </span>        page?.toString()?.let { safePage -&gt;
+<span class="lineno">  46 </span>            val lastUpdate = cache?.toLongOrNull()
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/repository/CoinRepositoryImpl.kt:53:61</span><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
+        <pre><code><span class="lineno">  50 </span>        }
+<span class="lineno">  51 </span>
+<span class="lineno">  52 </span>        return if (useCache || !connectivityHelper.isNetworkAvailable()) {
+<span class="lineno">  53 </span>            val offset = (page ?: 1).minus(1) * (perPage ?: <span class="error">250</span>)
+<span class="lineno">  54 </span>            val cacheList = if (ids != null) {
+<span class="lineno">  55 </span>                coinDao.getCoinsWithIds(limit = perPage, offset = offset, ids = ids.toTypedArray())
+<span class="lineno">  56 </span>            } else {
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/repository/CoinRepositoryImpl.kt:76:24</span><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
+        <pre><code><span class="lineno">  73 </span>        val keyName = &quot;CACHE_$id&quot;
+<span class="lineno">  74 </span>        val key = stringPreferencesKey(keyName)
+<span class="lineno">  75 </span>        val cache = userDataStoreManager.read(key).firstOrNull()
+<span class="lineno">  76 </span>        val fiveMin = (<span class="error">1000</span> * 60) * 1
+<span class="lineno">  77 </span>        var useCache = false
+<span class="lineno">  78 </span>        id?.let {
+<span class="lineno">  79 </span>            val lastUpdate = cache?.toLongOrNull()
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/repository/CoinRepositoryImpl.kt:76:31</span><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
+        <pre><code><span class="lineno">  73 </span>        val keyName = &quot;CACHE_$id&quot;
+<span class="lineno">  74 </span>        val key = stringPreferencesKey(keyName)
+<span class="lineno">  75 </span>        val cache = userDataStoreManager.read(key).firstOrNull()
+<span class="lineno">  76 </span>        val fiveMin = (1000 * <span class="error">60</span>) * 1
+<span class="lineno">  77 </span>        var useCache = false
+<span class="lineno">  78 </span>        id?.let {
+<span class="lineno">  79 </span>            val lastUpdate = cache?.toLongOrNull()
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/detail/CoinDetailViewModel.kt:122:23</span><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
+        <pre><code><span class="lineno"> 119 </span>                )
+<span class="lineno"> 120 </span>            }
+<span class="lineno"> 121 </span>            is Action.RefreshWithDelay -&gt; viewModelScope.launch(Dispatchers.IO) {
+<span class="lineno"> 122 </span>                delay(<span class="error">1000</span> * 60)
+<span class="lineno"> 123 </span>                dispatch(Action.GetCoinDetail(withCache = true))
+<span class="lineno"> 124 </span>                dispatch(Action.RefreshWithDelay)
+<span class="lineno"> 125 </span>            }
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/detail/CoinDetailViewModel.kt:122:30</span><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
+        <pre><code><span class="lineno"> 119 </span>                )
+<span class="lineno"> 120 </span>            }
+<span class="lineno"> 121 </span>            is Action.RefreshWithDelay -&gt; viewModelScope.launch(Dispatchers.IO) {
+<span class="lineno"> 122 </span>                delay(1000 * <span class="error">60</span>)
+<span class="lineno"> 123 </span>                dispatch(Action.GetCoinDetail(withCache = true))
+<span class="lineno"> 124 </span>                dispatch(Action.RefreshWithDelay)
+<span class="lineno"> 125 </span>            }
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/login/LoginViewModel.kt:69:76</span><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
+        <pre><code><span class="lineno">  66 </span>            showAlertInfo(title = null, message = application.getString(R.string.email_address_not_verify))
+<span class="lineno">  67 </span>            return false
+<span class="lineno">  68 </span>        }
+<span class="lineno">  69 </span>        if (password.value.text.isEmpty() || password.value.text.length &lt;= <span class="error">4</span>) {
+<span class="lineno">  70 </span>            showAlertInfo(title = null, message = application.getString(R.string.password_more_than_4_characters))
+<span class="lineno">  71 </span>            return false
+<span class="lineno">  72 </span>        }
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="MaxLineLength" open="open">
+    <summary class="rule-container"><span class="rule">MaxLineLength: 3 </span><span class="description">Line detected, which is longer than the defined maximum line length in the code style.</span></summary>
+<a href="https://detekt.dev/docs/rules/style#maxlinelength">Documentation</a>
+    <ul>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/repository/CoinRepositoryImpl.kt:86:9</span><span class="message">Line detected, which is longer than the defined maximum line length in the code style.</span>
+        <pre><code><span class="lineno">  83 </span>        }
+<span class="lineno">  84 </span>
+<span class="lineno">  85 </span>        val cacheData = coinDetailDao.getCoinDetailById(id)
+<span class="lineno">  86 </span>        <span class="error">return</span> if (withCache &amp;&amp; useCache &amp;&amp; cacheData != null || cacheData != null &amp;&amp; !connectivityHelper.isNetworkAvailable()) {
+<span class="lineno">  87 </span>            coinDetailMapper.mapEntityToUiModel(cacheData)
+<span class="lineno">  88 </span>        } else {
+<span class="lineno">  89 </span>            // Save cache time
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/detail/CoinDetailScreen.kt:172:33</span><span class="message">Line detected, which is longer than the defined maximum line length in the code style.</span>
+        <pre><code><span class="lineno"> 169 </span>                            )
+<span class="lineno"> 170 </span>
+<span class="lineno"> 171 </span>                            Text(
+<span class="lineno"> 172 </span>                                <span class="error">text = viewState.coinData.priceChangePercentage24h?.let { &quot;$it%&quot; } ?: kotlin.run { &quot;-&quot; }</span>,
+<span class="lineno"> 173 </span>                                color = if (viewState.coinData.isPricePercentage24hUpper) Color.Green else Color.Red,
+<span class="lineno"> 174 </span>                                style = MaterialTheme.typography.headlineMedium.copy(
+<span class="lineno"> 175 </span>                                    fontWeight = FontWeight.Bold
+</code></pre>
+      </li>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/detail/CoinDetailScreen.kt:204:33</span><span class="message">Line detected, which is longer than the defined maximum line length in the code style.</span>
+        <pre><code><span class="lineno"> 201 </span>
+<span class="lineno"> 202 </span>                        KButtonBackground(
+<span class="lineno"> 203 </span>                            text = stringResource(
+<span class="lineno"> 204 </span>                                <span class="error">id = if (viewState.isFavorite) R.string.remove_from_favorites else R.string.add_to_favorites</span>
+<span class="lineno"> 205 </span>                            ),
+<span class="lineno"> 206 </span>                            isFullWidth = false,
+<span class="lineno"> 207 </span>                            rootModifier = Modifier.weight(1f)
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="UnnecessaryBackticks" open="open">
+    <summary class="rule-container"><span class="rule">UnnecessaryBackticks: 1 </span><span class="description">Backticks are unnecessary.</span></summary>
+<a href="https://detekt.dev/docs/rules/style#unnecessarybackticks">Documentation</a>
+    <ul>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/model/response/coinDetail/DescriptionData.kt:37:9</span><span class="message">Backticks are unnecessary.</span>
+        <pre><code><span class="lineno">  34 </span>    @SerializedName(&quot;id&quot;)
+<span class="lineno">  35 </span>    val id: String?,
+<span class="lineno">  36 </span>    @SerializedName(&quot;it&quot;)
+<span class="lineno">  37 </span>    val <span class="error">`it`</span>: String?,
+<span class="lineno">  38 </span>    @SerializedName(&quot;ja&quot;)
+<span class="lineno">  39 </span>    val ja: String?,
+<span class="lineno">  40 </span>    @SerializedName(&quot;ko&quot;)
 </code></pre>
       </li>
     </ul>
   </details>
   <details id="UnusedPrivateMember" open="open">
-    <summary class="rule-container"><span class="rule">UnusedPrivateMember: 10 </span><span class="description">Private member is unused and should be removed.</span></summary>
+    <summary class="rule-container"><span class="rule">UnusedPrivateMember: 5 </span><span class="description">Private member is unused and should be removed.</span></summary>
 <a href="https://detekt.dev/docs/rules/style#unusedprivatemember">Documentation</a>
     <ul>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/data/src/main/java/com/iamkurtgoz/data/repository/CoinRepositoryImpl.kt:16:17</span><span class="message">Private property `apiService` is unused.</span>
-        <pre><code><span class="lineno">  13 </span>import javax.inject.Inject
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/source/CoinPagingSource.kt:12:17</span><span class="message">Private property `getFavoritesUseCase` is unused.</span>
+        <pre><code><span class="lineno">   9 </span>
+<span class="lineno">  10 </span>class CoinPagingSource @Inject constructor(
+<span class="lineno">  11 </span>    private val repository: CoinRepository,
+<span class="lineno">  12 </span>    private val <span class="error">getFavoritesUseCase</span>: GetFavoritesUseCase
+<span class="lineno">  13 </span>) : PagingSource&lt;CoinPagingSource.Params, CoinUIModel&gt;() {
 <span class="lineno">  14 </span>
-<span class="lineno">  15 </span>internal class CoinRepositoryImpl @Inject constructor(
-<span class="lineno">  16 </span>    private val <span class="error">apiService</span>: CoinApiService,
-<span class="lineno">  17 </span>    private val coinDao: CoinDao,
-<span class="lineno">  18 </span>    private val coinMapper: CoinMapper,
-<span class="lineno">  19 </span>    private val userDataStoreManager: UserDataStoreManager
+<span class="lineno">  15 </span>    override fun getRefreshKey(state: PagingState&lt;Params, CoinUIModel&gt;): Params? {
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinScreen.kt:36:60</span><span class="message">Function parameter `navController` is unused.</span>
-        <pre><code><span class="lineno">  33 </span>
-<span class="lineno">  34 </span>@ExperimentalMaterial3Api
-<span class="lineno">  35 </span>@Composable
-<span class="lineno">  36 </span>fun HomeScreen(viewModel: CoinViewModel = hiltViewModel(), <span class="error">navController</span>: NavController) {
-<span class="lineno">  37 </span>    val context = LocalContext.current
-<span class="lineno">  38 </span>    val activity = context as ComponentActivity
-<span class="lineno">  39 </span>    val viewState = viewModel.state.value
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/detail/CoinDetailViewModel.kt:31:17</span><span class="message">Private property `application` is unused.</span>
+        <pre><code><span class="lineno">  28 </span>
+<span class="lineno">  29 </span>@HiltViewModel
+<span class="lineno">  30 </span>class CoinDetailViewModel @Inject constructor(
+<span class="lineno">  31 </span>    private val <span class="error">application</span>: Application,
+<span class="lineno">  32 </span>    private val sharedUserState: SharedUserState,
+<span class="lineno">  33 </span>    private val savedStateHandle: SavedStateHandle,
+<span class="lineno">  34 </span>    private val getUserIsLoginUseCase: GetUserIsLoginUseCase,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinScreen.kt:39:9</span><span class="message">Private property `viewState` is unused.</span>
-        <pre><code><span class="lineno">  36 </span>fun HomeScreen(viewModel: CoinViewModel = hiltViewModel(), navController: NavController) {
-<span class="lineno">  37 </span>    val context = LocalContext.current
-<span class="lineno">  38 </span>    val activity = context as ComponentActivity
-<span class="lineno">  39 </span>    val <span class="error">viewState</span> = viewModel.state.value
-<span class="lineno">  40 </span>    val dialogState = viewModel.dialogState.value
-<span class="lineno">  41 </span>    val coinList = viewModel.coinPager.collectAsLazyPagingItems()
-<span class="lineno">  42 </span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/favorite/FavoriteViewModel.kt:28:17</span><span class="message">Private property `application` is unused.</span>
+        <pre><code><span class="lineno">  25 </span>
+<span class="lineno">  26 </span>@HiltViewModel
+<span class="lineno">  27 </span>class FavoriteViewModel @Inject constructor(
+<span class="lineno">  28 </span>    private val <span class="error">application</span>: Application,
+<span class="lineno">  29 </span>    private val sharedUserState: SharedUserState,
+<span class="lineno">  30 </span>    private val getUserIsLoginUseCase: GetUserIsLoginUseCase,
+<span class="lineno">  31 </span>    private val getFavoritesUseCase: GetFavoritesUseCase,
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/coin/CoinViewModel.kt:33:17</span><span class="message">Private property `application` is unused.</span>
-        <pre><code><span class="lineno">  30 </span>@OptIn(FlowPreview::class)
-<span class="lineno">  31 </span>@HiltViewModel
-<span class="lineno">  32 </span>class CoinViewModel @Inject constructor(
-<span class="lineno">  33 </span>    private val <span class="error">application</span>: Application,
-<span class="lineno">  34 </span>    private val sharedUserState: SharedUserState,
-<span class="lineno">  35 </span>    private val coinPagingSource: CoinPagingSource
-<span class="lineno">  36 </span>) : CoreViewModel&lt;CoinViewModel.State, CoinViewModel.Action, CoinViewModel.Effect&gt;(
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/login/LoginScreen.kt:45:9</span><span class="message">Private property `viewState` is unused.</span>
+        <pre><code><span class="lineno">  42 </span>fun LoginScreen(viewModel: LoginViewModel = hiltViewModel(), navController: NavController) {
+<span class="lineno">  43 </span>    val context = LocalContext.current
+<span class="lineno">  44 </span>    val activity = context as ComponentActivity
+<span class="lineno">  45 </span>    val <span class="error">viewState</span> = viewModel.state.value
+<span class="lineno">  46 </span>    val dialogState = viewModel.dialogState.value
+<span class="lineno">  47 </span>
+<span class="lineno">  48 </span>    LaunchedEffect(key1 = &quot;&quot;) {
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/favorite/FavoriteScreen.kt:19:68</span><span class="message">Function parameter `navController` is unused.</span>
-        <pre><code><span class="lineno">  16 </span>
-<span class="lineno">  17 </span>@ExperimentalMaterial3Api
-<span class="lineno">  18 </span>@Composable
-<span class="lineno">  19 </span>fun FavoriteScreen(viewModel: FavoriteViewModel = hiltViewModel(), <span class="error">navController</span>: NavController) {
-<span class="lineno">  20 </span>    val context = LocalContext.current
-<span class="lineno">  21 </span>    val activity = context as ComponentActivity
-<span class="lineno">  22 </span>    val viewState = viewModel.state.value
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/favorite/FavoriteScreen.kt:22:9</span><span class="message">Private property `viewState` is unused.</span>
-        <pre><code><span class="lineno">  19 </span>fun FavoriteScreen(viewModel: FavoriteViewModel = hiltViewModel(), navController: NavController) {
-<span class="lineno">  20 </span>    val context = LocalContext.current
-<span class="lineno">  21 </span>    val activity = context as ComponentActivity
-<span class="lineno">  22 </span>    val <span class="error">viewState</span> = viewModel.state.value
-<span class="lineno">  23 </span>    val dialogState = viewModel.dialogState.value
-<span class="lineno">  24 </span>
-<span class="lineno">  25 </span>    Scaffold(
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/favorite/FavoriteViewModel.kt:14:17</span><span class="message">Private property `application` is unused.</span>
-        <pre><code><span class="lineno">  11 </span>
-<span class="lineno">  12 </span>@HiltViewModel
-<span class="lineno">  13 </span>class FavoriteViewModel @Inject constructor(
-<span class="lineno">  14 </span>    private val <span class="error">application</span>: Application,
-<span class="lineno">  15 </span>    private val sharedUserState: SharedUserState
-<span class="lineno">  16 </span>) : CoreViewModel&lt;FavoriteViewModel.State, FavoriteViewModel.Action, FavoriteViewModel.Effect&gt;(
-<span class="lineno">  17 </span>    initialState = State(),
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/login/LoginScreen.kt:19:62</span><span class="message">Function parameter `navController` is unused.</span>
-        <pre><code><span class="lineno">  16 </span>
-<span class="lineno">  17 </span>@ExperimentalMaterial3Api
-<span class="lineno">  18 </span>@Composable
-<span class="lineno">  19 </span>fun LoginScreen(viewModel: LoginViewModel = hiltViewModel(), <span class="error">navController</span>: NavController) {
-<span class="lineno">  20 </span>    val context = LocalContext.current
-<span class="lineno">  21 </span>    val activity = context as ComponentActivity
-<span class="lineno">  22 </span>    val viewState = viewModel.state.value
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/login/LoginScreen.kt:22:9</span><span class="message">Private property `viewState` is unused.</span>
-        <pre><code><span class="lineno">  19 </span>fun LoginScreen(viewModel: LoginViewModel = hiltViewModel(), navController: NavController) {
-<span class="lineno">  20 </span>    val context = LocalContext.current
-<span class="lineno">  21 </span>    val activity = context as ComponentActivity
-<span class="lineno">  22 </span>    val <span class="error">viewState</span> = viewModel.state.value
-<span class="lineno">  23 </span>    val dialogState = viewModel.dialogState.value
-<span class="lineno">  24 </span>
-<span class="lineno">  25 </span>    Scaffold(
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/navigation/Navigator.kt:50:9</span><span class="message">Private property `coroutineScope` is unused.</span>
-        <pre><code><span class="lineno">  47 </span>@Composable
-<span class="lineno">  48 </span>fun Navigator(sharedUserState: SharedUserState) {
-<span class="lineno">  49 </span>    val navController = rememberNavController()
-<span class="lineno">  50 </span>    val <span class="error">coroutineScope</span> = rememberCoroutineScope()
-<span class="lineno">  51 </span>    var alertState by remember { mutableStateOf&lt;SharedUserState.Effect.ShowAlertInfo?&gt;(null) }
-<span class="lineno">  52 </span>
-<span class="lineno">  53 </span>    LaunchedEffect(key1 = &quot;&quot;) {
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/navigation/Navigator.kt:55:9</span><span class="message">Private property `coroutineScope` is unused.</span>
+        <pre><code><span class="lineno">  52 </span>@Composable
+<span class="lineno">  53 </span>fun Navigator(sharedUserState: SharedUserState) {
+<span class="lineno">  54 </span>    val navController = rememberNavController()
+<span class="lineno">  55 </span>    val <span class="error">coroutineScope</span> = rememberCoroutineScope()
+<span class="lineno">  56 </span>    var alertState by remember { mutableStateOf&lt;SharedUserState.Effect.ShowAlertInfo?&gt;(null) }
+<span class="lineno">  57 </span>
+<span class="lineno">  58 </span>    LaunchedEffect(key1 = &quot;&quot;) {
 </code></pre>
       </li>
     </ul>
@@ -1657,20 +1710,20 @@
     <summary class="rule-container"><span class="rule">UseIfInsteadOfWhen: 1 </span><span class="description">Binary expressions are better expressed using an `if` expression than a `when` expression.</span></summary>
 <a href="https://detekt.dev/docs/rules/style#useifinsteadofwhen">Documentation</a>
     <ul>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/navigation/Navigator.kt:136:5</span><span class="message">Prefer using 'if' for binary conditions instead of 'when'.</span>
-        <pre><code><span class="lineno"> 133 </span>inline fun &lt;S, A, E, reified VM : CoreViewModel&lt;S, A, E&gt;&gt; customHiltViewModel(): VM {
-<span class="lineno"> 134 </span>    val hiltViewModel = hiltViewModel&lt;VM&gt;()
-<span class="lineno"> 135 </span>
-<span class="lineno"> 136 </span>    <span class="error">when (hiltViewModel.viewModelState.value) {</span>
-<span class="lineno"> 137 </span><span class="error">        is CoreViewModel.ViewModelState.ShowLoadingDialog -&gt; {</span>
-<span class="lineno"> 138 </span><span class="error">            KLottieProgressHUD(</span>
-<span class="lineno"> 139 </span><span class="error">                size = MaterialTheme.dimens.DP_56</span>
+      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/navigation/Navigator.kt:162:5</span><span class="message">Prefer using 'if' for binary conditions instead of 'when'.</span>
+        <pre><code><span class="lineno"> 159 </span>inline fun &lt;S, A, E, reified VM : CoreViewModel&lt;S, A, E&gt;&gt; customHiltViewModel(): VM {
+<span class="lineno"> 160 </span>    val hiltViewModel = hiltViewModel&lt;VM&gt;()
+<span class="lineno"> 161 </span>
+<span class="lineno"> 162 </span>    <span class="error">when (hiltViewModel.viewModelState.value) {</span>
+<span class="lineno"> 163 </span><span class="error">        is CoreViewModel.ViewModelState.ShowLoadingDialog -&gt; {</span>
+<span class="lineno"> 164 </span><span class="error">            KLottieProgressHUD(</span>
+<span class="lineno"> 165 </span><span class="error">                size = MaterialTheme.dimens.DP_56</span>
 </code></pre>
       </li>
     </ul>
   </details>
   <details id="WildcardImport" open="open">
-    <summary class="rule-container"><span class="rule">WildcardImport: 6 </span><span class="description">Wildcard imports should be replaced with imports using fully qualified class names. Wildcard imports can lead to naming conflicts. A library update can introduce naming clashes with your classes which results in compilation errors.</span></summary>
+    <summary class="rule-container"><span class="rule">WildcardImport: 4 </span><span class="description">Wildcard imports should be replaced with imports using fully qualified class names. Wildcard imports can lead to naming conflicts. A library update can introduce naming clashes with your classes which results in compilation errors.</span></summary>
 <a href="https://detekt.dev/docs/rules/style#wildcardimport">Documentation</a>
     <ul>
       <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/BottomNav.kt:3:1</span><span class="message">androidx.compose.foundation.* is a wildcard import. Replace it with fully qualified imports.</span>
@@ -1712,32 +1765,12 @@
 <span class="lineno">   7 </span>import androidx.compose.foundation.lazy.LazyColumn
 </code></pre>
       </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/favorite/FavoriteScreen.kt:4:1</span><span class="message">androidx.compose.foundation.layout.* is a wildcard import. Replace it with fully qualified imports.</span>
-        <pre><code><span class="lineno">   1 </span>package com.iamkurtgoz.presentation.features.favorite
-<span class="lineno">   2 </span>
-<span class="lineno">   3 </span>import androidx.activity.ComponentActivity
-<span class="lineno">   4 </span><span class="error">import androidx.compose.foundation.layout.*</span>
-<span class="lineno">   5 </span>import androidx.compose.foundation.layout.Column
-<span class="lineno">   6 </span>import androidx.compose.foundation.layout.padding
-<span class="lineno">   7 </span>import androidx.compose.material3.ExperimentalMaterial3Api
-</code></pre>
-      </li>
-      <li><span class="location">/Users/iamkurtgoz/Software/Freelance/CryptoCurrencyApi/presentation/src/main/java/com/iamkurtgoz/presentation/features/login/LoginScreen.kt:4:1</span><span class="message">androidx.compose.foundation.layout.* is a wildcard import. Replace it with fully qualified imports.</span>
-        <pre><code><span class="lineno">   1 </span>package com.iamkurtgoz.presentation.features.login
-<span class="lineno">   2 </span>
-<span class="lineno">   3 </span>import androidx.activity.ComponentActivity
-<span class="lineno">   4 </span><span class="error">import androidx.compose.foundation.layout.*</span>
-<span class="lineno">   5 </span>import androidx.compose.foundation.layout.Column
-<span class="lineno">   6 </span>import androidx.compose.foundation.layout.padding
-<span class="lineno">   7 </span>import androidx.compose.material3.ExperimentalMaterial3Api
-</code></pre>
-      </li>
     </ul>
   </details>
 </div>
 
 
-generated with <a href="https://detekt.dev/">detekt version 1.22.0</a> on 2023-06-12 14:15:18 UTC.
+generated with <a href="https://detekt.dev/">detekt version 1.22.0</a> on 2023-06-14 21:11:39 UTC.
 
 </body>
 </html>

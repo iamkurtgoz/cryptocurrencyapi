@@ -1,14 +1,12 @@
 package com.iamkurtgoz.presentation.features.detail
 
 import androidx.activity.ComponentActivity
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
@@ -46,7 +44,10 @@ import kotlinx.coroutines.flow.collectLatest
 
 @ExperimentalMaterial3Api
 @Composable
-fun CoinDetailScreen(viewModel: CoinDetailViewModel = hiltViewModel(), navController: NavController) {
+fun CoinDetailScreen(
+    viewModel: CoinDetailViewModel = hiltViewModel(),
+    navController: NavController
+) {
     val context = LocalContext.current
     val activity = context as ComponentActivity
     val viewState = viewModel.state.value
@@ -56,7 +57,7 @@ fun CoinDetailScreen(viewModel: CoinDetailViewModel = hiltViewModel(), navContro
 
     LaunchedEffect(key1 = "") {
         viewModel.sideEffect.collectLatest {
-            when(it) {
+            when (it) {
                 is CoinDetailViewModel.Effect.RouteToLogin -> {
                     navController.navigate(Screen.Login.route)
                 }
@@ -121,9 +122,10 @@ fun CoinDetailScreen(viewModel: CoinDetailViewModel = hiltViewModel(), navContro
                         )
                     }
 
-                    Row(modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(top = MaterialTheme.dimens.DP_32),
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = MaterialTheme.dimens.DP_32),
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.Center
                     ) {
@@ -173,7 +175,6 @@ fun CoinDetailScreen(viewModel: CoinDetailViewModel = hiltViewModel(), navContro
                                     fontWeight = FontWeight.Bold
                                 )
                             )
-
                         }
                     }
 
@@ -199,7 +200,9 @@ fun CoinDetailScreen(viewModel: CoinDetailViewModel = hiltViewModel(), navContro
                         }
 
                         KButtonBackground(
-                            text = stringResource(id = if (viewState.isFavorite) R.string.remove_from_favorites else R.string.add_to_favorites),
+                            text = stringResource(
+                                id = if (viewState.isFavorite) R.string.remove_from_favorites else R.string.add_to_favorites
+                            ),
                             isFullWidth = false,
                             rootModifier = Modifier.weight(1f)
                                 .padding(start = MaterialTheme.dimens.DP_8),
@@ -227,7 +230,6 @@ fun CoinDetailScreen(viewModel: CoinDetailViewModel = hiltViewModel(), navContro
                             .padding(all = MaterialTheme.dimens.DP_16)
                     )
                 }
-
             }
         }
     )

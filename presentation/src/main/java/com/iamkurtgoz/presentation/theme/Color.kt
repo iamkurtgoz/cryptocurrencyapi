@@ -31,7 +31,9 @@ fun ColorTextSecondary(): Color =
     if (!isSystemInDarkTheme()) ColorTextSecondaryLight else ColorTextSecondaryNight
 
 @Composable
-fun ColorTextFieldPlaceholder(): Color = if (!isSystemInDarkTheme()) ColorTextFieldPlaceholderLight else ColorTextFieldPlaceholderNight
+fun ColorTextFieldPlaceholder(): Color =
+    if (!isSystemInDarkTheme()) ColorTextFieldPlaceholderLight else ColorTextFieldPlaceholderNight
 
 @Composable
-fun ColorTextFieldBackgroundGray(): Color = if (!isSystemInDarkTheme()) ColorTextFieldBackgroundGrayLight else ColorTextFieldBackgroundGrayNight
+fun ColorTextFieldBackgroundGray(): Color =
+    if (!isSystemInDarkTheme()) ColorTextFieldBackgroundGrayLight else ColorTextFieldBackgroundGrayNight

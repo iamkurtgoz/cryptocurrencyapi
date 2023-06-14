@@ -1,8 +1,6 @@
 package com.iamkurtgoz.domain.model
 
 import com.iamkurtgoz.domain.extensions.formatDecimal
-import java.text.NumberFormat
-import java.util.Locale
 
 data class CoinUIModel(
     val id: String?,

@@ -1,7 +1,6 @@
 package com.iamkurtgoz.presentation.features.login
 
 import android.app.Application
-import android.widget.Toast
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.text.input.TextFieldValue
@@ -18,9 +17,6 @@ import com.iamkurtgoz.presentation.core.SideEffect
 import com.iamkurtgoz.presentation.core.ViewAction
 import com.iamkurtgoz.presentation.core.ViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -48,7 +44,7 @@ class LoginViewModel @Inject constructor(
     }
 
     override fun dispatch(action: Action) {
-        when(action) {
+        when (action) {
             is Action.Login -> viewModelScope.launch {
                 if (isValid()) {
                     sendRequestWithoutRest(
@@ -82,10 +78,10 @@ class LoginViewModel @Inject constructor(
     ) : ViewState
 
     sealed class Action : ViewAction {
-        object Login: Action()
+        object Login : Action()
     }
 
     sealed class Effect : SideEffect {
-        object RouteToBack: Effect()
+        object RouteToBack : Effect()
     }
 }

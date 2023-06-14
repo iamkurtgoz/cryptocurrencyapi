@@ -5,7 +5,6 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import com.iamkurtgoz.contract.enums.ErrorType
 import com.iamkurtgoz.contract.enums.LoadingType
-import com.iamkurtgoz.domain.combineResults
 import com.iamkurtgoz.domain.model.CoinDetailUIModel
 import com.iamkurtgoz.domain.model.FavoriteUIModel
 import com.iamkurtgoz.domain.usecase.AddFavoritesUseCase
@@ -52,7 +51,7 @@ class CoinDetailViewModel @Inject constructor(
     }
 
     override fun dispatch(action: Action) {
-        when(action) {
+        when (action) {
             is Action.SyncLoginStatus -> viewModelScope.launch {
                 val newState = state.value.copy(
                     isSignedIn = getUserIsLoginUseCase.invoke()
@@ -61,9 +60,11 @@ class CoinDetailViewModel @Inject constructor(
                 dispatch(Action.GetCoinDetail(withCache = true))
             }
             is Action.GetCoinDetail -> {
-                updateState(state.value.copy(
-                    isContentLoading = true
-                ))
+                updateState(
+                    state.value.copy(
+                        isContentLoading = true
+                    )
+                )
                 combine(
                     getCoinDetailUseCase.invoke(state.value.coinId, action.withCache),
                     getFavoritesUseCase.invoke()
@@ -71,12 +72,14 @@ class CoinDetailViewModel @Inject constructor(
                     val coinData = results[0] as? CoinDetailUIModel?
                     val favorites = results[1] as? List<FavoriteUIModel>?
                     val favoriteModel = favorites?.firstOrNull { it.id == state.value.coinId }
-                    updateState(state.value.copy(
-                        isContentLoading = false,
-                        coinData = coinData,
-                        isFavorite = favoriteModel != null,
-                        favoriteModel = favoriteModel
-                    ))
+                    updateState(
+                        state.value.copy(
+                            isContentLoading = false,
+                            coinData = coinData,
+                            isFavorite = favoriteModel != null,
+                            favoriteModel = favoriteModel
+                        )
+                    )
                 }.catch {
                     showErrorMessage(it)
                 }.launchIn(viewModelScope)
@@ -88,10 +91,12 @@ class CoinDetailViewModel @Inject constructor(
                     call = { addFavoritesUseCase.invoke(state.value.coinId) },
                     onSuccess = {
                         val favoriteModel = it.firstOrNull { it.id == state.value.coinId }
-                        updateState(state.value.copy(
-                            isFavorite = favoriteModel != null,
-                            favoriteModel = favoriteModel
-                        ))
+                        updateState(
+                            state.value.copy(
+                                isFavorite = favoriteModel != null,
+                                favoriteModel = favoriteModel
+                            )
+                        )
                         showContent()
                     }
                 )
@@ -103,10 +108,12 @@ class CoinDetailViewModel @Inject constructor(
                     call = { remoteFavoritesUseCase.invoke(state.value.coinId, state.value.favoriteModel?.documentId) },
                     onSuccess = {
                         val favoriteModel = it.firstOrNull { it.id == state.value.coinId }
-                        updateState(state.value.copy(
-                            isFavorite = favoriteModel != null,
-                            favoriteModel = favoriteModel
-                        ))
+                        updateState(
+                            state.value.copy(
+                                isFavorite = favoriteModel != null,
+                                favoriteModel = favoriteModel
+                            )
+                        )
                         showContent()
                     }
                 )
@@ -129,14 +136,14 @@ class CoinDetailViewModel @Inject constructor(
     ) : ViewState
 
     sealed class Action : ViewAction {
-        object SyncLoginStatus: Action()
-        data class GetCoinDetail(val withCache: Boolean = true): Action()
-        object AddFavorites: Action()
-        object RemoveFavorites: Action()
-        object RefreshWithDelay: Action()
+        object SyncLoginStatus : Action()
+        data class GetCoinDetail(val withCache: Boolean = true) : Action()
+        object AddFavorites : Action()
+        object RemoveFavorites : Action()
+        object RefreshWithDelay : Action()
     }
 
     sealed class Effect : SideEffect {
-        object RouteToLogin: Effect()
+        object RouteToLogin : Effect()
     }
 }

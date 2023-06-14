@@ -16,8 +16,6 @@ internal interface CoinApiService {
         @Query("ids") ids: String?
     ): List<CoinData>
 
-
-
     @GET("coins/{id}")
     suspend fun getCoinDetail(@Path("id") id: String?): CoinDetailData
 }

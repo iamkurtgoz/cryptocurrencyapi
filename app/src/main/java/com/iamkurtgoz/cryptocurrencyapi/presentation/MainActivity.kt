@@ -8,11 +8,11 @@ import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.iamkurtgoz.cryptocurrencyapi.R
 import com.iamkurtgoz.presentation.PresentationView
 import com.iamkurtgoz.presentation.core.SharedUserState
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import com.iamkurtgoz.cryptocurrencyapi.R
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

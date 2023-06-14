@@ -16,11 +16,9 @@ import com.iamkurtgoz.presentation.core.SharedUserState
 import com.iamkurtgoz.presentation.core.SideEffect
 import com.iamkurtgoz.presentation.core.ViewAction
 import com.iamkurtgoz.presentation.core.ViewState
-import com.iamkurtgoz.presentation.features.coin.CoinViewModel
 import com.iamkurtgoz.presentation.features.coin.source.CoinPagingSource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -60,9 +58,8 @@ class FavoriteViewModel @Inject constructor(
         ).flow.cachedIn(viewModelScope)
     }
 
-
     override fun dispatch(action: Action) {
-        when(action) {
+        when (action) {
             is Action.SyncLoginStatus -> viewModelScope.launch {
                 val newState = state.value.copy(
                     isSignedIn = getUserIsLoginUseCase.invoke()
@@ -72,9 +69,11 @@ class FavoriteViewModel @Inject constructor(
                     resetCoinPager()
                     dispatch(Action.GetFavorites)
                 } else {
-                    updateState(state.value.copy(
-                        isContentLoading = false,
-                    ))
+                    updateState(
+                        state.value.copy(
+                            isContentLoading = false
+                        )
+                    )
                 }
             }
             is Action.GetFavorites -> {
@@ -83,15 +82,19 @@ class FavoriteViewModel @Inject constructor(
                     errorType = ErrorType.Popup,
                     call = { getFavoritesUseCase.invoke().map { it.mapNotNull { it.id } } },
                     onLoadingCallback = {
-                        updateState(state.value.copy(
-                            isContentLoading = true
-                        ))
+                        updateState(
+                            state.value.copy(
+                                isContentLoading = true
+                            )
+                        )
                     },
                     onSuccess = {
-                        updateState(state.value.copy(
-                            isContentLoading = false,
-                            favoritesList = it
-                        ))
+                        updateState(
+                            state.value.copy(
+                                isContentLoading = false,
+                                favoritesList = it
+                            )
+                        )
                     }
                 )
             }
@@ -105,12 +108,12 @@ class FavoriteViewModel @Inject constructor(
     ) : ViewState
 
     sealed class Action : ViewAction {
-        object SyncLoginStatus: Action()
-        object GetFavorites: Action()
+        object SyncLoginStatus : Action()
+        object GetFavorites : Action()
     }
 
     sealed class Effect : SideEffect {
-        object RouteToLogin: Effect()
-        data class RouteToCoinDetail(val id: String): Effect()
+        object RouteToLogin : Effect()
+        data class RouteToCoinDetail(val id: String) : Effect()
     }
 }

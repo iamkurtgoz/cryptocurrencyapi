@@ -8,7 +8,7 @@ import javax.inject.Singleton
 
 @Singleton
 class ConnectivityHelper @Inject constructor(
-    @ApplicationContext private val context: Context,
+    @ApplicationContext private val context: Context
 ) {
 
     fun isNetworkAvailable(): Boolean {
@@ -16,5 +16,4 @@ class ConnectivityHelper @Inject constructor(
         val networkInfo = connectivityManager?.activeNetworkInfo
         return networkInfo != null && networkInfo.isConnected
     }
-
 }

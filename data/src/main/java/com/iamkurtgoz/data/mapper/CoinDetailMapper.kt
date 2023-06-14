@@ -1,11 +1,8 @@
 package com.iamkurtgoz.data.mapper
 
-import com.iamkurtgoz.data.model.response.CoinData
 import com.iamkurtgoz.data.model.response.coinDetail.CoinDetailData
 import com.iamkurtgoz.domain.model.CoinDetailUIModel
-import com.iamkurtgoz.domain.model.CoinUIModel
 import com.iamkurtgoz.local.entity.CoinDetailEntity
-import com.iamkurtgoz.local.entity.CoinEntity
 import java.util.UUID
 import javax.inject.Inject
 
@@ -46,7 +43,7 @@ internal class CoinDetailMapper @Inject constructor() {
                 priceChangePercentage7d = this.marketData?.priceChangePercentage7d,
                 priceChangePercentage7dInCurrency = this.marketData?.priceChangePercentage7dInCurrency?.tryX,
                 symbol = this.symbol,
-                totalSupply = this.marketData?.totalSupply,
+                totalSupply = this.marketData?.totalSupply
             )
         }
     }

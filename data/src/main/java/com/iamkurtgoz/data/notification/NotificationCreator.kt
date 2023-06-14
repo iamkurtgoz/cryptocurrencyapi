@@ -32,7 +32,7 @@ object NotificationCreator {
                 description = descriptionText
             }
 
-            val notificationManager: NotificationManager = 
+            val notificationManager: NotificationManager =
                 context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
         }

@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SplashViewModel @Inject constructor(
-    private val sharedUserState: SharedUserState,
+    private val sharedUserState: SharedUserState
 ) : CoreViewModel<SplashViewModel.State, SplashViewModel.Action, SplashViewModel.Effect>(
     initialState = State(),
     sharedUserState = sharedUserState
@@ -24,7 +24,7 @@ class SplashViewModel @Inject constructor(
     }
 
     override fun dispatch(action: Action) {
-        when(action) {
+        when (action) {
             is Action.RouteToHome -> viewModelScope.launch {
                 delay(DelayTime)
                 val newState = state.value.copy(
@@ -36,11 +36,11 @@ class SplashViewModel @Inject constructor(
     }
 
     data class State(
-        val keepSplashScreenOn: Boolean = true,
+        val keepSplashScreenOn: Boolean = true
     ) : ViewState
 
     sealed class Action : ViewAction {
-        object RouteToHome: Action()
+        object RouteToHome : Action()
     }
 
     sealed class Effect : SideEffect

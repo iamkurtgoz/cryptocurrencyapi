@@ -23,7 +23,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.iamkurtgoz.cryptocurrencyapi.presentation.R
@@ -31,8 +30,6 @@ import com.iamkurtgoz.presentation.core.animation.KLottieView
 import com.iamkurtgoz.presentation.features.coin.components.CoinCard
 import com.iamkurtgoz.presentation.features.coin.components.SearchViewTextField
 import com.iamkurtgoz.presentation.features.detail.CoinDetailScreenNavArg
-import com.iamkurtgoz.presentation.features.favorite.FavoriteViewModel
-import com.iamkurtgoz.presentation.navigation.ScreenState
 import com.iamkurtgoz.presentation.theme.ColorTextPrimary
 import com.iamkurtgoz.presentation.theme.dimens
 import kotlinx.coroutines.flow.collectLatest
@@ -45,6 +42,8 @@ fun HomeScreen(viewModel: CoinViewModel = hiltViewModel(), navController: NavCon
     val viewState = viewModel.state.value
     val dialogState = viewModel.dialogState.value
     val coinList = viewModel.coinPager.collectAsLazyPagingItems()
+    val searchText by viewModel.searchText.collectAsState()
+    val searchList by viewModel.searchList.collectAsState()
 
     LaunchedEffect(key1 = coinList.itemSnapshotList.items) {
         viewModel.dispatch(CoinViewModel.Action.UpdateList(coinList.itemSnapshotList.items))
@@ -52,17 +51,13 @@ fun HomeScreen(viewModel: CoinViewModel = hiltViewModel(), navController: NavCon
 
     LaunchedEffect(key1 = "") {
         viewModel.sideEffect.collectLatest {
-            when(it) {
+            when (it) {
                 is CoinViewModel.Effect.RouteToCoinDetail -> {
                     navController.navigate(CoinDetailScreenNavArg.getRoute(it.id))
                 }
             }
         }
     }
-
-    val searchText by viewModel.searchText.collectAsState()
-    val searchList by viewModel.searchList.collectAsState()
-    val isSearching by viewModel.isSearching.collectAsState()
 
     Scaffold(
         topBar = {
@@ -95,7 +90,7 @@ fun HomeScreen(viewModel: CoinViewModel = hiltViewModel(), navController: NavCon
                         loadStateItem(coinList.loadState.append)
                     }
                 } else {
-                    if (isSearching) {
+                    if (viewState.isSearching) {
                         Box(modifier = Modifier.fillMaxSize()) {
                             CircularProgressIndicator(
                                 modifier = Modifier.align(Alignment.Center)
@@ -137,7 +132,13 @@ fun LazyListScope.loadStateItem(loadState: LoadState) {
                     Text(
                         modifier = Modifier
                             .padding(8.dp),
-                        text = if (loadState.error.localizedMessage?.contains("HTTP 429") == true) stringResource(id = R.string.error_http_429) else stringResource(id = R.string.error_unknown),
+                        text = if (loadState.error.localizedMessage?.contains("HTTP 429") == true) {
+                            stringResource(
+                                id = R.string.error_http_429
+                            )
+                        } else {
+                            stringResource(id = R.string.error_unknown)
+                        },
                         color = Color.Red
                     )
                 }

@@ -6,7 +6,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.ui.Modifier
 
-//Fill max size
+// Fill max size
 @SuppressLint("ModifierFactoryUnreferencedReceiver")
 fun Modifier.fillMaxSizeStatus(active: Boolean, fraction: Float = 1f): Modifier {
     return if (active) {

@@ -1,6 +1,5 @@
 package com.iamkurtgoz.data.model.response.coinDetail
 
-
 import com.google.gson.annotations.SerializedName
 
 data class CoinDetailData(

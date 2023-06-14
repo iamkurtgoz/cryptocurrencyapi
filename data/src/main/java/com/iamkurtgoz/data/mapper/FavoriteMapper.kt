@@ -15,5 +15,4 @@ internal class FavoriteMapper @Inject constructor() {
             )
         }
     }
-
 }

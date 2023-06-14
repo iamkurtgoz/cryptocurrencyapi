@@ -1,6 +1,5 @@
 package com.iamkurtgoz.domain.usecase
 
-import com.iamkurtgoz.domain.model.CoinDetailUIModel
 import com.iamkurtgoz.domain.model.FavoriteUIModel
 import com.iamkurtgoz.domain.repository.CoinRepository
 import kotlinx.coroutines.flow.Flow

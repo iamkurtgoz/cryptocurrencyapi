@@ -98,7 +98,7 @@ fun Navigator(sharedUserState: SharedUserState) {
                 arguments = listOf(
                     navArgument(name = CoinDetailScreenNavArg.key) {
                         type = NavType.StringType
-                    },
+                    }
                 )
             ) {
                 CoinDetailScreen(

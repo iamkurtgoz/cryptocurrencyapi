@@ -5,7 +5,6 @@ import androidx.paging.PagingState
 import com.iamkurtgoz.domain.model.CoinUIModel
 import com.iamkurtgoz.domain.repository.CoinRepository
 import com.iamkurtgoz.domain.usecase.GetFavoritesUseCase
-import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class CoinPagingSource @Inject constructor(

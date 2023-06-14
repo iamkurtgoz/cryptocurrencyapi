@@ -1,27 +1,20 @@
 package com.iamkurtgoz.presentation.features.favorite
 
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material3.Button
 import androidx.compose.material3.Card
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.LocalMinimumInteractiveComponentEnforcement
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -39,13 +32,11 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import com.iamkurtgoz.cryptocurrencyapi.presentation.R
 import com.iamkurtgoz.presentation.core.animation.KLottieView
 import com.iamkurtgoz.presentation.core.components.KButtonBackground
-import com.iamkurtgoz.presentation.features.coin.CoinViewModel
 import com.iamkurtgoz.presentation.features.coin.components.CoinCard
 import com.iamkurtgoz.presentation.features.coin.loadStateItem
 import com.iamkurtgoz.presentation.features.detail.CoinDetailScreenNavArg
 import com.iamkurtgoz.presentation.navigation.Screen
 import com.iamkurtgoz.presentation.navigation.ScreenState
-import com.iamkurtgoz.presentation.theme.AppShapes
 import com.iamkurtgoz.presentation.theme.Blue
 import com.iamkurtgoz.presentation.theme.ColorTextPrimary
 import com.iamkurtgoz.presentation.theme.ColorTextSecondary
@@ -63,7 +54,7 @@ fun FavoriteScreen(viewModel: FavoriteViewModel = hiltViewModel(), navController
 
     LaunchedEffect(key1 = "") {
         viewModel.sideEffect.collectLatest {
-            when(it) {
+            when (it) {
                 is FavoriteViewModel.Effect.RouteToLogin -> {
                     navController.navigate(Screen.Login.route)
                 }
@@ -101,7 +92,7 @@ fun FavoriteScreen(viewModel: FavoriteViewModel = hiltViewModel(), navController
                     }
                 } else if (!viewState.isSignedIn) {
                     LoginFirstView(viewModel = viewModel)
-                } else if (viewState.favoritesList.isEmpty()){
+                } else if (viewState.favoritesList.isEmpty()) {
                     EmptyFavoritesView()
                 } else {
                     val coinList = viewModel.coinPager.collectAsLazyPagingItems()
@@ -119,7 +110,9 @@ fun FavoriteScreen(viewModel: FavoriteViewModel = hiltViewModel(), navController
                                         item,
                                         onClick = {
                                             it.id?.let {
-                                                viewModel.updateSideEffect(FavoriteViewModel.Effect.RouteToCoinDetail(it))
+                                                viewModel.updateSideEffect(
+                                                    FavoriteViewModel.Effect.RouteToCoinDetail(it)
+                                                )
                                             }
                                         }
                                     )
@@ -137,7 +130,7 @@ fun FavoriteScreen(viewModel: FavoriteViewModel = hiltViewModel(), navController
 
 @ExperimentalMaterial3Api
 @Composable
-private fun LoginFirstView(viewModel: FavoriteViewModel){
+private fun LoginFirstView(viewModel: FavoriteViewModel) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Card(modifier = Modifier.padding(horizontal = MaterialTheme.dimens.DP_16)) {
             Column(
@@ -175,20 +168,18 @@ private fun LoginFirstView(viewModel: FavoriteViewModel){
                 KButtonBackground(
                     text = stringResource(id = R.string.login),
                     rootModifier = Modifier
-                        .padding(top = MaterialTheme.dimens.DP_16),
-                ){
+                        .padding(top = MaterialTheme.dimens.DP_16)
+                ) {
                     viewModel.updateSideEffect(FavoriteViewModel.Effect.RouteToLogin)
                 }
-
             }
         }
-
     }
 }
 
 @ExperimentalMaterial3Api
 @Composable
-private fun EmptyFavoritesView(){
+private fun EmptyFavoritesView() {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Card(modifier = Modifier.padding(horizontal = MaterialTheme.dimens.DP_16)) {
             Column(
@@ -222,9 +213,7 @@ private fun EmptyFavoritesView(){
                     color = ColorTextSecondary(),
                     textAlign = TextAlign.Center
                 )
-
             }
         }
-
     }
 }
