@@ -14,10 +14,3 @@ val String.Companion.ReverseBrackets
 
 val String?.orEmpty
     get() = this ?: String.Empty
-
-val String?.formatDecimal
-    get() = run {
-        val numberFormat = NumberFormat.getNumberInstance(Locale("tr", "TR"))
-        numberFormat.maximumFractionDigits = 2
-        "${numberFormat.format(this?.toDoubleOrNull() ?: 0.0)}₺"
-    }

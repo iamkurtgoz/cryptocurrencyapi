@@ -18,4 +18,5 @@
     <string name="refresh">Refresh</string>
     <string name="remove_from_favorites">Remote from favorites</string>
     <string name="add_to_favorites">Add to favorites</string>
+    <string name="your_favorites_empty">Your favorites are empty</string>
 </resources>

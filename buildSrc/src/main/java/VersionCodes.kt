@@ -17,6 +17,8 @@ object VersionCodes {
         const val splashScreen = "1.0.1"
         const val pagination = "3.1.1"
         const val datastore = "1.0.0"
+        const val workManager = "2.8.1"
+        const val workManagerHilt = "1.0.0"
     }
 
     object Compose {

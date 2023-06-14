@@ -65,6 +65,7 @@ dependencies {
     //Project
     implementation(project(Modules.firebase))
     implementation(project(Modules.contract))
+    implementation(project(Modules.networdk))
     implementation(project(Modules.data))
     implementation(project(Modules.domain))
     implementation(project(Modules.presentation))

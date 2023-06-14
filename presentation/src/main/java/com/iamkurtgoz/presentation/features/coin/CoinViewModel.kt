@@ -81,7 +81,8 @@ class CoinViewModel @Inject constructor(
         initialKey = CoinPagingSource.Params(
             vsCurrency = CoinPagingSource.CURRENCY,
             page = CoinPagingSource.DEFAULT_PAGE,
-            perPage = CoinPagingSource.DEFAULT_PER_PAGE
+            perPage = CoinPagingSource.DEFAULT_PER_PAGE,
+            isFavorite = false
         )
     ).flow.cachedIn(viewModelScope)
 

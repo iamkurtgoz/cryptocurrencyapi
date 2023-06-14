@@ -12,7 +12,8 @@ internal interface CoinApiService {
     suspend fun getCoinList(
         @Query("vs_currency") vsCurrency: String?,
         @Query("per_page") perPage: Int?,
-        @Query("page") page: Int?
+        @Query("page") page: Int?,
+        @Query("ids") ids: String?
     ): List<CoinData>
 
 

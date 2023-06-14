@@ -27,12 +27,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.IntSize
-import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.iamkurtgoz.core.formatDecimal
 import com.iamkurtgoz.cryptocurrencyapi.presentation.R
+import com.iamkurtgoz.domain.extensions.formatDecimal
 import com.iamkurtgoz.presentation.core.animation.KLottieView
 import com.iamkurtgoz.presentation.core.components.KButtonBackground
 import com.iamkurtgoz.presentation.core.getScreenWidth
@@ -168,7 +167,7 @@ fun CoinDetailScreen(viewModel: CoinDetailViewModel = hiltViewModel(), navContro
                             )
 
                             Text(
-                                text = "${viewState.coinData.priceChangePercentage24h}%",
+                                text = viewState.coinData.priceChangePercentage24h?.let { "$it%" } ?: kotlin.run { "-" },
                                 color = if (viewState.coinData.isPricePercentage24hUpper) Color.Green else Color.Red,
                                 style = MaterialTheme.typography.headlineMedium.copy(
                                     fontWeight = FontWeight.Bold
@@ -192,7 +191,11 @@ fun CoinDetailScreen(viewModel: CoinDetailViewModel = hiltViewModel(), navContro
                             rootModifier = Modifier.weight(1f)
                                 .padding(end = MaterialTheme.dimens.DP_8)
                         ) {
-                            viewModel.dispatch(CoinDetailViewModel.Action.GetCoinDetail(withCache = false))
+                            if (viewState.isSignedIn) {
+                                viewModel.dispatch(CoinDetailViewModel.Action.GetCoinDetail(withCache = false))
+                            } else {
+                                viewModel.updateSideEffect(CoinDetailViewModel.Effect.RouteToLogin)
+                            }
                         }
 
                         KButtonBackground(
@@ -202,10 +205,14 @@ fun CoinDetailScreen(viewModel: CoinDetailViewModel = hiltViewModel(), navContro
                                 .padding(start = MaterialTheme.dimens.DP_8),
                             containerColor = if (viewState.isFavorite) Color.Red else Blue
                         ) {
-                            if (viewState.isFavorite) {
-                                viewModel.dispatch(CoinDetailViewModel.Action.RemoveFavorites)
+                            if (viewState.isSignedIn) {
+                                if (viewState.isFavorite) {
+                                    viewModel.dispatch(CoinDetailViewModel.Action.RemoveFavorites)
+                                } else {
+                                    viewModel.dispatch(CoinDetailViewModel.Action.AddFavorites)
+                                }
                             } else {
-                                viewModel.dispatch(CoinDetailViewModel.Action.AddFavorites)
+                                viewModel.updateSideEffect(CoinDetailViewModel.Effect.RouteToLogin)
                             }
                         }
                     }

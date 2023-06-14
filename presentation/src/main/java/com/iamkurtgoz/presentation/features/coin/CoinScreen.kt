@@ -45,7 +45,6 @@ fun HomeScreen(viewModel: CoinViewModel = hiltViewModel(), navController: NavCon
     val viewState = viewModel.state.value
     val dialogState = viewModel.dialogState.value
     val coinList = viewModel.coinPager.collectAsLazyPagingItems()
-    val navBackStackEntry by navController.currentBackStackEntryAsState()
 
     LaunchedEffect(key1 = coinList.itemSnapshotList.items) {
         viewModel.dispatch(CoinViewModel.Action.UpdateList(coinList.itemSnapshotList.items))
@@ -86,7 +85,7 @@ fun HomeScreen(viewModel: CoinViewModel = hiltViewModel(), navController: NavCon
                                     item,
                                     onClick = {
                                         it.id?.let {
-                                            viewModel.updateSideEffect(CoinViewModel.Effect.RouteToCoinDetail("bitcoin"))
+                                            viewModel.updateSideEffect(CoinViewModel.Effect.RouteToCoinDetail(it))
                                         }
                                     }
                                 )
@@ -111,7 +110,7 @@ fun HomeScreen(viewModel: CoinViewModel = hiltViewModel(), navController: NavCon
                                         item,
                                         onClick = {
                                             it.id?.let {
-                                                viewModel.updateSideEffect(CoinViewModel.Effect.RouteToCoinDetail("bitcoin"))
+                                                viewModel.updateSideEffect(CoinViewModel.Effect.RouteToCoinDetail(it))
                                             }
                                         }
                                     )
@@ -125,7 +124,7 @@ fun HomeScreen(viewModel: CoinViewModel = hiltViewModel(), navController: NavCon
     )
 }
 
-private fun LazyListScope.loadStateItem(loadState: LoadState) {
+fun LazyListScope.loadStateItem(loadState: LoadState) {
     when (loadState) {
         is LoadState.Error -> {
             item {

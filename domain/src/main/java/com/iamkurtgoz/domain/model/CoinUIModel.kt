@@ -1,5 +1,6 @@
 package com.iamkurtgoz.domain.model
 
+import com.iamkurtgoz.domain.extensions.formatDecimal
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -19,23 +20,23 @@ data class CoinUIModel(
     val marketCapChangePercentage24h: Double?
 ) {
     fun formatHigh24(): String {
-        high24h?.toDoubleOrNull()?.let {
-            return formatCurrency(it)
+        return high24h?.formatDecimal ?: kotlin.run {
+            high24h?.let {
+                "$high24h₺" ?: "--"
+            } ?: kotlin.run {
+                "-"
+            }
         }
-        return "$high24h ₺" ?: "--"
     }
 
     fun formatLow24(): String {
-        low24h?.toDoubleOrNull()?.let {
-            return formatCurrency(it)
+        return low24h?.formatDecimal ?: kotlin.run {
+            low24h?.let {
+                "$low24h₺" ?: "--"
+            } ?: kotlin.run {
+                "-"
+            }
         }
-        return "$low24h ₺" ?: "--"
-    }
-
-    fun formatCurrency(value: Double): String {
-        val numberFormat = NumberFormat.getNumberInstance(Locale("tr", "TR"))
-        numberFormat.maximumFractionDigits = 2
-        return "${numberFormat.format(value)} ₺"
     }
 
     fun doesMatchSearchQuery(query: String): Boolean {

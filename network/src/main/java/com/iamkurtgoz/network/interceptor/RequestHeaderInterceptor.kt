@@ -13,9 +13,9 @@ internal class RequestHeaderInterceptor @Inject constructor(
         val initial = chain.request()
         val builder = initial.newBuilder()
         val request = builder
-            // .addHeader("deviceToken", deviceId)
-            // .addHeader("operationSystem", "Android")
-            // .addHeader("language", "en")
+            .addHeader("deviceToken", deviceId)
+            .addHeader("operationSystem", "Android")
+            .addHeader("language", "en")
             .build()
         return chain.proceed(request)
     }

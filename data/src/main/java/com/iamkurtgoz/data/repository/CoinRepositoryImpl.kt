@@ -14,13 +14,13 @@ import com.iamkurtgoz.domain.repository.CoinRepository
 import com.iamkurtgoz.firebase.FirebaseInitializer
 import com.iamkurtgoz.local.dao.CoinDao
 import com.iamkurtgoz.local.dao.CoinDetailDao
-import kotlinx.coroutines.flow.Flow
+import com.iamkurtgoz.network.helper.ConnectivityHelper
 import kotlinx.coroutines.flow.firstOrNull
-import kotlinx.coroutines.flow.map
 import java.util.Date
 import javax.inject.Inject
 
 internal class CoinRepositoryImpl @Inject constructor(
+    private val connectivityHelper: ConnectivityHelper,
     private val apiService: CoinApiService,
     private val firebase: FirebaseInitializer,
     private val coinDao: CoinDao,
@@ -34,7 +34,8 @@ internal class CoinRepositoryImpl @Inject constructor(
     override suspend fun getCoinList(
         vsCurrency: String?,
         page: Int?,
-        perPage: Int?
+        perPage: Int?,
+        ids: List<String>?
     ): List<CoinUIModel> {
         val keyName = "CACHE_$page"
         val key = stringPreferencesKey(keyName)
@@ -48,15 +49,19 @@ internal class CoinRepositoryImpl @Inject constructor(
             }
         }
 
-        //TODO: check network status
-        return if (useCache) {
+        return if (useCache || !connectivityHelper.isNetworkAvailable()) {
             val offset = (page ?: 1).minus(1) * (perPage ?: 250)
-            coinMapper.mapEntityToUiModel(coinDao.getCoins(limit = perPage, offset = offset))
+            val cacheList = if (ids != null) {
+                coinDao.getCoinsWithIds(limit = perPage, offset = offset, ids = ids.toTypedArray())
+            } else {
+                coinDao.getCoins(limit = perPage, offset = offset)
+            }
+            coinMapper.mapEntityToUiModel(cacheList)
         } else {
             // Save cache time
             userDataStoreManager.save(key, Date().time.toString())
             // uiList
-            val list = apiService.getCoinList(vsCurrency, perPage, page)
+            val list = apiService.getCoinList(vsCurrency, perPage, page, ids?.joinToString { "," })
             val uiList = coinMapper.map(list)
             val entityList = coinMapper.mapUiModelToEntity(uiList)
             coinDao.insertCoin(entityList)
@@ -77,9 +82,8 @@ internal class CoinRepositoryImpl @Inject constructor(
             }
         }
 
-        //TODO: check network status
         val cacheData = coinDetailDao.getCoinDetailById(id)
-        return if (withCache && useCache && cacheData != null) {
+        return if (withCache && useCache && cacheData != null || cacheData != null && !connectivityHelper.isNetworkAvailable()) {
             coinDetailMapper.mapEntityToUiModel(cacheData)
         } else {
             // Save cache time

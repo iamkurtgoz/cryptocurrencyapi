@@ -21,6 +21,7 @@ import com.iamkurtgoz.presentation.core.ViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.launch
@@ -57,12 +58,12 @@ class CoinDetailViewModel @Inject constructor(
                     isSignedIn = getUserIsLoginUseCase.invoke()
                 )
                 updateState(newState)
+                dispatch(Action.GetCoinDetail(withCache = true))
             }
             is Action.GetCoinDetail -> {
                 updateState(state.value.copy(
                     isContentLoading = true
                 ))
-                println("Start")
                 combine(
                     getCoinDetailUseCase.invoke(state.value.coinId, action.withCache),
                     getFavoritesUseCase.invoke()
@@ -76,6 +77,8 @@ class CoinDetailViewModel @Inject constructor(
                         isFavorite = favoriteModel != null,
                         favoriteModel = favoriteModel
                     ))
+                }.catch {
+                    showErrorMessage(it)
                 }.launchIn(viewModelScope)
             }
             is Action.AddFavorites -> {

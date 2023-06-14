@@ -54,6 +54,7 @@ class FirebaseInitializer @Inject constructor(
     }
 
     suspend fun readFavorites(email: String?): List<DocumentSnapshot> {
+        if (auth.currentUser == null) return emptyList()
         val favorites = firestore.collection(FAVORITES)
             .whereEqualTo("email", email)
             .get()
@@ -80,7 +81,7 @@ class FirebaseInitializer @Inject constructor(
         val doc = docRef.get().await()
 
         return if (doc.exists()) {
-            docRef.delete().await()
+            docRef.delete()
         } else {
             Any()
         }

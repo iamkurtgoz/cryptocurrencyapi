@@ -29,6 +29,14 @@ object Deps {
             append("androidx.datastore:datastore-preferences:")
             append(VersionCodes.AndroidX.datastore)
         }
+        val workManager = buildString {
+            append("androidx.work:work-runtime-ktx:")
+            append(VersionCodes.AndroidX.workManager)
+        }
+        val workManagerHilt = buildString {
+            append("androidx.hilt:hilt-work:")
+            append(VersionCodes.AndroidX.workManagerHilt)
+        }
     }
 
     object Compose {
@@ -152,6 +160,7 @@ object Deps {
             append("com.google.code.gson:gson:")
             append(VersionCodes.Network.gson)
         }
+
     }
 
     object Glide {
