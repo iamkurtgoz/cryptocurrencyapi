@@ -5,6 +5,7 @@ import androidx.hilt.work.HiltWorkerFactory
 import androidx.work.Configuration
 import androidx.work.WorkManager
 import com.google.firebase.FirebaseApp
+import com.iamkurtgoz.data.worker.CheckBitcoinCurrencyWorker
 import com.iamkurtgoz.firebase.FirebaseInitializer
 import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject
@@ -28,6 +29,10 @@ class App : Application(), Configuration.Provider {
 
     override fun onCreate() {
         super.onCreate()
+        //Firebase Initialize
         firebase.init()
+
+        //Check currency workar initialize
+        CheckBitcoinCurrencyWorker.start(workManager)
     }
 }

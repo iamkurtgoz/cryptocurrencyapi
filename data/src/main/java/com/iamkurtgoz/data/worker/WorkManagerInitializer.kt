@@ -1,4 +1,4 @@
-package com.iamkurtgoz.network.workManager
+package com.iamkurtgoz.data.worker
 
 import android.content.Context
 import android.util.Log

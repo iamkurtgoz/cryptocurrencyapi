@@ -90,6 +90,7 @@ fun FavoriteScreen(viewModel: FavoriteViewModel = hiltViewModel(), navController
             Column(
                 modifier = Modifier
                     .padding(innerPadding)
+                    .fillMaxSize()
             ) {
                 if (viewState.isContentLoading) {
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
@@ -108,6 +109,7 @@ fun FavoriteScreen(viewModel: FavoriteViewModel = hiltViewModel(), navController
                     Column(
                         modifier = Modifier
                             .padding(innerPadding)
+                            .fillMaxSize()
                     ) {
                         LazyColumn {
                             items(coinList.itemCount) { index ->

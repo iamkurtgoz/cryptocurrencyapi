@@ -1,18 +1,18 @@
 package com.iamkurtgoz.cryptocurrencyapi.presentation
 
+import android.os.Build
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.runtime.mutableStateOf
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.iamkurtgoz.presentation.PresentationView
 import com.iamkurtgoz.presentation.core.SharedUserState
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import javax.inject.Inject
+import com.iamkurtgoz.cryptocurrencyapi.R
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -20,14 +20,17 @@ class MainActivity : ComponentActivity() {
     @Inject
     lateinit var sharedUserState: SharedUserState
 
-    private var keepSplashScreenOn = mutableStateOf(true)
+    private val viewModel by viewModels<SplashViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         processSplashScreen()
-        example()
         setContent {
-            if (!keepSplashScreenOn.value) {
+            val viewState = viewModel.state.value
+            if (!viewState.keepSplashScreenOn) {
+                if (Build.VERSION.SDK_INT >= 33) {
+                    notificationPermissionLauncher.launch(android.Manifest.permission.POST_NOTIFICATIONS)
+                }
                 PresentationView(sharedUserState)
             }
         }
@@ -36,20 +39,18 @@ class MainActivity : ComponentActivity() {
     private fun processSplashScreen() {
         installSplashScreen().apply {
             setKeepOnScreenCondition {
-                keepSplashScreenOn.value
+                viewModel.state.value.keepSplashScreenOn
             }
         }
     }
 
-    // TODO delete when add splash view model
-    private fun example() {
-        CoroutineScope(Dispatchers.IO).launch {
-            delay(DelayTime)
-            keepSplashScreenOn.value = !keepSplashScreenOn.value
+    private val notificationPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { isGranted ->
+        if (!isGranted) {
+            if (Build.VERSION.SDK_INT >= 33) {
+                Toast.makeText(this, getString(R.string.permission_denied), Toast.LENGTH_SHORT).show()
+            }
         }
-    }
-
-    companion object {
-        const val DelayTime = 1000L
     }
 }

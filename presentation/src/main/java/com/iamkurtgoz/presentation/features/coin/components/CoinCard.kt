@@ -34,7 +34,8 @@ fun CoinCard(index: Int, item: CoinUIModel, onClick: (CoinUIModel) -> Unit) {
             .clickable { onClick.invoke(item) }
             .fillMaxWidth()
             .padding(horizontal = MaterialTheme.dimens.DP_16)
-            .padding(top = if (index == 0) MaterialTheme.dimens.DP_16 else MaterialTheme.dimens.DP_12),
+            .padding(top = if (index == 0) MaterialTheme.dimens.DP_16 else MaterialTheme.dimens.DP_8)
+            .padding(vertical = MaterialTheme.dimens.DP_4),
         shape = AppShapes.extraSmall,
         elevation = CardDefaults.cardElevation(
             defaultElevation = MaterialTheme.dimens.DP_2

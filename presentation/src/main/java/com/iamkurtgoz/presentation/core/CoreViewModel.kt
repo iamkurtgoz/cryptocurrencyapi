@@ -113,7 +113,7 @@ abstract class CoreViewModel<S : ViewState, A : ViewAction, E : SideEffect>(
             .onError {
                 showContent()
                 if (errorType == ErrorType.Popup) {
-                    showAlertInfo(title = null, message = it.message, buttonTitleResource = R.string.ok)
+                    showAlertInfo(title = null, message = it.localizedMessage, buttonTitleResource = R.string.ok)
                 } else {
                     onErrorCallback(it)
                 }

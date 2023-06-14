@@ -137,7 +137,7 @@ fun LazyListScope.loadStateItem(loadState: LoadState) {
                     Text(
                         modifier = Modifier
                             .padding(8.dp),
-                        text = stringResource(id = R.string.error_unknown),
+                        text = if (loadState.error.localizedMessage?.contains("HTTP 429") == true) stringResource(id = R.string.error_http_429) else stringResource(id = R.string.error_unknown),
                         color = Color.Red
                     )
                 }

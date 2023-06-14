@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Crypto Currency</string>
+    <string name="permission_denied">Permission denied</string>
 </resources>

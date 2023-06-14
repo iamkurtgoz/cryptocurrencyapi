@@ -19,6 +19,7 @@ dependencies {
     implementation(project(Modules.local))
     implementation(project(Modules.firebase))
 
+    implementation(Deps.AndroidX.core)
     implementation(Deps.AndroidX.datastore)
 
     implementation(Deps.Hilt.hilt)

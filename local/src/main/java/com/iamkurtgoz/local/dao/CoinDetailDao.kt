@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Update
 import com.iamkurtgoz.local.entity.CoinDetailEntity
 import com.iamkurtgoz.local.entity.CoinEntity
 
@@ -15,4 +16,7 @@ interface CoinDetailDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCoinDetail(services: CoinDetailEntity)
+
+    @Update
+    fun updateCoin(coinDetail: CoinDetailEntity)
 }

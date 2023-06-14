@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="your_favorite_coin_price_change">Your favorite coin price change. Old value: %1$s, New Value: %2$s</string>
+</resources>
